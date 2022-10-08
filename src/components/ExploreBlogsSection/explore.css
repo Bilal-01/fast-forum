@@ -1,0 +1,29 @@
+/* 
+#EFFFFD
+#B8FFF9
+#85F4FF
+#42C2FF
+rgb(239, 255, 253)
+rgb(184, 255, 249)
+rgb(133, 244, 255)
+rgb(66, 194, 255)
+
+#14279B
+#3D56B2
+#5C7AEA
+#E6E6E6
+rgb(20, 39, 155)
+rgb(61, 86, 178)
+rgb(92, 122, 234)
+rgb(230, 230, 230)
+
+*/
+
+.explore-blogs-container{
+    background-color: #B8FFF9;
+    width: 100%;
+    height: 680px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}

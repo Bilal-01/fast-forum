@@ -1,0 +1,15 @@
+.header{
+    background-color: rgba(216, 148, 148, 0.933);
+    height: 20vh;
+    width: 100vw;
+}
+
+.content-wrapper{
+    width: 100%;
+}
+
+.bg-img{
+    width: 100%;
+    height: 440px;
+}
+
