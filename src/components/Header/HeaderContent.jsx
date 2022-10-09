@@ -22,10 +22,17 @@ function HeaderContent(){
         <img className='bg-img' src={bgImg2} alt="background" />
         <img className='bg-img' src={bgImg3} alt="background" />
     </Slider> */}
+
+    //https://bennettfeely.com/clippy/  
     
     return(
         <div className="content-wrapper">
-            <img className='bg-img' src={bgImg1} alt="background" />
+            <img className='bg-img' src={bgImg3} alt="background" />
+            <div className="content">
+                <h1 className='heading'>
+                    Hello
+                </h1>
+            </div>
         </div>
     )
 }
