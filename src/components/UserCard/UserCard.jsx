@@ -23,14 +23,19 @@ function UserCard(props){
         <div className='user-card' style={styles}>
             <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                 <Avatar
+                    imgProps= {{
+                        sx: {
+                            borderRadius: '100%'
+                        }
+                    }}
                     variant='circle' 
                     alt={props.name} 
                     src={props.src}
                     sx={{
                         borderRadius: '100%', 
                         padding: '10px',
-                        height: 72, 
-                        width: 72, 
+                        height: 84, 
+                        width: 84, 
                         border: isHovering ? '3px solid #1976d2': '3px solid white' ,
                         transition: "0.3s all",
                     }}
