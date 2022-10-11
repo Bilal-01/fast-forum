@@ -22,10 +22,12 @@ function UserCard(props){
     return(
         <div className='user-card' style={styles}>
             <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                <Avatar 
+                <Avatar
+                    variant='circle' 
                     alt={props.name} 
                     src={props.src}
-                    sx={{ 
+                    sx={{
+                        borderRadius: '100%', 
                         padding: '10px',
                         height: 72, 
                         width: 72, 

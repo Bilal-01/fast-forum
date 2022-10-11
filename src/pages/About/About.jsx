@@ -4,6 +4,7 @@ import aboutImg from '../../assets/about-us.jpeg';
 import alligator from '../../assets/alligator.png';
 import panda from '../../assets/panda.png';
 import dino from '../../assets/dino.png';
+import bilal from '../../assets/bilal.jpg';
 
 import './about.css';
 
@@ -13,7 +14,7 @@ function About(){
             <Navbar />
             <TextAndImageContainer width="70%" height="70vh" src={aboutImg} />
             <div className='user-card-container'>
-                <UserCard src={alligator} name="Bilal Aziz" description="An admirable King" />
+                <UserCard src={bilal} name="Bilal Aziz" description="An admirable King" />
                 <UserCard src={panda} name="Maryam Siddiqui" description="An idiot Panda. " />
                 <UserCard src={dino} name="Sabah Mawani" description="A scary Dino" />
             </div>
