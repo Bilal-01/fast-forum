@@ -1,0 +1,30 @@
+.txt-img-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.text-container, .img-container{
+    width: 50%;
+    height: 100%;
+}
+
+.txt-container-heading{
+    font-size: 2rem;
+    color: #1976d2;
+}
+
+.txt-container-txt{
+    width: 80%;
+    align-items: left;
+    font-size: 1.4rem;
+}
+
+
+.img-container-img{
+    margin-top: 10%;
+    min-width: 100%;
+    height: 80%;
+    object-fit: fill;
+    border-radius: 20px;
+}

@@ -12,6 +12,7 @@ function CardContainer(){
                     heading="Heading Text" 
                     description="Lorum ispum dolor sit amet consectuer" 
                     color="primary"
+                    border="1px solid blue"
                 />                
             </div>
             <div className="single-card">
@@ -20,6 +21,7 @@ function CardContainer(){
                 heading="Heading Text" 
                 description="Lorum ispum dolor sit amet consectuer" 
                 color="primary"
+                border="1px solid green"
             />
             </div>
             <div className="single-card">
@@ -28,6 +30,7 @@ function CardContainer(){
                 heading="Heading Text" 
                 description="Lorum ispum dolor sit amet consectuer" 
                 color="primary"
+                border="1px solid pink"
             />
             </div>
             <div className="single-card">
@@ -36,6 +39,7 @@ function CardContainer(){
                 heading="Heading Text" 
                 description="Lorum ispum dolor sit amet consectuer" 
                 color="primary"
+                border="1px solid yellow"
             />
             </div>
             

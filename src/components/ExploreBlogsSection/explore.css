@@ -20,6 +20,10 @@
     justify-content: space-between;
 }
 
+.explore-card:hover{
+    box-shadow: 0 20px 52px 0 rgb(81 88 144 / 14%);
+}
+
 .explore-img-container{
     width: 50%;
     height: 100%;
@@ -32,8 +36,8 @@
     
 }
 
-.text-container{
-    width: 40%;
+.explore-text-container{
+    width: 50%;
     height: 100%;
     display: flex;
     align-items: center;

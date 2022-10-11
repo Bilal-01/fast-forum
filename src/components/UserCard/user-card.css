@@ -1,0 +1,23 @@
+.user-card{
+    width: 400px;
+    height: 100px;
+    margin: 20px 25px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-description{
+    margin-left: 20px;
+}
+
+.admin-description > h3{
+    font-size: 1.6rem;
+    color: #1976d2;
+    margin-bottom: 0;
+}
+
+.admin-description > p{
+    margin-top: 0;
+}

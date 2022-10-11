@@ -8,4 +8,5 @@ export {default as BlogContainer} from './BlogContainer/BlogContainer';
 export {default as SocietyConatiner} from './SocietyContainer/SocietyContainer';
 export{ default as CardActionArea1} from './CardActionArea1/CardActionArea1';
 export {default as SocietyConatinerBottom} from './SocietyContainerBottom/SocietyContainerBottom';
-
+export {default as TextAndImageContainer} from './TextAndImageContainer/TextAndImageContainer';
+export {default as UserCard} from './UserCard/UserCard';

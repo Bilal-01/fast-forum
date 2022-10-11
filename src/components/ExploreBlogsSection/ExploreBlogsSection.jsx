@@ -12,16 +12,14 @@ function ExploreBlogsSection(){
                     <div className="explore-img-container">
                         <img className="explore-img" src={exploreImg} alt="" />
                     </div>
-                    <div className='text-container'>
+                    <div className='explore-text-container'>
                         <div className="text">
                             <h3 className="text-heading">
                                 Explore
                             </h3>
                             <p className='text-content'>
                                 Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem.
-                            </p>
-
-                            
+                            </p>   
                             <h3 className="text-heading">
                                 Explore
                             </h3>
