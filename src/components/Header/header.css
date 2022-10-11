@@ -4,21 +4,52 @@
 }
 .bg-img{
     background:transparent;
-    filter: brightness(50%);
+    filter: brightness(40%);
     width: 100%;
     height: 80vh;
-    z-index: -1;
+    clip-path: ellipse(91% 66% at 54% 31%);
 }
 
 .content{
     position: absolute;
-    top: 30%;
-    left: 50%;
+    top: 15%;
+    width: 100%;
     color: #fff;
-    height: 150px;
-    border: 1px solid white;
+    height: 80%;
 }
 
-.heading{
+.header-heading{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    text-align: center;
+    opacity: 0;
+}
+
+.header-text{
+    position: absolute;
+    bottom: -25%;
+    left: 30%;
+    width: 40%;
+    font-size: 1.6rem;
+    opacity: 0;
+    text-align: center;
     
+}
+
+.header-text-container{
+    height: inherit;
+    position: relative;
+}
+
+
+.img-shadow{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80vh;
+    background-color: #c5ecfc;
+    clip-path: ellipse(91% 66% at 64% 31%);
+    z-index: -5;
 }

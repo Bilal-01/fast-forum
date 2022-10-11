@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 .left-to-right-cont{
     width: 70%;
