@@ -1,9 +1,7 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import bgImg1 from "../../assets/bg-img1.jpeg";
 import bgImg2 from "../../assets/bg-home1.jpeg";
-import bgImg3 from "../../assets/bg-home2.jpeg";import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import bgImg3 from "../../assets/bg-home2.jpeg";
 import {gsap} from "gsap";
 
 const settings = {

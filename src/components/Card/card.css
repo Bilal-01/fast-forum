@@ -1,6 +1,5 @@
 .card{
     box-shadow: 0 5px 26px 0 rgb(68 88 144 / 14%);
-    border: 1px solid white;
     height: 200px;
     overflow: hidden;
     width: 280px;
@@ -11,6 +10,5 @@
 }
 
 .card:hover{
-    border: 1px solid rgb(45, 161, 228);
-    transition: 0.3s all;
+
 }

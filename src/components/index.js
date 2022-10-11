@@ -5,3 +5,5 @@ export {default as ExploreBlogsSection} from './ExploreBlogsSection/ExploreBlogs
 export {default as CardContainer} from './CardContainer/CardContainer';
 export {default as Card} from './Card/Card';
 export {default as BlogContainer} from './BlogContainer/BlogContainer';
+export {default as TextAndImageContainer} from './TextAndImageContainer/TextAndImageContainer';
+export {default as UserCard} from './UserCard/UserCard';
