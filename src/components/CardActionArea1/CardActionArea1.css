@@ -5,11 +5,5 @@
     align-items: center;
     justify-content: center;
     margin: 20px 0px;
-    border: 1px solid black;
     
-}
-
-.society-single-card{
-    padding: 10px 10px;
-    box-shadow: 0 5px 26px 0 rgb(68 88 144 / 14%);
 }

@@ -1,10 +1,11 @@
 import React from "react";
-//import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import SingleCard from './SingleCard';
+
 import DECS_LOGO from './../../assets/Societies_image/Decs_logo.jpg'
 import TNC_LOGO from './../../assets/Societies_image/tnc_logo.png'
 import TLC_LOGO from './../../assets/Societies_image/TLC_logo.jpg'
@@ -17,75 +18,42 @@ import FMS_LOGO from './../../assets/Societies_image/FMS_logo.jpg'
 import IEEE_LOGO from './../../assets/Societies_image/IEEE_logo.jpg'
 import SPORTICS_LOGO from './../../assets/Societies_image/Sportics_logo.jpg'
 
+import './CardActionArea1.css'
+
 function CardActionArea1() {
   return (
     <div>
       <div className='society-card-wrapper'>
-        <div className='society-single-card'>
-          <Card sx={{ maxWidth: 345 }}>
-            <CardActionArea>
-              <CardMedia
-                component="img"
-                height="150"
-                image={DECS_LOGO}
-                alt="DECS-Society"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div" sx={{ textAlign: "center" }}>
-                  Dramatic and Extra Curricular Society
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  DECS has always been on the go in planning extra-curricular activities such as picnics for the FASTians which prove to be both exhilarating and exclusive.
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </div>
+        <SingleCard
+          width = "345px"
+          height = "150px"
+          logo={DECS_LOGO}
+          heading="Dramatic and Extra Curricular Society" 
+          description="DECS has always been on the go in planning extra-curricular activities such as picnics for the FASTians which prove to be both exhilarating and exclusive."
+        />
+        
+        <SingleCard
+        
+          width = "345px"
+          height = "150px"
+          logo={TLC_LOGO}
+          heading="The Literary Club" 
+          description="TLC is the most active, the most happening and the most classy society at FAST. With events like Xpressions, Zauq, Agha Hasan Abedi Declamation Contest, Intra-MUN, Parliamentary Debates and an annual magazine called the localhost"
+        />
 
-        <div className='society-single-card'>
-          <Card sx={{ maxWidth: 345 }}>
-            <CardActionArea>
-              <CardMedia
-                component="img"
-                height="140"
-                image={TLC_LOGO}
-                alt="TLC-Society"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div" sx={{ textAlign: "center" }}>
-                  The Literary Club
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  TLC is the most active, the most happening and the most classy society at FAST. With events like Xpressions, Zauq, Agha Hasan Abedi Declamation Contest, Intra-MUN, Parliamentary Debates and an annual magazine called the "localhost"
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </div>
-
-        <div className='society-single-card'>
-          <Card sx={{ maxWidth: 345 }}>
-            <CardActionArea>
-              <CardMedia
-                component="img"
-                height="140"
-                image={FDSS_LOGO}
-                alt="FDSS-Society"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div" sx={{ textAlign: "center" }}>
-                  FAST DataScience Society
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  TLC is the most active, the most happening and the most classy society at FAST. With events like Xpressions, Zauq, Agha Hasan Abedi Declamation Contest, Intra-MUN, Parliamentary Debates and an annual magazine called the "localhost"
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </div>
+        <SingleCard
+          width = "345px"
+          height = "150px"
+          logo={FDSS_LOGO}
+          heading="FAST DataScience Society" 
+          description="TLC is the most active, the most happening and the most classy society at FAST. With events like Xpressions, Zauq, Agha Hasan Abedi Declamation Contest, Intra-MUN, Parliamentary Debates and an annual magazine called the 'localhost'"
+        />
       </div>
 
       <div className='society-card-wrapper'>
+
+
+
         <div className='society-single-card'>
           <Card sx={{ maxWidth: 345 }}>
             <CardActionArea>
