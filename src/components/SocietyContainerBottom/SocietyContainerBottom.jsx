@@ -4,8 +4,8 @@ import './SocietyContainerBottom.css';
 function SocietyContainerBottom()
 {
     return(
-        <div className='Society-Container-Bottom'>
-            <img  src={image}/> 
+        <div className='society-container-bottom'>
+            <img className='society-container-bottom-img'  src={image}/> 
         </div>
     )
 }

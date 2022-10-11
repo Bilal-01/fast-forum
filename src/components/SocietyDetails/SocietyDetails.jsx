@@ -7,7 +7,7 @@ function SocietyDetails(props)
     
     return(
         <div className='society-details-container'>
-            <img src={props.src} alt='society' />
+            <img className='society-details-img' src={props.src} alt='society' />
 
         </div>
     )
