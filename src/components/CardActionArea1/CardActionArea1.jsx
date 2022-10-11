@@ -20,8 +20,8 @@ import SPORTICS_LOGO from './../../assets/Societies_image/Sportics_logo.jpg'
 function CardActionArea1() {
   return (
     <div>
-      <div className='card-wrapper'>
-        <div className='single-card'>
+      <div className='society-card-wrapper'>
+        <div className='society-single-card'>
           <Card sx={{ maxWidth: 345 }}>
             <CardActionArea>
               <CardMedia
@@ -42,7 +42,7 @@ function CardActionArea1() {
           </Card>
         </div>
 
-        <div className='single-card'>
+        <div className='society-single-card'>
           <Card sx={{ maxWidth: 345 }}>
             <CardActionArea>
               <CardMedia
@@ -63,7 +63,7 @@ function CardActionArea1() {
           </Card>
         </div>
 
-        <div className='single-card'>
+        <div className='society-single-card'>
           <Card sx={{ maxWidth: 345 }}>
             <CardActionArea>
               <CardMedia
@@ -85,8 +85,8 @@ function CardActionArea1() {
         </div>
       </div>
 
-      <div className='card-wrapper'>
-        <div className='single-card'>
+      <div className='society-card-wrapper'>
+        <div className='society-single-card'>
           <Card sx={{ maxWidth: 345 }}>
             <CardActionArea>
               <CardMedia
@@ -106,7 +106,7 @@ function CardActionArea1() {
             </CardActionArea>
           </Card>
         </div>
-        <div className='single-card'>
+        <div className='society-single-card'>
           <Card sx={{ maxWidth: 355 }}>
             <CardActionArea>
               <CardMedia
@@ -128,7 +128,7 @@ function CardActionArea1() {
           </Card>
         </div>
 
-        <div className='single-card'>
+        <div className='society-single-card'>
           <Card sx={{ maxWidth: 345 }}>
             <CardActionArea>
               <CardMedia
@@ -149,8 +149,8 @@ function CardActionArea1() {
         </div>
       </div>
 
-      <div className='card-wrapper'>
-        <div className='single-card'>
+      <div className='society-card-wrapper'>
+        <div className='society-single-card'>
           <Card sx={{ maxWidth: 345 }}>
             <CardActionArea>
               <CardMedia
@@ -170,7 +170,7 @@ function CardActionArea1() {
             </CardActionArea>
           </Card>
         </div>
-        <div className='single-card'>
+        <div className='society-single-card'>
           <Card sx={{ maxWidth: 345 }}>
             <CardActionArea>
               <CardMedia
@@ -190,7 +190,7 @@ function CardActionArea1() {
           </Card>
         </div>
 
-        <div className='single-card'>
+        <div className='society-single-card'>
           <Card sx={{ maxWidth: 345 }}>
             <CardActionArea>
               <CardMedia
@@ -211,9 +211,9 @@ function CardActionArea1() {
 
 
       </div>
-      <div className='card-wrapper'>
+      <div className='society-card-wrapper'>
 
-        <div className='single-card'>
+        <div className='society-single-card'>
           <Card sx={{ maxWidth: 345 }}>
             <CardActionArea>
               <CardMedia
@@ -231,7 +231,7 @@ function CardActionArea1() {
             </CardActionArea>
           </Card>
         </div>
-        <div className='single-card'>
+        <div className='society-single-card'>
           <Card sx={{ maxWidth: 345 }}>
             <CardActionArea>
               <CardMedia
