@@ -24,7 +24,7 @@ function HeaderContent(){
     useLayoutEffect(() => {
         let ctx = gsap.context(() => {
             gsap.to(".header-heading",  {
-                y: 150,
+                y: 120,
                 duration: 1.5,
                 opacity: 1 
             });
@@ -33,7 +33,7 @@ function HeaderContent(){
 
         ctx = gsap.context(() => {
             gsap.to(".header-text",  {
-                y: -150,
+                y: -90,
                 duration: 1.5,
                 opacity: 1 
             });
