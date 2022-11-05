@@ -37,7 +37,6 @@
     height: 85%;
     width: 25%;
     background-color: white;
-    padding: 10px 20px;
     box-shadow: 0 15px 40px 0 rgba(29, 38, 63, 0.14);
     border-radius: 15px;
     display: flex;
@@ -135,3 +134,4 @@
 .user-profile-about > h1{
     text-align: left;
 }
+

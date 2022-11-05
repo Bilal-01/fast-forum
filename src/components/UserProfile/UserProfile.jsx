@@ -19,41 +19,32 @@ function UserProfile(props){
                 
                 <div className='user-profile-container'>
                     <div className="user-profile-container-left">
-                        <div className='user-profile-line'>
-                            <div className="profile-icon-container">
-                                <img src={profileIcon} alt="Profile Icon" />
-                            </div>
+                        <div className="profile-icon-container">
+                            <img src={profileIcon} alt="Profile Icon" />
                         </div>
-                        <div>
+                        <div style={{width: '100%'}}>
                             <h1 className='user-profile-heading'>My Profile</h1>
-                            
-                            <div className="user-profile-line">
-                                <h2 className='user-profile-name'>
-                                    Bilal Aziz
-                                </h2>
-                                <p style={{marginTop: 0, textAlign: 'center', width: '100%'}}>
-                                    k200397@nu.edu.pk
-                                </p>
-                            </div>
+                            <h2 className='user-profile-name'>
+                                Bilal Aziz
+                            </h2>
+                            <p style={{marginTop: 0, textAlign: 'center', width: '100%'}}>
+                                k200397@nu.edu.pk
+                            </p>
                             <div className='user-profile-desc'>
-                                <div className='user-profile-line'>
-                                    <p>
-                                        Batch: 2020
-                                        <br /> Status: Admin
-                                    </p>
-                                </div>
-                                <div>
-                                </div>
-                                <Stack direction='row' spacing={2} sx={{justifyContent: 'center', marginTop: '14px'}}>
-                                    <IconButton onClick={() => {
+                                <p>
+                                    Batch: 2020
+                                    <br /> Status: Admin
+                                </p>
+                                <Stack direction='row' sx={{justifyContent: 'center', marginTop: '14px'}}>
+                                    <IconButton sx={{width: '33%', border: '1px solid gray', borderLeft: 'none', borderRadius: 0}}  onClick={() => {
                                         <Navigate to="https://agentestudio.com/blog/design-user-profile-page"  replace={true} />
                                     }}>
                                         <LinkedInIcon fontSize='large' color='primary' sx={{cursor: 'pointer'}} />
                                     </IconButton>
-                                    <IconButton>
+                                    <IconButton fullWidth sx={{width: '33%',  borderBottom: '1px solid gray', borderTop: '1px solid gray', borderRadius: 0}}>
                                         <GitHubIcon fontSize='large' color='dark' sx={{cursor: 'pointer'}} />
                                     </IconButton>
-                                    <IconButton>
+                                    <IconButton sx={{width: '33%',  border: '1px solid gray', borderRight: 'none', borderRadius: 0}}>
                                         <TwitterIcon fontSize='large' color='primary' sx={{cursor: 'pointer'}} />
                                     </IconButton>
                                 </Stack>
