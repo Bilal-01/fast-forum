@@ -1,1 +1,77 @@
-import React from 'react';
+import React, { useState } from 'react';
+import EditIcon from '@mui/icons-material/Edit';
+import { Box, Button, Typography, Modal, IconButton, TextField, TextareaAutosize } from '@mui/material';
+
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 500,
+    height: 500,
+    bgcolor: 'background.paper',
+    borderTop: '5px solid #1976d2',
+    borderBottom: '5px solid #1976d2',
+    borderRadius: '20px',
+    boxShadow: 16,
+    p: 4,
+};
+
+function EditPersonalInfoModal(props){
+    
+    const [open, setOpen] = useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
+
+    return (
+        <>
+            <IconButton onClick={handleOpen}>
+                <EditIcon color='primary' fontSize='medium' />
+            </IconButton>
+            <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+            >
+                {props.type == "personal"  ?
+                <Box sx={style}
+                    component="form"
+                    noValidate
+                    autoComplete="off"
+                >
+                    <Typography id="modal-modal-title" variant="h6" component="h1" color = "#1976d2">
+                        Edit Personal Details
+                    </Typography>
+                    <TextField sx ={{ margin: '20px 0' }} id="full-name" label="Full Name" variant="outlined" fullWidth />
+                    <TextField sx={{ width: '48%' }} id="department" label="Department" variant="outlined"  />
+                    <TextField sx={{ width: '48%', marginLeft: '16px' }} id="domain" label="Domain" variant="outlined"  />
+                    <TextField sx ={{ margin: '20px 0' }} id="skill" label="Most Prominent Skill" variant="outlined" fullWidth />
+                    <TextareaAutosize
+                        aria-label="empty textarea"
+                        minRows={2}
+                        placeholder="Write your Quote here ..."
+                        style={{ width: '100%', padding: '15px 20px' }}
+                    />
+                </Box>   
+                :
+                <Box sx={style}>
+                    <Typography id="modal-modal-title" variant="h6" component="h1" color = "#1976d2">
+                        Edit Your About
+                    </Typography>
+                    <TextareaAutosize
+                    aria-label="minimum height"
+                    minRows={15}
+                    placeholder="Tell us About Yourself..."
+                    style={{ width: '100%', padding: '15px 20px', marginTop: '20px' }}
+                    />
+
+                </Box>
+                }
+            </Modal>
+        </>
+    )
+}
+
+export default EditPersonalInfoModal;
