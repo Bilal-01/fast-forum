@@ -1,6 +1,4 @@
 import React from 'react';
-import Card from '../Card/Card';
-import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import exploreImg from './../../assets/bg-home1.jpeg';
 import './blogcont.css';
 

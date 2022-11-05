@@ -5,3 +5,4 @@ export {default as About} from './About/About';
 export {default as Profile} from './Profile/Profile';
 export {default as Societies} from './Societies/Societies';
 export {default as Details} from './Societies/Details/Details';
+export {default as Forms} from './Blog/Forms/Forms';

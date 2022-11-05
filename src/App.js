@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, About, Contact, Blog, Societies, Details, Profile } from './pages';
+import { Home, About, Contact, Blog, Forms, Societies, Details, Profile } from './pages';
 import {BrowserRouter as Router, Switch, Route, Routes} from 'react-router-dom';
 import './App.css';
 
@@ -16,6 +16,7 @@ function App() {
           <Route path='/societies' element={<Societies />} />
           <Route path='/societies/details' element={<Details />} />
           <Route path='/profile' element={<Profile />} />
+          <Route path='/blog/forms' element={<Forms />} />
         </Routes>
       </Router>
     </>
