@@ -6,4 +6,5 @@ export {default as Profile} from './Profile/Profile';
 export {default as Societies} from './Societies/Societies';
 export {default as Details} from './Societies/Details/Details';
 export {default as Forms} from './Blog/Forms/Forms';
+export {default as Teachers} from './Teachers/Teachers';
 export {default as Resources} from './Resources/Resources';
