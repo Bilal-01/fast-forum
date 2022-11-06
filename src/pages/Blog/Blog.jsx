@@ -1,7 +1,5 @@
 import React from 'react';
-import Navbar from '../../components/Navbar/Navbar';
-import BlogContainer from '../../components/BlogContainer/BlogContainer';
-
+import {BlogContainer, Navbar} from '../../components';
 function Blog()
 {
     return (

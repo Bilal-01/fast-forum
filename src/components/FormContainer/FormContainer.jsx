@@ -15,20 +15,20 @@ function FormContainer()
                             Blog Form
                         </div>
                         <p className='input-type'>Heading:</p>
-                        <TextField
+                        <TextField className='form-len'
                             id="outlined-multiline-static"
                             multiline
                             rows={1}
                             defaultValue="Blog Title"
-                            style={{width: 650, paddingLeft: 50}}
+                            style={{paddingLeft: 50}}
                         />
                         <p className='input-type'>Description:</p>
-                        <TextField
+                        <TextField className='form-len'
                             id="outlined-multiline-static"
                             multiline
                             rows={9}
                             defaultValue="Blog Description"
-                            style={{width: 650, paddingLeft: 50}}
+                            style={{paddingLeft: 50}}
                         />
                         <div className='submit'>
                             <Button variant='contained'>Submit</Button>

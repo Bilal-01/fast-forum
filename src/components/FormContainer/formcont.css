@@ -22,7 +22,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background-color: rgb(15, 102, 160);
+    background-color: rgba(15, 102, 160, 0.705);
     height: 680px;
     width: 70%;
     box-shadow: 0 15px 40px 0 rgba(14, 18, 31, 0.397);
@@ -40,19 +40,26 @@
 .form-heading{
     color: #1976d2;
     text-align: center;
-    font-size: 2rem;
+    font-size: 4rem;
     margin: 20px 0;
     text-indent: 0ch;
+    font-weight: 700;
+    font-family:'Times New Roman', Times, serif ;
 }
 
 .input-type{
     text-decoration: black;
     text-transform: uppercase;
     text-indent: 5ch;
+    font-weight: 600;
 }
 
 .submit{
     text-align:right ;
     padding-bottom: 3ch;
     padding-right: 3ch;
+}
+
+.form-len{
+    width: 95%;
 }
