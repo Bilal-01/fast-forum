@@ -11,3 +11,4 @@ export {default as SocietyConatinerBottom} from './SocietyContainerBottom/Societ
 export {default as TextAndImageContainer} from './TextAndImageContainer/TextAndImageContainer';
 export {default as UserCard} from './UserCard/UserCard';
 export {default as UserProfile} from './UserProfile/UserProfile';
+export {default as ViewTeachers} from './ViewTeachers/ViewTeachers';

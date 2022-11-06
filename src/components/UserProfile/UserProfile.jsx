@@ -8,6 +8,8 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import EditIcon from '@mui/icons-material/Edit';
 import {Stack, IconButton} from '@mui/material';
+import EditPersonalInfoModal from './EditPersonalInfoModal';
+
 
 function UserProfile(props){
     
@@ -36,15 +38,15 @@ function UserProfile(props){
                                     <br /> Status: Admin
                                 </p>
                                 <Stack direction='row' sx={{justifyContent: 'center', marginTop: '14px'}}>
-                                    <IconButton sx={{width: '33%', border: '1px solid gray', borderLeft: 'none', borderRadius: 0}}  onClick={() => {
+                                    <IconButton onClick={() => {
                                         <Navigate to="https://agentestudio.com/blog/design-user-profile-page"  replace={true} />
                                     }}>
                                         <LinkedInIcon fontSize='large' color='primary' sx={{cursor: 'pointer'}} />
                                     </IconButton>
-                                    <IconButton fullWidth sx={{width: '33%',  borderBottom: '1px solid gray', borderTop: '1px solid gray', borderRadius: 0}}>
+                                    <IconButton fullWidth>
                                         <GitHubIcon fontSize='large' color='dark' sx={{cursor: 'pointer'}} />
                                     </IconButton>
-                                    <IconButton sx={{width: '33%',  border: '1px solid gray', borderRight: 'none', borderRadius: 0}}>
+                                    <IconButton>
                                         <TwitterIcon fontSize='large' color='primary' sx={{cursor: 'pointer'}} />
                                     </IconButton>
                                 </Stack>
@@ -56,26 +58,22 @@ function UserProfile(props){
                         <div className="user-profile-editable">
                             <h1 className='user-profile-heading'>
                                 Personal Information 
-                                <IconButton>
-                                    <EditIcon color='primary' fontSize='medium' />
-                                </IconButton>
+                                <EditPersonalInfoModal type="personal" />
                             </h1>
                             <p className='user-personal-info'>
                                 Full Name: Mohammad Bilal Aziz <br />
                                 Department: Computer Science <br />
                                 Domain: Web Development <br />
                                 Most Prominent Skill: Web Designing <br />
-                                <p style={{marginTop: '10px', textAlign: 'center', fontSize: '1.6rem'}}>
+                                <p style={{marginTop: '7px', textAlign: 'center', fontSize: '1.3rem'}}>
                                     <i> "The only journey is the one within "</i>
                                 </p>
                             </p>
                         </div>
                         <div className="user-profile-about">
                             <h1 className="user-profile-heading">
-                                About 
-                                <IconButton>
-                                    <EditIcon color='primary'></EditIcon>
-                                </IconButton>
+                                About
+                                <EditPersonalInfoModal type="about" />
                             </h1>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras convallis sem ac finibus suscipit. Nam pellentesque, purus eu sodales semper, sem felis tempor tellus, non accumsan velit mauris vitae enim. Curabitur ac risus dignissim enim cursus finibus sed sed metus.
