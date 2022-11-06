@@ -1,0 +1,7 @@
+.PImage {
+    object-fit: cover;
+    margin:60px auto ;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+}

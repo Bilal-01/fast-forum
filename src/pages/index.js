@@ -10,3 +10,4 @@ export {default as Teachers} from './Teachers/Teachers';
 export {default as Resources} from './Resources/Resources';
 export {default as Guide} from './Guide/Guide';
 export {default as Carpool} from './Carpool/Carpool';
+export {default as Project} from './Project/Project';
