@@ -40,19 +40,26 @@
 .form-heading{
     color: #1976d2;
     text-align: center;
-    font-size: 2rem;
+    font-size: 4rem;
     margin: 20px 0;
     text-indent: 0ch;
+    font-weight: 700;
+    font-family:'Times New Roman', Times, serif ;
 }
 
 .input-type{
     text-decoration: black;
     text-transform: uppercase;
     text-indent: 5ch;
+    font-weight: 600;
 }
 
 .submit{
     text-align:right ;
     padding-bottom: 3ch;
     padding-right: 3ch;
+}
+
+.form-len{
+    width: 95%;
 }
