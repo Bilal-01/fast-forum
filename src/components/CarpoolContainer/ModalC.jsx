@@ -20,9 +20,21 @@ function ModalC() {
 
   return (
     <div>
-      <Button sx={{position:'center', border:'none',fontFamily:'Arial',fontSize:'14px' ,color:'Black' ,background:'#f6cb7e'}} variant="outlined" onClick={handleClickOpen}>
-        Fill the Form
-      </Button>
+      <div className='cp-form-btn-container'>
+        <Button 
+        sx={{
+          border:'1px solid #f6cb7e',
+          fontFamily:'Arial',
+          fontSize:'14px' ,
+          color:'Black' ,
+          background:'#f6cb7e'
+        }} 
+        variant="outlined" 
+        onClick={handleClickOpen}
+        >
+          Fill the Form
+        </Button>
+      </div>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Carpool Service</DialogTitle>
         <DialogContent>

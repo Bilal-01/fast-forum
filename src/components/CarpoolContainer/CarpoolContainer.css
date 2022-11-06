@@ -5,3 +5,8 @@
     display: flex;
     justify-content: center;
 }
+
+.cp-form-btn-container{
+    width: 100%;
+    text-align: center;
+}

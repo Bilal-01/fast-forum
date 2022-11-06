@@ -43,7 +43,7 @@ const rows = [
 
 function TableC() {
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} sx={{width: '95%', margin: '10px auto'}}>
       <Table sx={{ minWidth: 650 }} aria-label="customized table">
         <TableHead>
           <TableRow>
