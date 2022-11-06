@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, CarpoolContainer,TableC,ModalC } from '../../components';
+import { Navbar, CarpoolContainer,TableC,ModalC, Footer } from '../../components';
 function Carpool()
 {
     return(
@@ -8,6 +8,7 @@ function Carpool()
         <CarpoolContainer />
         <ModalC />
         <TableC />
+        <Footer />
     </>
     )
 }
