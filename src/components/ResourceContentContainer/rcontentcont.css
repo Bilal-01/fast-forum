@@ -1,0 +1,9 @@
+.resource-list{
+    column-count: 3;
+    background-color: rgba(127, 207, 231, 0.644);
+}
+
+.br-bg{
+    background-color: rgba(127, 207, 231, 0.644);
+    height: 2in;
+}
