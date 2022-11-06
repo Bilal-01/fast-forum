@@ -1,8 +1,6 @@
 import React from 'react';
 import RImg from './../../assets/resources-bg-1.jpeg';
 import './resourcecont.css';
-import { Button, List, ListItemButton, ListItemIcon, ListItemText, TextField } from '@mui/material';
-import FolderIcon from '@mui/icons-material/Folder';
 
 function ResourceContainer()
 {
