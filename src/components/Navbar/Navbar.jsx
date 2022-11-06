@@ -27,7 +27,7 @@ import MenuIcon from '@mui/icons-material/Menu';
     };
     
     return (
-      <Box sx={{ flexGrow: 1 }}>
+      <Box sx={{ flexGrow: 1, marginBottom: '64px' }}>
         <AppBar position="fixed">
           <Toolbar>
             <IconButton

@@ -1,5 +1,5 @@
 import React from "react";
-import {Navbar } from '../../../components';
+import {Navbar, Footer } from '../../../components';
 import SocietyDetails from "../../../components/SocietyDetails/SocietyDetails";
 import societyLogo from '../../../assets/Societies_image/Decs_logo.jpg';
 
@@ -8,6 +8,8 @@ function Details(){
         <>
             <Navbar />
             <SocietyDetails src={societyLogo} />
+            <Footer />
+
         </>
     );
 

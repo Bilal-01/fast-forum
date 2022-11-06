@@ -1,8 +1,12 @@
-.society-details-img{
-    object-fit: cover;
-    position: fixed;
+.society-details-container{
+    box-shadow: 24px;
     width: 100%;
-    height: 50%;
+}
+
+.society-details-img{
+    object-fit: fill;
+    width: 100%;
+    height: 540px;
     z-index: -1;
 }
 

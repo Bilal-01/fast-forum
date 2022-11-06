@@ -5,192 +5,60 @@ import FolderIcon from '@mui/icons-material/Folder';
 
 function ResourceContentContainer()
 {
+    const projects = [
+        'Agile Project Management',
+        "Agile Project Management",
+        "Artificial Intelligence",
+        "Assembly Language", 
+        "Computer Networks", 
+        "Communication and Presentation Skills",
+        "Data Science", 
+        "Database Systems", 
+        "Deep Learning for Perception",
+        "Design and Analysis for Algorithms",
+        "Design Defects and Restructuring",
+        "Digital Logic Design", 
+        "Discrete Mathematics", 
+        "English Compositon and Comprehension",
+        "Fundamentals of Management", 
+        "Information and Communication Technology",
+        "Information Processing Technique", 
+        "Information Retrieval", 
+        "Information Security", 
+        "Islamic and Religious Studies",
+        "Numerical Computing", 
+        "Object Oriented Programming", 
+        "Operating Systems", 
+        "Pakistan Studies", 
+        "Probability and Statistics", 
+        "Programming Fundamentals", 
+        "Parallel and Distributed Computing",
+        "Professional Practices in IT",
+        "Software Design and Analysis",
+        "Software Engineering",
+        "Technical Business Writing", 
+    ];
+    
     return(
-            <>
+        <>
             <div className='br-bg'>
                 <br/>
             </div>
                 <List className='resource-list'>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <FolderIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Agile Project Management" />
-                    </ListItemButton>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <FolderIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Artificial Intelligence" />
-                    </ListItemButton>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <FolderIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Assembly Language" />
-                    </ListItemButton>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <FolderIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Computer Networks" />
-                    </ListItemButton>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <FolderIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Communication and Presentation Skills" />
-                    </ListItemButton>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <FolderIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Data Science" />
-                    </ListItemButton>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <FolderIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Database Systems" />
-                    </ListItemButton>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <FolderIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Deep Learning for Perception" />
-                    </ListItemButton>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <FolderIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Design and Analysis for Algorithms" />
-                    </ListItemButton>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <FolderIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Design Defects and Restructuring" />
-                    </ListItemButton>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <FolderIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Digital Logic Design" />
-                    </ListItemButton>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <FolderIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Discrete Mathematics" />
-                    </ListItemButton>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <FolderIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="English Compositon and Comprehension" />
-                    </ListItemButton>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <FolderIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Fundamentals of Management" />
-                    </ListItemButton>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <FolderIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Information and Communication Technology" />
-                    </ListItemButton>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <FolderIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Information Processing Technique" />
-                    </ListItemButton>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <FolderIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Information Retrieval" />
-                    </ListItemButton>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <FolderIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Information Security" />
-                    </ListItemButton>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <FolderIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Islamic and Religious Studies" />
-                    </ListItemButton>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <FolderIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Numerical Computing" />
-                    </ListItemButton>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <FolderIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Object Oriented Programming" />
-                    </ListItemButton>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <FolderIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Operating Systems" />
-                    </ListItemButton>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <FolderIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Pakistan Studies" />
-                    </ListItemButton>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <FolderIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Probability and Statistics" />
-                    </ListItemButton>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <FolderIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Programming Fundamentals" />
-                    </ListItemButton>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <FolderIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Parallel and Distributed Computing" />
-                    </ListItemButton>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <FolderIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Professional Practices in IT" />
-                    </ListItemButton>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <FolderIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Software Design and Analysis" />
-                    </ListItemButton>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <FolderIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Software Engineering" />
-                    </ListItemButton>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <FolderIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Technical Business Writing" />
-                    </ListItemButton>
+                    {
+                        projects.map((project, i) => {
+                            return(
+                                <div key={i}>
+                                    <ListItemButton>
+                                        <ListItemIcon>
+                                            <FolderIcon />
+                                        </ListItemIcon>
+                                        <ListItemText primary={project} />
+                                    </ListItemButton>
+                                </div>
+                            )
+                        })
+                    }
                 </List>
                 
             </>
