@@ -1,7 +1,5 @@
 import React from 'react';
-import Navbar from '../../../components/Navbar/Navbar';
-import FormContainer from '../../../components/FormContainer/FormContainer';
-
+import {FormContainer, Navbar} from '../../../components';
 function Forms()
 {
     return (

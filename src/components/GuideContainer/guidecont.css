@@ -1,4 +1,4 @@
-.resource-container{
+.guide-container{
     width: 100%;
     height:50vh;
     display: flex;
@@ -6,7 +6,7 @@
     object-fit: contain;
 }
 
-.rbg-img{
+.gbg-img{
     background:transparent;
     filter: brightness(40%);
     width: 100%;
@@ -15,7 +15,7 @@
 }
 
 
-.rimg-shadow{
+.gimg-shadow{
     position: absolute;
     top: 0;
     left: 0;
@@ -26,19 +26,16 @@
     z-index: -5;
 }
 
-.resource-container > h1 {
-    color: #fff;
+.guide-container > h1 {
+    color: rgb(253, 253, 253);
     font-size: 90px;
-    margin-top: -350px ;
+    margin-top: -300px ;
     z-index: 2;
     text-align: center;
 }
 
-.resource-container > p {
+.guide-container > p {
     color: #fff;
     font-size: 32px;
     margin-top: 2px;
 }
-
-
-

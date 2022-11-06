@@ -12,3 +12,7 @@ export {default as TextAndImageContainer} from './TextAndImageContainer/TextAndI
 export {default as UserCard} from './UserCard/UserCard';
 export {default as UserProfile} from './UserProfile/UserProfile';
 export {default as ViewTeachers} from './ViewTeachers/ViewTeachers';
+export {default as FormContainer} from './FormContainer/FormContainer';
+export {default as ResourceContainer} from './ResourceContainer/ResourceContainer';
+export {default as ResourceContentContainer} from './ResourceContentContainer/ResourceContentContainer';
+export {default as GuideContainer} from './GuideContainer/GuideContainer'

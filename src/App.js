@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, About, Contact, Blog, Forms, Societies, Details, Profile, Teachers, Resources } from './pages';
+import { Home, About, Contact, Blog, Forms, Societies, Details, Profile, Teachers, Resources, Guide } from './pages';
 import {BrowserRouter as Router, Switch, Route, Routes} from 'react-router-dom';
 import './App.css';
 
@@ -19,6 +19,7 @@ function App() {
           <Route path='/blog/forms' element={<Forms />} />
           <Route path='/teachers' element={<Teachers />} />
           <Route path='/resources' element={<Resources />} />
+          <Route path='/guide' element={<Guide />} />
         </Routes>
       </Router>
     </>

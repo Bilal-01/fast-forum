@@ -1,7 +1,5 @@
 import React from 'react';
-import Navbar from '../../components/Navbar/Navbar';
-import ResourceContainer from '../../components/ResourceContainer/ResourceContainer';
-import ResourceContentContainer from '../../components/ResourceContentContainer/ResourceContentContainer';
+import {Navbar, ResourceContainer, ResourceContentContainer} from '../../components';
 function Resources()
 {
     return (
