@@ -22,3 +22,4 @@ export {default as ModalC} from './CarpoolContainer/ModalC'
 export {default as ProjectContainer} from './ProjectContainer/ProjectContainer'
 export {default as TableP} from './ProjectContainer/TableP'
 export {default as ModalP} from './ProjectContainer/ModalP'
+export {default as Timetable} from './Timetable/Timetable';
