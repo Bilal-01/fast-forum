@@ -5,9 +5,10 @@ export {default as ExploreBlogsSection} from './ExploreBlogsSection/ExploreBlogs
 export {default as CardContainer} from './CardContainer/CardContainer';
 export {default as Card} from './Card/Card';
 export {default as BlogContainer} from './BlogContainer/BlogContainer';
-export {default as SocietyConatiner} from './SocietyContainer/SocietyContainer';
+export {default as SocietyContainer} from './SocietyContainer/SocietyContainer';
 export {default as CardActionArea1} from './CardActionArea1/CardActionArea1';
-export {default as SocietyConatinerBottom} from './SocietyContainerBottom/SocietyContainerBottom';
+export {default as SocietyContainerBottom} from './SocietyContainerBottom/SocietyContainerBottom';
+export {default as EventContainer} from './EventContainer/EventContainer';
 export {default as TextAndImageContainer} from './TextAndImageContainer/TextAndImageContainer';
 export {default as UserCard} from './UserCard/UserCard';
 export {default as UserProfile} from './UserProfile/UserProfile';
