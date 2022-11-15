@@ -21,96 +21,133 @@ import SPORTICS_LOGO from './../../assets/Societies_image/Sportics_logo.jpg'
 import './CardActionArea1.css'
 
 function CardActionArea1() {
+  const [expanded, setExpanded] = React.useState(false);
+
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  };
   return (
     <div>
       <div className='society-card-wrapper'>
         <SingleCard
           width = "345px"
-          height = "150px"
+          height = "200px"
           logo={DECS_LOGO}
           heading="Dramatic and Extra Curricular Society" 
           description="DECS has always been on the go in planning extra-curricular activities such as picnics for the FASTians which prove to be both exhilarating and exclusive."
-        />
-        
+          head="Sir Amin Sadiq"
+          president="Shayan Pasha"
+          link="https://www.facebook.com/decsfast/"
+          />
         <SingleCard
         
           width = "345px"
-          height = "150px"
+          height = "200px"
           logo={TLC_LOGO}
           heading="The Literary Club" 
           description="TLC is the most active, the most happening and the most classy society at FAST. With events like Xpressions, Zauq, Agha Hasan Abedi Declamation Contest, Intra-MUN, Parliamentary Debates and an annual magazine called the localhost"
+          head="Miss Javeria"
+          president="Ibad Ur Rehman"
+          link="https://www.facebook.com/TLCFAST/"
         />
 
         <SingleCard
           width = "345px"
-          height = "150px"
+          height = "200px"
           logo={FDSS_LOGO}
           heading="FAST DataScience Society" 
           description="TLC is the most active, the most happening and the most classy society at FAST. With events like Xpressions, Zauq, Agha Hasan Abedi Declamation Contest, Intra-MUN, Parliamentary Debates and an annual magazine called the 'localhost'"
+          head="Amna Mubarak"
+          president="20K-1965"
+          link="https://www.facebook.com/profile.php?id=100086255005453"        
         />
       </div>
       <div className='society-card-wrapper'>
       <SingleCard
           width = "345px"
-          height = "150px"
+          height = "200px"
           logo={ACM_LOGO}
           heading="Association for Computing Machinery" 
           description= "The ACM Student Chapter at FAST-NUCES Karachi Campus is dedicated to the promotion of computing education, research and development.At ACM-NUCES KHI Chapter. You join a team that aims to change the methodology with which students approach computing and technology."
-        />
+          head="Miss Bakhtawer"
+          president="Ismail Ahmed Chaudary"
+          link="https://www.facebook.com/acmnuces"
+       />
           <SingleCard
-          width = "355px"
+          width = "345px"
           height = "140px"
           logo={TNC_LOGO}
           heading="Think N Create" 
           description="The objective of the committee is to develop within students, skill sets related to the industry.
           They shall be introduced to the current technical, managerial, ethical aspects of expertise in use or desired."
+          head="-"
+          president="Razia"
+          link="https://www.facebook.com/tncfast"
         />
           <SingleCard
           width = "345px"
-          height = "140px"
+          height = "200px"
           logo={ACM_W_LOGO}
           heading="Association for Computing Machinery - Women" 
           description= " ACM-W supports, celebrates, and advocates internationally for the full engagement of women in all aspects of the computing field, providing a wide range of programs and services to ACM members and working in the larger community to advance the contributions of technical women."
+          head="Miss Safia Baloch"
+          president="Sara Sameer"
+          link="https://www.facebook.com/acmw.nuceskhi"
         />
       </div>
 
       <div className='society-card-wrapper'>
       <SingleCard
-          width = "345px"
-          height = "210px"
+          width = "390px"
+          height = "270px"
           logo={CBS_LOGO}
           heading="Character Building Society" 
           description= "We, at CBS, help students to improve themselves by showing better character and enable them to know & act on their responsibilities in different life roles."
+          head="Sir Usama Auntley"
+          president="Hammadullah"
+          link="https://www.facebook.com/CBSfastkhi"
           />
       <SingleCard
-          width = "345px"
-          height = "160px"
+          width = "390px"
+          height = "210px"
           logo={FMS_LOGO}
           heading="FAST Management Society" 
           description= "FMS is a society founded by the BBA Department. Our main objective is to evince better management skills in the real world job environment. We solely focus on our undergrads, as our goal is for every individual."
+          head="-"
+          president="-"
+          link="https://www.facebook.com/28606FMS/"
           />
       <SingleCard
-          width = "345px"
-          height = "160px"
+          width = "390px"
+          height = "210px"
           logo={IEEE_LOGO}
           heading="Institute of Electrical and Electronics Engineers" 
           description= "The IEEE NUCES aims to integrate the students and provide them a platform where they could get recognized for their contributions for the development and for the advancement of technology for humanity."
+          head="-"
+          president="Sidra Ahmed Khan"
+          link="https://www.facebook.com/ieee.fast.nuces.khi"
           />
       </div>
       <div className='society-card-wrapper'>
       <SingleCard
-          width = "345px"
+          width = "385px"
           height = "210px"
           logo={SPORTICS_LOGO}
           heading="Sportics" 
           description= "The society for those who love sports at FAST-Karachi. Let it be outdoor sports: Volley Ball, Cricket, Throw-ball, Basketball, and  Football or the indoor: Table-tennis, Snooker, Foosball.  For many past years, successively organizing the Intra and Inter University Competitions."
+          head="Sir Behraj Khan"
+          president="Abdul Saboor Sheikh"
+          link="https://www.facebook.com/sportics.nuceskhi"
           />
       <SingleCard
-          width = "345px"
-          height = "180px"
+          width = "385px"
+          height = "210px"
           logo={GDSC_LOGO}
           heading="Google Developer Students Club" 
           description= "Google Developer Student Clubs (GDSC) are community groups for college and university students interested in Google developer technologies. Students from all undergraduate or graduate programs with an interest in growing as a developer are welcome."
+          head="-"
+          president="-"
+          link="https://www.facebook.com/dscnuces/"
           />
       </div>
       </div>

@@ -67,7 +67,7 @@ function TableP() {
             <StyledTableCell align="center">{row.CourseID}</StyledTableCell>
             <StyledTableCell align="center">{row.StudentID}</StyledTableCell>
             <StyledTableCell align="center">{row.DateOfPost}</StyledTableCell>
-            <StyledTableCell align="center"><Link href="#">{row.GithubLink}</Link></StyledTableCell>
+            <StyledTableCell align="center"><Link href={row.GithubLink}>{row.GithubLink}</Link></StyledTableCell>
           </StyledTableRow>
           ))}
         </TableBody>
