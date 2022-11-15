@@ -13,3 +13,4 @@ export {default as Guide} from './Guide/Guide';
 export {default as Carpool} from './Carpool/Carpool';
 export {default as Project} from './Project/Project';
 export {default as Timetable} from './Timetable/Timetable';
+export {default as TimetablePage} from './TimetablePage/TimetablePage';

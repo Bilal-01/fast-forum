@@ -15,6 +15,7 @@ import {
   Project,
   Timetable, 
   Event,
+  TimetablePage, 
 } from './pages';
 import {BrowserRouter as Router, Switch, Route, Routes} from 'react-router-dom';
 import './App.css';
@@ -40,6 +41,7 @@ function App() {
           <Route path='/carpool' element={<Carpool />} />      
           <Route path='/project' element={<Project />} />      
           <Route path='/timetable' element={<Timetable />} />       
+          <Route path='/timetable' element={<TimetablePage />} />              
         </Routes>
       </Router>
     </>
