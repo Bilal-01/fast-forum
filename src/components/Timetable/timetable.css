@@ -1,0 +1,48 @@
+.timetable-container{
+    width: 1400px;
+    height: 700px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.timetable-bg{
+    background: rgb(122,145,154);
+    background: linear-gradient(357deg, rgba(122,145,154,1) 7%, rgba(77,101,111,1) 80%);   
+}
+
+.tt-table{
+    height: 95%;
+}
+
+.tt-row > th{
+    width: 200px;
+    height: 100px;
+    color: white;
+    background: rgb(122,145,154);
+    font-size: 1.3rem;
+    font-weight: lighter;
+    margin-left: 10px;
+
+}
+
+.tt-row:first-child{
+    background: none;
+}
+
+.tt-row-heading{
+    background-color: #393d45;
+    color: white;
+    font-weight: lighter;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.tt-cell{
+    background: white;
+}
+
+.tt-cell > p{
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: lighter;
+}
