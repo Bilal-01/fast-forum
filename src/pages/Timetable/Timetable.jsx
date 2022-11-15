@@ -1,9 +1,10 @@
 import React from 'react';
+import '../../components';
 
-function Timetable()
-{
+function Timetable(){
+    
     return (
-        'timetable page'    
+        <Timetable />
     );
 }
 
