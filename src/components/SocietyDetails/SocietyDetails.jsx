@@ -12,13 +12,16 @@ function SocietyDetails(props)
                 sx={{
                     width: 600,
                     height: 300,
-                    margin: '0px auto'
+                    margin: '20px auto'
                 }}
             >
                 <Typography variant='h1' align='center'>
                     DECS
                 </Typography>
                 <Typography variant='h5' align='center'>  
+                    DECS has always been on the go in planning extra-curricular activities such as picnics for the FASTians which prove to be both exhilarating and exclusive.
+                </Typography>
+                <Typography>
                 </Typography>
 
             </Box>
