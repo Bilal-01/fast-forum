@@ -15,7 +15,6 @@ export {default as ViewTeachers} from './ViewTeachers/ViewTeachers';
 export {default as FormContainer} from './FormContainer/FormContainer';
 export {default as ResourceContainer} from './ResourceContainer/ResourceContainer';
 export {default as ResourceContentContainer} from './ResourceContentContainer/ResourceContentContainer';
-export {default as GuideContainer} from './GuideContainer/GuideContainer'
 export {default as CarpoolContainer} from './CarpoolContainer/CarpoolContainer'
 export {default as TableC} from './CarpoolContainer/TableC'
 export {default as ModalC} from './CarpoolContainer/ModalC'

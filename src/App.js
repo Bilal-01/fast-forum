@@ -11,7 +11,6 @@ import {
   Carpool,
   Teachers,
   Resources,
-  Guide,
   Project,
   TimetablePage, 
 } from './pages';
@@ -34,7 +33,6 @@ function App() {
           <Route path='/blog/forms' element={<Forms />} />
           <Route path='/teachers' element={<Teachers />} />
           <Route path='/resources' element={<Resources/>} />
-          <Route path='/guide' element={<Guide />} />
           <Route path='/carpool' element={<Carpool />} />      
           <Route path='/project' element={<Project />} />      
           <Route path='/timetable' element={<TimetablePage />} />              

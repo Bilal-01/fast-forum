@@ -76,9 +76,9 @@
 }
 
 .b-add{
-    background-color: #f3f8fa;
-    align-self: flex-end;
     text-align: right;
     padding-right: 4%;
     padding-bottom: 4%;
+    z-index: 10;
+    overflow: hidden;
 }

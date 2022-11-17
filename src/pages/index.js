@@ -8,7 +8,6 @@ export {default as Details} from './Societies/Details/Details';
 export {default as Forms} from './Blog/Forms/Forms';
 export {default as Teachers} from './Teachers/Teachers';
 export {default as Resources} from './Resources/Resources';
-export {default as Guide} from './Guide/Guide';
 export {default as Carpool} from './Carpool/Carpool';
 export {default as Project} from './Project/Project';
 export {default as TimetablePage} from './TimetablePage/TimetablePage';

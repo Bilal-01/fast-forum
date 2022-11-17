@@ -1,4 +1,4 @@
-import { Fab } from '@mui/material';
+import { Box, Fab } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import React from 'react';
 import exploreImg from './../../assets/bg-home1.jpeg';
@@ -68,13 +68,12 @@ function BlogContainer()
                         </div>
                     </article>
                 </div>
-                <div className='b-add'>
-                <Fab classname='b-add' color='primary' aria-label='add blog'>
+            </div>
+            <Box className='b-add' sx={{ flexGrow: 1, marginBottom: '64px' }}>
+            <Fab color='primary' aria-label='add blog' >
                 <AddIcon />
             </Fab>
-                </div>
-            </div>
-            
+            </Box>
         </>
         
         
