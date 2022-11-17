@@ -12,6 +12,8 @@ import {
   Teachers,
   Resources,
   Project,
+  Timetable, 
+  Event,
   TimetablePage, 
 } from './pages';
 import {BrowserRouter as Router, Switch, Route, Routes} from 'react-router-dom';
@@ -28,13 +30,15 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/blog' element={<Blog />} />
           <Route path='/societies' element={<Societies />} />
-          <Route path='/societies/details' element={<Details />} />
+          <Route path='/Event' element={<Event />} />          
+          <Route path='/societies/details' element={<Details />} /> /*no need?*/
           <Route path='/profile' element={<Profile />} />
           <Route path='/blog/forms' element={<Forms />} />
           <Route path='/teachers' element={<Teachers />} />
           <Route path='/resources' element={<Resources/>} />
           <Route path='/carpool' element={<Carpool />} />      
           <Route path='/project' element={<Project />} />      
+          <Route path='/timetable' element={<Timetable />} />       
           <Route path='/timetable' element={<TimetablePage />} />              
         </Routes>
       </Router>
