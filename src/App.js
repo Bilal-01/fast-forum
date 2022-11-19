@@ -13,7 +13,8 @@ import {
   Resources,
   Guide,
   Project,
-  TimetablePage, 
+  TimetablePage,
+  Authentication, 
 } from './pages';
 import {BrowserRouter as Router, Switch, Route, Routes} from 'react-router-dom';
 import './App.css';
@@ -37,7 +38,8 @@ function App() {
           <Route path='/guide' element={<Guide />} />
           <Route path='/carpool' element={<Carpool />} />      
           <Route path='/project' element={<Project />} />      
-          <Route path='/timetable' element={<TimetablePage />} />              
+          <Route path='/timetable' element={<TimetablePage />} />     
+          <Route path='/Authentication' element={<Authentication />} />               
         </Routes>
       </Router>
     </>

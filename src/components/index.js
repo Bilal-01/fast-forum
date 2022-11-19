@@ -23,3 +23,4 @@ export {default as ProjectContainer} from './ProjectContainer/ProjectContainer'
 export {default as TableP} from './ProjectContainer/TableP'
 export {default as ModalP} from './ProjectContainer/ModalP'
 export {default as Timetable} from './Timetable/Timetable';
+export {default as UserAuth} from './UserAuth/UserAuth';

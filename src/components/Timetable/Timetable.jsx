@@ -65,8 +65,17 @@ const fridayData = [
     generateData('Algo-BSCS-5D', 'E-12'),
 ]
 
+
 function Timetable()
 {
+    const styles = {
+        background: "white",
+    
+    };
+
+    const d = new Date();
+    const currDay = d.getDay();
+
     return (
         <>
         <div className='timetable-bg'>
