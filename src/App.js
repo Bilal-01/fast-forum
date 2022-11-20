@@ -31,7 +31,6 @@ function App() {
           <Route path='/blog' element={<Blog />} />
           <Route path='/societies' element={<Societies />} />
           <Route path='/Event' element={<Event />} />          
-          <Route path='/societies/details' element={<Details />} /> /*no need?*/
           <Route path='/profile' element={<Profile />} />
           <Route path='/blog/forms' element={<Forms />} />
           <Route path='/teachers' element={<Teachers />} />
@@ -39,7 +38,9 @@ function App() {
           <Route path='/carpool' element={<Carpool />} />      
           <Route path='/project' element={<Project />} />      
           <Route path='/timetable' element={<TimetablePage />} />         
-          <Route path='/authentication' element={<Authentication />} />              
+          <Route path='/authentication' element={<Authentication />} />
+          <Route path='/*' element={<Home />} />
+
         </Routes>
       </Router>
     </>

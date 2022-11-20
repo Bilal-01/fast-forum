@@ -1,5 +1,7 @@
 import React from 'react';
+import { FileUpload }from '../../components'
 import './timetable.css';
+import TimetableFormModal from './TimetableFormModal';
 
 
 function generateData(code, classroom){
@@ -163,6 +165,9 @@ function Timetable()
                         </tr>
                     </tbody>
                </table>
+               <div className='tt-upload-btn'>
+                    <TimetableFormModal />
+               </div>
             </div>
         </div>
         </>  

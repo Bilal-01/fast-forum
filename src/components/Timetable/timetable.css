@@ -1,11 +1,12 @@
 .timetable-container{
     width: 1400px;
-    height: 700px;
+    height: 660px;
     margin: 0 auto;
     padding-top: 20px;
 }
 
 .timetable-bg{
+    height: 720px;
     background: rgb(122,145,154);
     background: linear-gradient(357deg, rgba(122,145,154,1) 7%, rgba(77,101,111,1) 80%);   
 }
@@ -45,4 +46,8 @@
     font-size: 1.2rem;
     text-align: center;
     font-weight: lighter;
+}
+
+.tt-upload-btn{
+    margin: 20px 0;
 }
