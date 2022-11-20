@@ -7,6 +7,7 @@ function TimetablePage(){
         <>
             <Navbar />
             <Timetable />
+            <Footer />
         </>
     );
 }

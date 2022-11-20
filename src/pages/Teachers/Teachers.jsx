@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, ViewTeachers } from '../../components';
+import { Navbar, ViewTeachers, Footer } from '../../components';
 
 function Teachers(){
 
@@ -7,6 +7,7 @@ function Teachers(){
         <>
             <Navbar />
             <ViewTeachers />
+            <Footer />
         </>
     )
 
