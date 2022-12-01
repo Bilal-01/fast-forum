@@ -4,9 +4,13 @@ import React from 'react';
 import exploreImg from './../../assets/bg-home1.jpeg';
 import BImg from './../../assets/blog-1.jpg';
 import './blogcont.css';
+import axios from 'axios';
 
 function BlogContainer()
 {
+    axios.get('http://localhost/forum/php/api/blog.php').then(function(response){
+        console.log(response.data.results)
+    })
     return(
         <>
             <div className="b-container">
