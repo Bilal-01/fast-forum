@@ -13,3 +13,4 @@ export {default as Carpool} from './Carpool/Carpool';
 export {default as Project} from './Project/Project';
 export {default as TimetablePage} from './TimetablePage/TimetablePage';
 export {default as Authentication} from './Authentication/Authentication';
+export {default as Admin} from './Admin/Admin';
