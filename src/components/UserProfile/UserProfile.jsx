@@ -39,7 +39,8 @@ function UserProfile(props){
                                 </p>
                                 <Stack direction='row' sx={{justifyContent: 'center', marginTop: '14px'}}>
                                     <IconButton onClick={() => {
-                                        <Navigate to="https://agentestudio.com/blog/design-user-profile-page"  replace={true} />
+                                        
+                                    return    <Navigate to="https://agentestudio.com/blog/design-user-profile-page"  replace={true} />
                                     }}>
                                         <LinkedInIcon fontSize='large' color='primary' sx={{cursor: 'pointer'}} />
                                     </IconButton>
