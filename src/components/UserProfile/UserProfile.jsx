@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Navigate } from 'react-router-dom';
+import React, { useState, useContext } from 'react';
+import { Navigate, useParams } from 'react-router-dom';
 import './user-profile.css'
 import bgImage from '../../assets/profile-bg.jpg';
 import profileIcon from '../../assets/user-profile-icon.png';
@@ -9,9 +9,16 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import EditIcon from '@mui/icons-material/Edit';
 import {Stack, IconButton} from '@mui/material';
 import EditPersonalInfoModal from './EditPersonalInfoModal';
+import UserContext from '../UserContext';
 
 
 function UserProfile(props){
+    const auth = useContext(UserContext);
+    const params = useParams();
+    console.log("USER ID");
+    console.log(auth.user.id)
+    console.log("Params");
+    console.log(params.id)
     
     return(
         <>
@@ -59,7 +66,13 @@ function UserProfile(props){
                         <div className="user-profile-editable">
                             <h1 className='user-profile-heading'>
                                 Personal Information 
-                                <EditPersonalInfoModal type="personal" />
+                                {   
+                                    auth.user.id === params.id
+                                    ?
+                                    <EditPersonalInfoModal type="personal" />
+                                    :
+                                    null
+                                }
                             </h1>
                             <p className='user-personal-info'>
                                 Full Name: Mohammad Bilal Aziz <br />
@@ -74,7 +87,13 @@ function UserProfile(props){
                         <div className="user-profile-about">
                             <h1 className="user-profile-heading">
                                 About
-                                <EditPersonalInfoModal type="about" />
+                                {   
+                                    auth.user.id === params.id
+                                    ?
+                                    <EditPersonalInfoModal type="about" />
+                                    :
+                                    null
+                                }
                             </h1>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras convallis sem ac finibus suscipit. Nam pellentesque, purus eu sodales semper, sem felis tempor tellus, non accumsan velit mauris vitae enim. Curabitur ac risus dignissim enim cursus finibus sed sed metus.

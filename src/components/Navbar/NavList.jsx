@@ -9,6 +9,7 @@ import './navbar.css';
 function NavList(){
     const auth = useContext(UserContext)
     const navigate = useNavigate();
+    console.log(auth.user);
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -59,7 +60,7 @@ function NavList(){
                         <AccountCircleIcon sx={{color: 'white', borderRadius: '100%',fontSize: '2.5rem', padding: '0px'}} />
                         {
                         <div style={hoverEffect} >
-                            <div onClick={() => navigate('/profile')} className='account-dropdown-link'>Visit Profile</div>
+                            <div onClick={() => navigate('/profile/'+auth.user.id)} className='account-dropdown-link'>Visit Profile</div>
                             <div onClick={() => navigate('/blog')} className='account-dropdown-link'>Your Blog</div>
                             <div onClick={() => navigate('/timetable')} className='account-dropdown-link'>Your Timetable</div>
                             <div onClick={handleLogout} className='account-dropdown-link'>Logout</div>

@@ -47,7 +47,7 @@ function App() {
           <Route path='/blog' element={<Blog />} />
           <Route path='/societies' element={<Societies />} />
           <Route path='/Event' element={<Event />} />          
-          <Route path='/profile' element={<Profile />} />
+          <Route path='/profile/:id' element={<Profile />} />
           <Route path='/blog/forms' element={<Forms />} />
           <Route path='/teachers' element={<Teachers />} />
           <Route path='/resources' element={<Resources/>} />

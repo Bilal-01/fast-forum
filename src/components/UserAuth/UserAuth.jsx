@@ -33,6 +33,11 @@ const validationSchema = yup.object({
     const [isResetEntered, setIsResetEntered] = useState(false);
     const navigate = useNavigate();
     
+
+    function getIdFromEmail(email){
+        return email.substring(0, 7);
+    }
+
     const formik = useFormik({
         initialValues: {
             email: '',
@@ -45,10 +50,11 @@ const validationSchema = yup.object({
                 if(response.data['status'] === 1){
                     let user = {
                         ...values,
-                        role: 0,
+                        role: 1,
+                        id: getIdFromEmail(values.email),
                     }
-                    data.setUser(values);
-                    sessionStorage.setItem("user", JSON.stringify(values));
+                    data.setUser(user);
+                    sessionStorage.setItem("user", JSON.stringify(user));
                     const tempUser = JSON.parse(sessionStorage.getItem('user'));
                     console.log('Session value');
                     console.log(tempUser);

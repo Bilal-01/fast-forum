@@ -26,6 +26,23 @@ function CardActionArea1() {
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+  //const [society, setSociety] = useState(null);
+  // axios.get('url').then(function(res){
+  //    setSociety(res.data.results);
+  // })
+
+  // <SingleCard
+//         width = "345px"
+//         height = "200px"
+//         logo={DECS_LOGO}
+//         heading={society.heading} 
+//         description={society.description}
+//         head={society.teacher_name} // this will come from a join query [ do a join on teacher and society]
+//         president= {society.president_name} // this will also come from a join query [ user join on society ]
+//         link={society.link}
+//         />
+//       <SingleCard
+
   return (
     <div>
       <div className='society-card-wrapper'>
