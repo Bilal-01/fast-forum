@@ -24,7 +24,7 @@ import axios from 'axios';
 
 function App() {
 
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(JSON.parse(sessionStorage.getItem('user')));
   const [isLoading, setIsLoading] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
