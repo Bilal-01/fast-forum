@@ -14,11 +14,13 @@ import {
   Project,
   Event,
   TimetablePage, 
-  Authentication
+  Authentication,
+  Admin,
 } from './pages';
 import UserContext from './components/UserContext';
 import {BrowserRouter as Router, Switch, Route, Routes} from 'react-router-dom';
 import './App.css';
+import axios from 'axios';
 
 function App() {
 
@@ -53,6 +55,7 @@ function App() {
           <Route path='/project' element={<Project />} />      
           <Route path='/timetable' element={<TimetablePage />} />         
           <Route path='/authentication' element={<Authentication />} />
+          <Route path='/admin' element={<Admin />} />
           <Route path='/*' element={<Home />} />
         </Routes>
       </Router>

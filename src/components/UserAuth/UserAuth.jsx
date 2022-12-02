@@ -43,20 +43,24 @@ const validationSchema = yup.object({
             console.log(values);
             axios.post('http://localhost/forum/php/index.php', values).then(function(response){
                 console.log(response.data);
+                if(response.data['status'] === 1){
+                    let user = {
+                        ...values,
+                        role: 0,
+                    }
+                    data.setUser(values);
+                    console.log(user);
+                    if(user.role === 0){
+                        console.log("In admin");
+                        navigate("/admin");
+                    }
+                    else{
+                        navigate("/");
+                    }
+                }
             });
         },
     });
-    
-
-    // function validateEmail(value) {
-    //     let error;
-    //     if (!value) {
-    //         error = 'Required';
-    //     } else if (!/^[A-Za-z0-9._%+-]+@nu\.edu\.pk$/i.test(value)) {
-    //         error = 'Invalid email address';
-    //     }
-    //     return error;
-    // }
 
     return(
         <Grid>
@@ -99,7 +103,6 @@ const validationSchema = yup.object({
                             autoComplete='off'
                             required
                             sx={{marginBottom: 1, marginTop: 1}}
-                            // validate={validateEmail}
                         />
 
 
