@@ -47,8 +47,7 @@ const validationSchema = yup.object({
     .required('This field is required'),
   time: yup
     .string('Enter your pick up point')
-    // .required('This field is required'),
-    ,
+    .required('This field is required'),
   day: yup
     .string('Enter Day')
     .required('This field is required'),
@@ -67,11 +66,12 @@ function ModalC() {
   const auth = useContext(UserContext);
   const [day, setDay] = React.useState('');
 
-  const [value, setValue] = React.useState(dayjs('2014-08-18T21:11:54'));   
-  const handleChangeT = (newValue) => {
-    setValue(newValue);
-    formik.setFieldValue('time', newValue);
-  };
+  // const [value, setValue] = React.useState(dayjs('2014-08-18T21:11:54'));   
+  // const handleChangeT = (newValue) => {
+  //   setValue(newValue);
+  //   formik.setFieldValue('time', newValue);
+  //   console.log("NEw: "+ newValue.time);
+  // };
   const handleChange = (event) => {
     setDay(event.target.value);
   };
@@ -95,11 +95,12 @@ function ModalC() {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      console.log(values);
+      // values.time =values.time.split(/T(.*)\./g)[1];
+     console.log("Values" + values.time);
       handleClose()
-      // axios.post('http://localhost/forum/php/api/carpool.php', values).then(function (response) {
-      //   console.log(response.data);
-      // });
+       axios.post('http://localhost/forum/php/api/carpool.php', values).then(function (response) {
+         console.log(response.data);
+      });
     },
   });
   return (
@@ -126,81 +127,62 @@ function ModalC() {
             Add your details
           </DialogContentText>
           <TextField
-            {...formik.getFieldProps('pick_up')}
-            error={formik.touched.pick_up && Boolean(formik.errors.pick_up)}
-            helperText={formik.touched.pick_up && formik.errors.pick_up}
             margin="dense"
             id="pick_up"
             label="Pick_Up"
             type="text"
             fullWidth
             variant="standard"
+            {...formik.getFieldProps('pick_up')}
+            error={formik.touched.pick_up && Boolean(formik.errors.pick_up)}
+            helperText={formik.touched.pick_up && formik.errors.pick_up}
           />
           <TextField
-            {...formik.getFieldProps('drop_off')}
-            error={formik.touched.drop_off && Boolean(formik.errors.drop_off)}
-            helperText={formik.touched.drop_off && formik.errors.drop_off}
             margin="dense"
             id="drop_off"
             label="Drop_Off"
             type="text"
             fullWidth
             variant="standard"
+            {...formik.getFieldProps('drop_off')}
+            error={formik.touched.drop_off && Boolean(formik.errors.drop_off)}
+            helperText={formik.touched.drop_off && formik.errors.drop_off}
           />
           <TextField
-            {...formik.getFieldProps('route')}
-            error={formik.touched.route && Boolean(formik.errors.route)}
-            helperText={formik.touched.route && formik.errors.route}
             margin="dense"
             id="route"
             label="Route"
             type="text"
             fullWidth
             variant="standard"
-          />
+            {...formik.getFieldProps('route')}
+            error={formik.touched.route && Boolean(formik.errors.route)}
+            helperText={formik.touched.route && formik.errors.route}
+            />
           <TextField
-            {...formik.getFieldProps('phoneNo')}
-            error={formik.touched.phoneNo && Boolean(formik.errors.phoneNo)}
-            helperText={formik.touched.phoneNo && formik.errors.phoneNo}
             margin="dense"
             id="phoneNo"
             label="PhoneNo"
             type="text"
             fullWidth
             variant="standard"
+            {...formik.getFieldProps('phoneNo')}
+            error={formik.touched.phoneNo && Boolean(formik.errors.phoneNo)}
+            helperText={formik.touched.phoneNo && formik.errors.phoneNo}
           />
-          {/* <TextField
-            {...formik.getFieldProps('time')}
-            error={formik.touched.time && Boolean(formik.errors.time)}
-            helperText={formik.touched.time && formik.errors.time}
+          <TextField
             margin="dense"
             id="time"
             label="Time"
-            type="text"
+            type="time" 
+            min="06:00" 
+            max="16:30"
             fullWidth
             variant="standard"
-          /> */}
-          <FormControl>
-           <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <Stack  component="form" spacing={3}>
-          <TimePicker 
-            label="Time"
-            value={formik.values.time}
-            onChange={handleChangeT}
-            minTime={dayjs('2018-01-01T06:30')}
-            maxTime={dayjs('2018-01-01T16:30')}
-            renderInput={(params) => <TextField required   sx={{ m:1, width: 150 }} {...params}  
-            id = 'time'
+            {...formik.getFieldProps('time')}
             error={formik.touched.time && Boolean(formik.errors.time)}
             helperText={formik.touched.time && formik.errors.time}
-            />
-            }
-
           />
-          </Stack>
-          </LocalizationProvider>
-          
-          </FormControl>
           <FormControl required sx={{ m: 1, minWidth: 120 }}>
             <InputLabel id="demo-simple-select-required-label">Day</InputLabel>
             <Select
