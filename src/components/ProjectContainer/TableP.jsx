@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React,{useState,useEffect} from 'react';
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -8,6 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Link from '@mui/material/Link';
+import axios from 'axios';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   
@@ -33,16 +34,25 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-function ProjectData(SNO,CourseID,StudentID,DateOfPost,GithubLink) {
-  return {SNO,CourseID,StudentID,DateOfPost,GithubLink};
-}
-
-const rows = [
-  ProjectData(1,"CS3001","K201234","1/10/2022","github.com/xyz"),
-  ProjectData(1,"CS3001","K201234","1/10/2022","github.com/xyz"),
-];
-
 function TableP() {
+  const [rows, setRows] = useState([])
+  useEffect(() => {
+    refreshProject();
+  }, [])
+  function refreshProject() {
+    axios.get("http://localhost/forum/php/api/project.php").then(function (response) {
+      console.log(response.data.results);
+      setRows([...response.data.results])
+      rows.map((row, i) => {
+        console.log(row.project_id 
+          + row.course_id
+          + row.date_of_post
+          + row.github_link
+          + row.student_id
+          );
+      })
+    })
+  }
   return (
     <TableContainer component={Paper} sx={{width: '95%', margin: '10px auto'}}>
       <Table sx={{ minWidth: 650 }} aria-label="customized table">
@@ -56,18 +66,18 @@ function TableP() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {rows.map((row,i) => (
             <StyledTableRow
-              key={row.SNO}
+              key={row.project_id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
                <StyledTableCell component="th" scope="row">
-                {row.SNO}
+                {i}
                 </StyledTableCell>
-            <StyledTableCell align="center">{row.CourseID}</StyledTableCell>
-            <StyledTableCell align="center">{row.StudentID}</StyledTableCell>
-            <StyledTableCell align="center">{row.DateOfPost}</StyledTableCell>
-            <StyledTableCell align="center"><Link href={row.GithubLink}>{row.GithubLink}</Link></StyledTableCell>
+            <StyledTableCell align="center">{row.course_id}</StyledTableCell>
+            <StyledTableCell align="center">{row.student_id}</StyledTableCell>
+            <StyledTableCell align="center">{row.date_of_post}</StyledTableCell>
+            <StyledTableCell align="center"><Link href={row.github_link}>{row.github_link}</Link></StyledTableCell>
           </StyledTableRow>
           ))}
         </TableBody>
