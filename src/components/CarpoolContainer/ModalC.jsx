@@ -12,7 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
-import { useFormik } from 'formik';
+import { useFormik, setFieldValue } from 'formik';
 import * as yup from "yup";
 import axios from 'axios';
 import UserContext from '../UserContext';
@@ -70,6 +70,7 @@ function ModalC() {
   const [value, setValue] = React.useState(dayjs('2014-08-18T21:11:54'));   
   const handleChangeT = (newValue) => {
     setValue(newValue);
+    formik.setFieldValue('time', newValue);
   };
   const handleChange = (event) => {
     setDay(event.target.value);
@@ -96,9 +97,9 @@ function ModalC() {
     onSubmit: (values) => {
       console.log(values);
       handleClose()
-      axios.post('http://localhost/forum/php/api/carpool.php', values).then(function (response) {
-        console.log(response.data);
-      });
+      // axios.post('http://localhost/forum/php/api/carpool.php', values).then(function (response) {
+      //   console.log(response.data);
+      // });
     },
   });
   return (
@@ -184,14 +185,16 @@ function ModalC() {
             <Stack  component="form" spacing={3}>
           <TimePicker 
             label="Time"
-            value={value}
+            value={formik.values.time}
             onChange={handleChangeT}
             minTime={dayjs('2018-01-01T06:30')}
             maxTime={dayjs('2018-01-01T16:30')}
             renderInput={(params) => <TextField required   sx={{ m:1, width: 150 }} {...params}  
-            {...formik.getFieldProps('time')}
+            id = 'time'
             error={formik.touched.time && Boolean(formik.errors.time)}
-            helperText={formik.touched.time && formik.errors.time} />}
+            helperText={formik.touched.time && formik.errors.time}
+            />
+            }
 
           />
           </Stack>
