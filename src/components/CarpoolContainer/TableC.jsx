@@ -43,23 +43,23 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 function TableC() {
   const [rows, setRows] = useState([])
   useEffect(() => {
-    // refreshCarpool();
+     refreshCarpool();
   }, [])
-  // function refreshCarpool() {
-  //   axios.get("http://localhost/forum/php/api/carpool.php").then(function (response) {
-  //     console.log(response.data.results);
-  //     setRows([...response.data.results])
-  //     rows.map((row, i) => {
-  //       console.log(row.pick_up +
-  //         row.drop_off +
-  //         row.route +
-  //         row.captain_id +
-  //         row.phoneNo +
-  //         row.time +
-  //         row.Day);
-  //     })
-  //   })
-  // }
+  function refreshCarpool() {
+    axios.get("http://localhost/forum/php/api/carpool.php").then(function (response) {
+      console.log(response.data.results);
+      setRows([...response.data.results])
+      rows.map((row, i) => {
+        console.log(row.pick_up +
+          row.drop_off +
+          row.route +
+          row.captain_id +
+          row.phoneNo +
+          row.time +
+          row.Day);
+      })
+    })
+  }
   // console.log(rows[0].Days);
   return (
     <TableContainer component={Paper} sx={{ width: '95%', margin: '10px auto' }}>
