@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import { styled } from '@mui/material/styles';
+import Button from '@mui/material/Button';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
@@ -9,6 +10,8 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Link from '@mui/material/Link';
 import axios from 'axios';
+import UserContext from '../UserContext';
+import { useContext } from 'react';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   
@@ -35,10 +38,21 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 function TableP() {
+  const auth=useContext(UserContext);
+	var stud=''
+    {auth.user? stud=auth.user.id:stud=''}
   const [rows, setRows] = useState([])
   useEffect(() => {
     refreshProject();
   }, [])
+  function deleteEntry(Rid){
+    let id= Rid
+    console.log(id)
+    axios.delete('http://localhost/forum/php/api/project.php', {data: id}).then(function(response){
+        console.log(response.data)
+        refreshProject();
+    })
+}
   function refreshProject() {
     axios.get("http://localhost/forum/php/api/project.php").then(function (response) {
       console.log(response.data.results);
@@ -63,6 +77,7 @@ function TableP() {
             <StyledTableCell align="center">StudentID</StyledTableCell>
             <StyledTableCell align="center">DateOfPost</StyledTableCell>
             <StyledTableCell align="center">GithubLink</StyledTableCell>
+            <StyledTableCell align="center"> </StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -78,6 +93,7 @@ function TableP() {
             <StyledTableCell align="center">{row.student_id}</StyledTableCell>
             <StyledTableCell align="center">{row.date_of_post}</StyledTableCell>
             <StyledTableCell align="center"><Link href={row.github_link}>{row.github_link}</Link></StyledTableCell>
+            <StyledTableCell align="center">{stud === row.student_id?<Button variant="contained" onClick={(event)=>deleteEntry(row.project_id)}>Delete</Button>:''}</StyledTableCell>
           </StyledTableRow>
           ))}
         </TableBody>

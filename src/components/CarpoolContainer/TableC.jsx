@@ -8,9 +8,9 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import axios from 'axios';
-
-
-
+import UserContext from '../UserContext';
+import { useContext } from 'react';
+import Button from '@mui/material/Button';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
 
@@ -41,10 +41,21 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 
 function TableC() {
+  const auth=useContext(UserContext);
+	var stud=''
+    {auth.user? stud=auth.user.id:stud=''}
   const [rows, setRows] = useState([])
   useEffect(() => {
      refreshCarpool();
   }, [])
+  function deleteEntry(Rid){
+    let id= Rid
+    console.log(id)
+    axios.delete('http://localhost/forum/php/api/carpool.php', {data: id}).then(function(response){
+        console.log(response.data)
+        refreshCarpool();
+    })
+}
   function refreshCarpool() {
     axios.get("http://localhost/forum/php/api/carpool.php").then(function (response) {
       console.log(response.data.results);
@@ -74,6 +85,7 @@ function TableC() {
             <StyledTableCell align="center">PhoneNo</StyledTableCell>
             <StyledTableCell align="center">Time</StyledTableCell>
             <StyledTableCell align="center">Day</StyledTableCell>
+            <StyledTableCell align="center"> </StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -90,6 +102,7 @@ function TableC() {
               <StyledTableCell align="center">{row.phoneNo}</StyledTableCell>
               <StyledTableCell align="center">{row.time}</StyledTableCell>
               <StyledTableCell align="center">{row.day}</StyledTableCell>
+              <StyledTableCell align="center">{stud === row.captain_id?<Button variant="contained" onClick={(event)=>deleteEntry(row.carpool_id)}>Delete</Button>:''}</StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>

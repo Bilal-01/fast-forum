@@ -9,6 +9,7 @@ import './navbar.css';
 function NavList(){
     const auth = useContext(UserContext)
     const navigate = useNavigate();
+    console.log(auth.user);
 
 
     const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +28,6 @@ function NavList(){
         justifyContent: 'space-around',
         borderRadius: '10px',
         transition: '0.3s all',
-        boxShadow: '0 5px 26px 0 rgb(68 88 144 / 14%)',
     }
 
     const handleLogout = () => {
