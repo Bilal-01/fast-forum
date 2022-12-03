@@ -1,7 +1,8 @@
 .footer{
-    height: 340px;
+    height: 10vh;
+    background-color: rgb(5, 5, 56);
     width: 100%;
     text-align: center;
-    margin-top: 40px;
+    color: white;
 }
 

@@ -5,7 +5,9 @@ function Footer()
 {
     return(
         <div className="footer">
-            Copyrights 2022
+            Contact email: student.forum@fast.com
+            <br/>
+            Phone No: 0310-1319121
         </div>
     );
 }

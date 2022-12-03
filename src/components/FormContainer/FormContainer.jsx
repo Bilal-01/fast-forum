@@ -25,7 +25,7 @@ function FormContainer()
     const formik = useFormik({
         initialValues: {
           Heading: '',
-          post_by: 'k200434',
+          post_by: auth.user.id,
           description: ''
         },
         validationSchema: validationSchema,

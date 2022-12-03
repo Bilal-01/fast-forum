@@ -25,35 +25,55 @@ function Timetable()
         setTimetable,
     }
     useEffect(() => {
-        timetable.forEach((row) => {
-            addData(row);
-        })
+        // timetable.forEach((row) => {
+        //     addData(row);
+        // })
+        for(let i=0; i<9; i++){
+            // for(let j=0; j<9; j++){
+
+                addData(timetable[i]);
+            // }
+        }
     }, [timetable]);
 
     function addData(arr) {
-        console.log(arr[0].ttday);
-        if(arr[0].ttday === 'Monday'){
-            console.log("MONDAY");
-            console.log(([...timetable, arr]));
-            setMondayData([...timetable, arr]);
-        }
-        if(arr.ttday === 'Tuesday'){
-            setTuesdayData([...timetable, arr]);
-        }
-        if(arr.ttday === 'Wednesday'){
-            setWednesdayData([...timetable, arr]);
-        }
-        if(arr.ttday === 'Thursday'){
-            setThursdayData([...timetable, arr]);
-        }
-        if(arr.ttday === 'Friday'){
-            setFridayData([...timetable, arr]);
+        if(arr){
+            if(arr.ttday === 'Monday'){
+                setMondayData(current => [...current, arr]);
+            }
+            else{
+                setMondayData(current => [...current, null]);
+            }
+            if(arr.ttday === 'Tuesday'){
+                setTuesdayData(current => [...current, arr]);
+            }
+            else{
+                setTuesdayData(current => [...current, null]);
+            }
+            if(arr.ttday === 'Wednesday'){
+                setWednesdayData(current => [...current, arr]);
+            }
+            else{
+                setWednesdayData(current => [...current, null]);
+            }
+            if(arr.ttday === 'Thursday'){
+                setThursdayData(current => [...current, arr]);
+            }
+            else{
+                setThursdayData(current => [...current, null]);
+            }
+            if(arr.ttday === 'Friday'){
+                setFridayData(current => [...current, arr]);
+            }
+            else{
+                setFridayData(current => [...current, null]);
+            }
         }
     }
 
 
     const styles = {
-        background: "white",
+        background: "none",
     
     };
 
@@ -86,9 +106,15 @@ function Timetable()
                             </td>
                             {mondayData.map((key) => {
                                 return(
+                                    key ?
                                     <td key={key.id} className='tt-cell'>
                                         <p>{key.tcode}</p>
                                         <p>{key.croom}</p>
+                                    </td>
+                                    :
+                                    <td style={styles} className='tt-cell'>
+                                        <p></p>
+                                        <p></p>
                                     </td>
                                 );
                             })}
@@ -99,9 +125,15 @@ function Timetable()
                             </td>
                             {tuesdayData.map((key, i) => {
                                 return(
+                                    key ?
                                     <td key={key.id} className='tt-cell'>
                                         <p>{key.tcode}</p>
                                         <p>{key.croom}</p>
+                                    </td>
+                                    :
+                                    <td style={styles} className='tt-cell'>
+                                        <p></p>
+                                        <p></p>
                                     </td>
                                 );
                             })}
@@ -112,9 +144,15 @@ function Timetable()
                             </td>
                             {wednesdayData.map((key, i) => {
                                 return(
+                                    key ?
                                     <td key={key.id} className='tt-cell'>
                                         <p>{key.tcode}</p>
                                         <p>{key.croom}</p>
+                                    </td>
+                                    :
+                                    <td style={styles} className='tt-cell'>
+                                        <p></p>
+                                        <p></p>
                                     </td>
                                 );
                             })}
@@ -125,9 +163,15 @@ function Timetable()
                             </td>
                             {thursdayData.map((key, i) => {
                                 return(
+                                    key ?
                                     <td key={key.id} className='tt-cell'>
                                         <p>{key.tcode}</p>
                                         <p>{key.croom}</p>
+                                    </td>
+                                    :
+                                    <td style={styles} className='tt-cell'>
+                                        <p></p>
+                                        <p></p>
                                     </td>
                                 );
                             })}
@@ -138,9 +182,15 @@ function Timetable()
                             </td>
                             {fridayData.map((key, i) => {
                                 return(
+                                    key ?
                                     <td key={key.id} className='tt-cell'>
                                         <p>{key.tcode}</p>
                                         <p>{key.croom}</p>
+                                    </td>
+                                    :
+                                    <td style={styles} className='tt-cell'>
+                                        <p></p>
+                                        <p></p>
                                     </td>
                                 );
                             })}

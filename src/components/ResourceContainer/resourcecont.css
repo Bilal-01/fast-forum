@@ -40,5 +40,13 @@
     margin-top: 2px;
 }
 
+.br-bg{
+    background-color: rgb(255, 255, 255);
+    height:30vh ;
+}
 
+.r-form-btn-container{
+    width: 100%;
+    text-align: center;
+}
 

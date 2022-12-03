@@ -19,7 +19,7 @@ function AdminPanel()
 
     return(
         <>
-            <AdminSidebar comp={true} />
+            <AdminSidebar comp={setManageComponent} />
             <div className="admin-page">
                 <div className="managing-container">
                     <ManageComponent
