@@ -29,7 +29,7 @@ export default function TimetableFormModal() {
 
   return (
     <div>
-      <Button sx={{backgroundColor: '#006778', color: 'white'}} onClick={handleOpen}>Change Timetable</Button>
+      <Button sx={{backgroundColor: '#006778', color: 'white'}} onClick={handleOpen}>Update Timetable</Button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -46,7 +46,7 @@ export default function TimetableFormModal() {
                 Select Your Courses
             </h2>
             <TimetableFormSelectCourses />
-            <FileUpload text='Upload Timetable' />
+            {/* <FileUpload text='Upload Timetable' /> */}
         </Box>
       </Modal>
     </div>

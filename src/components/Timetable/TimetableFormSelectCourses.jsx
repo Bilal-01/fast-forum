@@ -7,7 +7,11 @@ import {
     ListItemText,
     Select,
     Checkbox,
+    Button,
 } from '@mui/material';
+import axios from 'axios';
+import TimetableContext from '../TimetableContext';
+import { useContext } from 'react';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -39,16 +43,26 @@ const names = [
 
 export default function TimetableFormSelectCourses() {
   const [personName, setPersonName] = useState([]);
+  const [finalValue, setFinalValue] = useState([]);
+
+  const timetable = useContext(TimetableContext);
 
   const handleChange = (event) => {
     const {
       target: { value },
     } = event;
     setPersonName(
-      // On autofill we get a stringified value.
       typeof value === 'string' ? value.split(',') : value,
     );
+    setFinalValue([...value]);
   };
+
+  const handleSubmit = () => {
+    axios.post('http://localhost/forum/php/api/timetable.php', finalValue).then(function(res){
+      // console.log([...res.data.results]);
+      timetable.setTimetable([...res.data.results]);
+    })
+  }
 
   return (
     <div>
@@ -72,6 +86,18 @@ export default function TimetableFormSelectCourses() {
             </MenuItem>
           ))}
         </Select>
+
+        <Button 
+          sx={{marginTop: '50px'}}
+          fullWidth
+          type='submit'
+          variant='contained'
+          color='primary'
+          onClick={handleSubmit}
+        >
+          Submit
+        </Button>
+
       </FormControl>
     </div>
   );
