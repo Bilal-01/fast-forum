@@ -1,12 +1,13 @@
 import React from 'react';
-import {Navbar, ResourceContainer, ResourceContentContainer} from '../../components';
+import {Navbar, ResourceContainer,ModalR,TableR} from '../../components';
 function Resources()
 {
     return (
         <>
             <Navbar/>
             <ResourceContainer />
-            <ResourceContentContainer/>
+            <ModalR/>
+            <TableR/>
         </>
         
     );

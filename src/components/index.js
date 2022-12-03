@@ -15,7 +15,8 @@ export {default as UserProfile} from './UserProfile/UserProfile';
 export {default as ViewTeachers} from './ViewTeachers/ViewTeachers';
 export {default as FormContainer} from './FormContainer/FormContainer';
 export {default as ResourceContainer} from './ResourceContainer/ResourceContainer';
-export {default as ResourceContentContainer} from './ResourceContentContainer/ResourceContentContainer';
+export {default as ModalR} from './ResourceContainer/ModalR';
+export {default as TableR} from './ResourceContainer/TableR';
 export {default as CarpoolContainer} from './CarpoolContainer/CarpoolContainer'
 export {default as TableC} from './CarpoolContainer/TableC'
 export {default as ModalC} from './CarpoolContainer/ModalC'
