@@ -29,3 +29,8 @@
     transition: 0.3s all;
 
 }
+
+.account-name{
+    text-align: left;
+    color: gray;
+}
