@@ -19,7 +19,7 @@ const validationSchema = yup.object({
       .required('This field is required'),
     password: yup
       .string('Enter your password')
-      .min(8, 'Must have a minimum of 8 characters')
+      .min(8, 'Must have a minimum of 8 characters'),
   });
 
 
@@ -40,6 +40,7 @@ const validationSchema = yup.object({
 
     const formik = useFormik({
         initialValues: {
+            name: '',
             email: '',
             password: '',
         },
@@ -47,12 +48,10 @@ const validationSchema = yup.object({
         onSubmit: (values) => {
             // console.log(values);
             axios.post('http://localhost/forum/php/index.php', values).then(function(response){
+                console.log(response.data);
                 if(response.data['status'] === 1){
-                    let user = {
-                        ...values,
-                        role: 1,
-                        id: getIdFromEmail(values.email),
-                    }
+                    let user = response.data.user;
+                    console.log(user);
                     data.setUser(user);
                     sessionStorage.setItem("user", JSON.stringify(user));
                     const tempUser = JSON.parse(sessionStorage.getItem('user'));
@@ -93,75 +92,92 @@ const validationSchema = yup.object({
                 isResetEntered ? <ResetLink onClick={()=>{setIsResetEntered(false)}} />
                 :
                 <>
-                    {/* <Form onSubmit={formik.handleSubmit}> */}
+                    {
+                        isRegister &&
                         <TextField
-                            {...formik.getFieldProps('email')}
-                            error={formik.touched.email && Boolean(formik.errors.email)}
-                            helperText={formik.touched.email && formik.errors.email} 
-                            id="email"
-                            name="email"
-                            label="Email" 
-                            type="email"
+                            {...formik.getFieldProps('name')}
+                            error={formik.touched.name && Boolean(formik.errors.name)}
+                            helperText={formik.touched.name && formik.errors.name} 
+                            id="name"
+                            name="name"
+                            label="Name" 
+                            type="name"
                             variant="outlined" 
-                            placeholder="Enter your email"
+                            placeholder="Enter your name"
                             fullWidth
                             autoComplete='off'
                             required
                             sx={{marginBottom: 1, marginTop: 1}}
                         />
+                    }
+
+                    <TextField
+                        {...formik.getFieldProps('email')}
+                        error={formik.touched.email && Boolean(formik.errors.email)}
+                        helperText={formik.touched.email && formik.errors.email} 
+                        id="email"
+                        name="email"
+                        label="Email" 
+                        type="email"
+                        variant="outlined" 
+                        placeholder="Enter your email"
+                        fullWidth
+                        autoComplete='off'
+                        required
+                        sx={{marginBottom: 1, marginTop: 1}}
+                    />
 
 
-                        {
-                            !isRegister && 
-                            <>
-                                <TextField
-                                    {...formik.getFieldProps('password')}
-                                    error={formik.touched.password && Boolean(formik.errors.password)}
-                                    helperText={formik.touched.password && formik.errors.password} 
-                                    id="password"
-                                    name="password"
-                                    label="Password" 
-                                    type="password"
-                                    variant="outlined" 
-                                    placeholder="Enter your password"
-                                    fullWidth
-                                    autoComplete='off'
-                                    required
-                                    sx={{marginBottom: 1, marginTop: 1}}
-                                />
+                    {
+                        !isRegister && 
+                        <>
+                            <TextField
+                                {...formik.getFieldProps('password')}
+                                error={formik.touched.password && Boolean(formik.errors.password)}
+                                helperText={formik.touched.password && formik.errors.password} 
+                                id="password"
+                                name="password"
+                                label="Password" 
+                                type="password"
+                                variant="outlined" 
+                                placeholder="Enter your password"
+                                fullWidth
+                                autoComplete='off'
+                                required
+                                sx={{marginBottom: 1, marginTop: 1}}
+                            />
 
-                                <Typography align='right' variant='body2'>
-                                    <Button variant="text" onClick={()=>{setIsResetEntered(true)}} >
-                                        Forgot password?
-                                    </Button>
-                                </Typography> 
-                                <FormControlLabel
-                                    control={
-                                        <Checkbox 
-                                        name="checkedB"
-                                        />
-                                    }
-                                    label="Remember me"
+                            <Typography align='right' variant='body2'>
+                                <Button variant="text" onClick={()=>{setIsResetEntered(true)}} >
+                                    Forgot password?
+                                </Button>
+                            </Typography> 
+                            <FormControlLabel
+                                control={
+                                    <Checkbox 
+                                    name="checkedB"
                                     />
-                            </>
-                        }       
-                        <Button 
-                            id='register'
-                            sx={{marginTop: 1, marginBottom: 1}}
-                            variant="contained" 
-                            type="submit" 
-                            color="primary"
-                            fullWidth
-                            onClick={formik.handleSubmit}
-                        >
-                            {isRegister ? "Get Password" : "Sign In"}
-                        </Button>
+                                }
+                                label="Remember me"
+                            />
+                        </>
+                    }       
+                    <Button 
+                        id='register'
+                        sx={{marginTop: 1, marginBottom: 1}}
+                        variant="contained" 
+                        type="submit" 
+                        color="primary"
+                        fullWidth
+                        onClick={formik.handleSubmit}
+                    >
+                        {isRegister ? "Get Password" : "Sign In"}
+                    </Button>
 
-                        <Typography variant='subtitle1' sx={{marginTop: 1}}>
-                            {isRegister ? "Already Registered?" : "Don't have an account?"} <br></br>
-                            <Button variant="text" onClick={() => {setIsRegister(!isRegister)}}>{isRegister ? "Sign In" : "Register"}</Button>
-                        </Typography>
-                    {/* </form> */}
+                    <Typography variant='subtitle1' sx={{marginTop: 1}}>
+                        {isRegister ? "Already Registered?" : "Don't have an account?"} <br></br>
+                        <Button variant="text" onClick={() => {setIsRegister(!isRegister)}}>{isRegister ? "Sign In" : "Register"}</Button>
+                    </Typography>
                     
                 </>
             }

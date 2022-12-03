@@ -11,6 +11,7 @@ function NavList(){
     const navigate = useNavigate();
     console.log(auth.user);
 
+
     const [isOpen, setIsOpen] = useState(false);
 
     const hoverEffect = {
@@ -60,6 +61,7 @@ function NavList(){
                         <AccountCircleIcon sx={{color: 'white', borderRadius: '100%',fontSize: '2.5rem', padding: '0px'}} />
                         {
                         <div style={hoverEffect} >
+                            <div className='account-dropdown-link account-name'>{auth.user.uname}</div>
                             <div onClick={() => navigate('/profile/'+auth.user.id)} className='account-dropdown-link'>Visit Profile</div>
                             <div onClick={() => navigate('/blog')} className='account-dropdown-link'>Your Blog</div>
                             <div onClick={() => navigate('/timetable')} className='account-dropdown-link'>Your Timetable</div>
