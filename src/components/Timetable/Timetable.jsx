@@ -27,27 +27,26 @@ function Timetable()
     useEffect(() => {
         timetable.forEach((row) => {
             addData(row);
+            console.log(mondayData)
         })
     }, [timetable]);
 
     function addData(arr) {
-        console.log(arr[0].ttday);
-        if(arr[0].ttday === 'Monday'){
-            console.log("MONDAY");
-            console.log(([...timetable, arr]));
-            setMondayData([...timetable, arr]);
+        if(arr.ttday === 'Monday'){
+            setMondayData([...timetable]);
+            // console.log([...timetable, arr]);
         }
         if(arr.ttday === 'Tuesday'){
-            setTuesdayData([...timetable, arr]);
+            setTuesdayData([...timetable]);
         }
         if(arr.ttday === 'Wednesday'){
-            setWednesdayData([...timetable, arr]);
+            setWednesdayData([...timetable]);
         }
         if(arr.ttday === 'Thursday'){
-            setThursdayData([...timetable, arr]);
+            setThursdayData([...timetable]);
         }
         if(arr.ttday === 'Friday'){
-            setFridayData([...timetable, arr]);
+            setFridayData([...timetable]);
         }
     }
 
