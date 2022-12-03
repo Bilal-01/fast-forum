@@ -38,8 +38,11 @@ const validationSchema = yup.object({
 //   ''
 // ]
 function ModalP() {
+  const auth = useContext(UserContext);
+    var stud=''
+    {auth.user? stud=auth.user.id:stud=''}
   const [open, setOpen] = React.useState(false);
-  const auth = useContext(UserContext); //project_id
+  //project_id
   // const [course, courses] = React.useState(''); //courses
   // const handleChange = (event) => {
   //   setCourses(event.target.value);
@@ -56,7 +59,7 @@ function ModalP() {
   const formik = useFormik({
     initialValues: {
       course_id: '',
-      student_id: 'K200434',
+      student_id: stud,
       date_of_post: date,
       github_link: ''
     },

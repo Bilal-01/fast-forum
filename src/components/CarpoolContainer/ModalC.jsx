@@ -16,14 +16,6 @@ import { useFormik, setFieldValue } from 'formik';
 import * as yup from "yup";
 import axios from 'axios';
 import UserContext from '../UserContext';
-import dayjs from 'dayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { TimePicker } from '@mui/x-date-pickers/TimePicker';
-import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
-import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
-import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
-import Stack from '@mui/material/Stack';
 
 
 
@@ -62,8 +54,10 @@ const days = [
 ]
 
 function ModalC() {
-  const [open, setOpen] = React.useState(false);
   const auth = useContext(UserContext);
+    var stud=''
+    {auth.user? stud=auth.user.id:stud=''}
+  const [open, setOpen] = React.useState(false);
   const [day, setDay] = React.useState('');
 
   // const [value, setValue] = React.useState(dayjs('2014-08-18T21:11:54'));   
@@ -88,7 +82,7 @@ function ModalC() {
       pick_up: '',
       drop_off: '',
       route: '',
-      captain_id: 'K200434',
+      captain_id: stud,
       phoneNo: '',
       time: '',
       day: ''

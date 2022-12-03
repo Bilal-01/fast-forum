@@ -102,7 +102,7 @@ function TableC() {
               <StyledTableCell align="center">{row.phoneNo}</StyledTableCell>
               <StyledTableCell align="center">{row.time}</StyledTableCell>
               <StyledTableCell align="center">{row.day}</StyledTableCell>
-              <StyledTableCell align="center">{stud === row.captain_id?<Button variant="contained" onClick={(event)=>deleteEntry(row.carpool_id)}>Delete</Button>:''}</StyledTableCell>
+              <StyledTableCell align="center">{stud === row.captain_id?<Button sx={{background:'#e25a44'}}variant="contained" onClick={(event)=>deleteEntry(row.carpool_id)}>Delete</Button>:''}</StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
