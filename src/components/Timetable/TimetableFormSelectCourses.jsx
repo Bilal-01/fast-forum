@@ -12,6 +12,7 @@ import {
 import axios from 'axios';
 import TimetableContext from '../TimetableContext';
 import { useContext } from 'react';
+import { useEffect } from 'react';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -44,8 +45,12 @@ const names = [
 export default function TimetableFormSelectCourses(props) {
   const [personName, setPersonName] = useState([]);
   const [finalValue, setFinalValue] = useState([]);
-
   const timetable = useContext(TimetableContext);
+
+  useEffect(() => {
+    timetable.setIsRefreshed(true);
+  }, [])
+
 
   const handleChange = (event) => {
     const {

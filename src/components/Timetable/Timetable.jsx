@@ -20,19 +20,23 @@ function Timetable()
     const [wednesdayData, setWednesdayData] = useState([]);
     const [thursdayData, setThursdayData] = useState([]);
     const [fridayData, setFridayData] = useState([]);
+    const [isRefreshed, setIsRefreshed] = useState(false);
     const data = {
+        isRefreshed,
         timetable,
+        setIsRefreshed,
         setTimetable,
     }
     useEffect(() => {
-        // timetable.forEach((row) => {
-        //     addData(row);
-        // })
+        if(isRefreshed){
+            setMondayData([]);
+            setTuesdayData([]);
+            setWednesdayData([]);
+            setThursdayData([]);
+            setFridayData([]);
+        }
         for(let i=0; i<9; i++){
-            // for(let j=0; j<9; j++){
-
-                addData(timetable[i]);
-            // }
+            addData(timetable[i]);
         }
     }, [timetable]);
 

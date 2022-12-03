@@ -19,15 +19,18 @@ function UserProfile(props){
     const navigate = useNavigate();
     const [user, setUser] = useState(null);
     useEffect(() => {
-        axios.post('http://localhost/forum/php/api/profile.php', params).then(function(res){
+        axios.post('http://localhost/forum/php/api/userProfile.php', params).then(function(res){
             console.log(res.data);
             if(!res.data.results){
-                // navigate('/');
+                navigate('/');
                 // console.log(res.data.results);
             }
             let tempUser = res.data.results;
             setUser(tempUser);
         });
+        axios.post('http://localhost/forum/php/api/profile.php', params).then(function(res){
+            
+        })
     }, [user]);
 
     return(
