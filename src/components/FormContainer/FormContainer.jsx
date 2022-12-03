@@ -48,8 +48,8 @@ function FormContainer()
                         <p className='input-type'>Heading:</p>
                         <TextField className='form-len'
                             {...formik.getFieldProps('Heading')}
-                            error={formik.touched.pick_up && Boolean(formik.errors.pick_up)}
-                            helperText={formik.touched.pick_up && formik.errors.pick_up}
+                            error={formik.touched.Heading && Boolean(formik.errors.Heading)}
+                            helperText={formik.touched.Heading && formik.errors.Heading}
                             id="Heading"
                             multiline
                             rows={1}
@@ -59,20 +59,22 @@ function FormContainer()
                         <p className='input-type'>Description:</p>
                         <TextField className='form-len'
                             {...formik.getFieldProps('description')}
-                            error={formik.touched.pick_up && Boolean(formik.errors.pick_up)}
-                            helperText={formik.touched.pick_up && formik.errors.pick_up}
+                            error={formik.touched.description && Boolean(formik.errors.description)}
+                            helperText={formik.touched.description && formik.errors.description}
                             id="description"
                             multiline
                             rows={9}
-                            defaultValue="Blog Description"
+                            //defaultValue="Blog Description"
                             style={{paddingLeft: 50}}
                         />
-                        <div className='submit'>
-                        <Link to="/blog"><Button variant='contained'onClick={() => {
-                            formik.handleSubmit()
-                            }}>Submit</Button></Link>
+                        <div className='btn'>
+                            <Link to="/blog">
+                                <Button className='back' variant='contained'>Back</Button>
+                                <Button className='submit' variant='contained'onClick={() => {
+                                    formik.handleSubmit()
+                                    }}>Submit</Button>
+                            </Link>
                         </div>
-                        
                     </div>
                 </div>
             </div>

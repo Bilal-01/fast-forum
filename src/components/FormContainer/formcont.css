@@ -54,8 +54,20 @@
     font-weight: 600;
 }
 
+.btn{
+    text-align: center;
+    padding-left: 3ch;
+    padding-bottom: 3ch;
+}
+
 .submit{
     text-align:right ;
+    padding-bottom: 3ch;
+    padding-right: 3ch;
+}
+
+.back{
+    text-align:left ;
     padding-bottom: 3ch;
     padding-right: 3ch;
 }
