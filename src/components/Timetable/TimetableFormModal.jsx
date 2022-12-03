@@ -45,7 +45,7 @@ export default function TimetableFormModal() {
             }}>
                 Select Your Courses
             </h2>
-            <TimetableFormSelectCourses />
+            <TimetableFormSelectCourses handleBtn={handleClose} />
             {/* <FileUpload text='Upload Timetable' /> */}
         </Box>
       </Modal>

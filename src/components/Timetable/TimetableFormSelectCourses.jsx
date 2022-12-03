@@ -41,7 +41,7 @@ const names = [
   'SDA BSCS-5B',
 ];
 
-export default function TimetableFormSelectCourses() {
+export default function TimetableFormSelectCourses(props) {
   const [personName, setPersonName] = useState([]);
   const [finalValue, setFinalValue] = useState([]);
 
@@ -62,6 +62,7 @@ export default function TimetableFormSelectCourses() {
       // console.log([...res.data.results]);
       timetable.setTimetable([...res.data.results]);
     })
+    props.handleBtn();
   }
 
   return (

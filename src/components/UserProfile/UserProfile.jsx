@@ -20,8 +20,10 @@ function UserProfile(props){
     const [user, setUser] = useState(null);
     useEffect(() => {
         axios.post('http://localhost/forum/php/api/profile.php', params).then(function(res){
+            console.log(res.data);
             if(!res.data.results){
-                navigate('/');
+                // navigate('/');
+                // console.log(res.data.results);
             }
             let tempUser = res.data.results;
             setUser(tempUser);
