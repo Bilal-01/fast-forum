@@ -13,7 +13,9 @@ function ResourceContainer()
                         Resources
                     </h1>
                 </div>
-                
+                <div className='br-bg'>
+                    <br/>
+                </div> 
             </>
     );
 }
