@@ -27,7 +27,6 @@ function Timetable()
     useEffect(() => {
         timetable.forEach((row) => {
             addData(row);
-            console.log(mondayData)
         })
     }, [timetable]);
 
@@ -37,6 +36,7 @@ function Timetable()
             // console.log([...timetable, arr]);
         }
         if(arr.ttday === 'Tuesday'){
+
             setTuesdayData([...timetable]);
         }
         if(arr.ttday === 'Wednesday'){

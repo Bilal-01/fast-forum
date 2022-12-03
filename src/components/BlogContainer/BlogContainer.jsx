@@ -7,9 +7,13 @@ import './blogcont.css';
 import axios from 'axios';
 import { Link } from "react-router-dom";
 import Footer from '../Footer/Footer';
+import UserContext from '../UserContext';
+import { useContext } from 'react';
 
 function BlogContainer()
 {
+    const auth = useContext(UserContext);
+    //auth.user.id
     const [rows, setRows] = useState([])
     useEffect(() => {
     refreshBlog();
