@@ -1,4 +1,3 @@
-import { CardActionArea } from "@mui/material";
 import React from "react";
 import { Navbar, SocietyContainer, CardActionArea1,SocietyContainerBottom } from '../../components';
 

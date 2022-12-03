@@ -11,7 +11,9 @@ import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Link from '@mui/material/Link';
+import { useNavigate } from 'react-router-dom';
 import FacebookOutlinedIcon from '@mui/icons-material/Facebook';
+
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -24,17 +26,21 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-function SingleCard(props) {
 
+
+function SingleCard(props) {
+  const navigate = useNavigate();
+  
   const styles = {
     padding: "10px 10px",
     boxShadow: "0 5px 26px 0 rgb(68 88 144 / 14%)"
   }
   const [expanded, setExpanded] = React.useState(false);
-
+  
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+  
 
   return (
     <div style={styles}>
@@ -71,7 +77,9 @@ function SingleCard(props) {
                 <b>Head</b>: {props.head}
                 </Typography>
                 <Typography variant="body2" color="text.primary">
-                  <b>President</b> : {props.president}
+                {/* onClick={()=>navigate('/profile/'+ props.president)} */}
+                  {/* <b>President</b> : {props.president} */}
+                  <b>President</b>: <Link href="/profile/props.president">{props.president}</Link>
                 </Typography>
 
                 <Typography variant="body2" color="text.secondary" >
