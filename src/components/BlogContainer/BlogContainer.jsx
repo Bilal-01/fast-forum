@@ -1,4 +1,4 @@
-import { Box, Fab } from '@mui/material';
+import { Box, colors, Fab } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import Button from '@mui/material/Button';
 import React, { useState,useEffect } from 'react';
@@ -70,7 +70,7 @@ function BlogContainer()
             {auth.user?
             <Box className='b-add' sx={{ flexGrow: 1, marginBottom: '64px' }}>
                 <Fab color='primary' aria-label='add blog' >
-                    <Link to="/blog/forms"><AddIcon /></Link>
+                    <Link to="/blog/forms"><AddIcon sx={{fontSize:45 ,color:'white', position:'center'}}/></Link>
                 </Fab>
             </Box>
             :''}
