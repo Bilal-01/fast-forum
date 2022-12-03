@@ -38,7 +38,13 @@ function CardActionArea1() {
   setSociety([...res.data.results])
     })
   }
-  function()
+  
+  function getLogo()
+  {
+    console.log(societies.sname);
+    if(societies.sname == "Dramatic and Extra Curricular Society")
+    return {DECS_LOGO};
+  }
   //const [society, setSociety] = useState(null);
   // axios.get('url').then(function(res){
   //    setSociety(res.data.results);
@@ -64,7 +70,7 @@ function CardActionArea1() {
       <SingleCard
         width = "345px"
         height = "200px"
-        logo={DECS_LOGO}
+        logo={getLogo()}
         heading={society.sname} 
         description={society.sdescription}
         head={society.tname} // this will come from a join query [ do a join on teacher and society]
