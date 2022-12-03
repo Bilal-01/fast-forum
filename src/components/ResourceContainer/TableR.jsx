@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import { styled } from '@mui/material/styles';
+import Button from '@mui/material/Button';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
@@ -9,6 +10,8 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Link from '@mui/material/Link';
 import axios from 'axios';
+import UserContext from '../UserContext';
+import { useContext } from 'react';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   
@@ -28,61 +31,73 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 	  backgroundColor: theme.palette.action.hover,
 	  
 	},
-	// hide last border
 	'&:last-child td, &:last-child th': {
 	  border: 0,
 	},
   }));
 
 function TableR() {
+	const auth=useContext(UserContext);
+	var stud=''
+    {auth.user? stud=auth.user.id:stud=''}
 	const [rows, setRows] = useState([])
 	useEffect(() => {
-	  refreshProject();
+	  	refreshResource();
 	}, [])
-	function refreshProject() {
-	  axios.get("http://localhost/forum/php/api/project.php").then(function (response) {
-		console.log(response.data.results);
-		setRows([...response.data.results])
-		rows.map((row, i) => {
-		  console.log(row.project_id 
-			+ row.course_id
-			+ row.date_of_post
-			+ row.github_link
-			+ row.student_id
-			);
-		})
-	  })
+	function deleteEntry(Rid){
+        let id= Rid
+        console.log(id)
+        axios.delete('http://localhost/forum/php/api/resource.php', {data: id}).then(function(response){
+            console.log(response.data)
+            refreshResource();
+        })
+    }
+	function refreshResource() {
+	  	axios.get("http://localhost/forum/php/api/resource.php").then(function (response) {
+			console.log(response.data.results);
+			setRows([...response.data.results])
+			rows.map((row, i) => {
+				console.log(row.ID 
+					+ row.course_id
+					+ row.student_id
+					+ row.Drive_Link
+					+ row.date_of_publish
+				);
+			})
+	  	})
 	}
 	return (
-	  <TableContainer component={Paper} sx={{width: '95%', margin: '10px auto'}}>
-		<Table sx={{ minWidth: 650 }} aria-label="customized table">
-		  <TableHead>
-			<TableRow>
-			<StyledTableCell align="left">SNO</StyledTableCell>
-			  <StyledTableCell align="center">CourseID</StyledTableCell>
-			  <StyledTableCell align="center">StudentID</StyledTableCell>
-			  <StyledTableCell align="center">DateOfPost</StyledTableCell>
-			  <StyledTableCell align="center">GithubLink</StyledTableCell>
-			</TableRow>
-		  </TableHead>
-		  <TableBody>
-			{rows.map((row,i) => (
-			  <StyledTableRow
-				key={row.project_id}
-				sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-			  >
-				 <StyledTableCell component="th" scope="row">
-				  {i}
-				  </StyledTableCell>
-			  <StyledTableCell align="center">{row.course_id}</StyledTableCell>
-			  <StyledTableCell align="center">{row.student_id}</StyledTableCell>
-			  <StyledTableCell align="center">{row.date_of_post}</StyledTableCell>
-			  <StyledTableCell align="center"><Link href={row.github_link}>{row.github_link}</Link></StyledTableCell>
-			</StyledTableRow>
-			))}
-		  </TableBody>
-		</Table>
-	  </TableContainer>
+		<TableContainer component={Paper} sx={{width: '95%', margin: '10px auto'}}>
+			<Table sx={{ minWidth: 650 }} aria-label="customized table">
+			<TableHead>
+				<TableRow>
+				<StyledTableCell align="left">SNO</StyledTableCell>
+				<StyledTableCell align="center">CourseID</StyledTableCell>
+				<StyledTableCell align="center">StudentID</StyledTableCell>
+				<StyledTableCell align="center">DateOfPublish</StyledTableCell>
+				<StyledTableCell align="center">DriveLink</StyledTableCell>
+				<StyledTableCell align="center"> </StyledTableCell>
+				</TableRow>
+			</TableHead>
+			<TableBody>
+				{rows.map((row,i) => (
+				<StyledTableRow
+					key={row.ID}
+					sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+				>
+					<StyledTableCell component="th" scope="row">
+					{i+1}
+					</StyledTableCell>
+				<StyledTableCell align="center">{row.course_id}</StyledTableCell>
+				<StyledTableCell align="center"><Link href={'/profile/'+ row.student_id}>{row.student_id}</Link></StyledTableCell>
+				<StyledTableCell align="center">{row.date_of_publish}</StyledTableCell>
+				<StyledTableCell align="center"><Link href={row.Drive_Link}>{row.Drive_Link}</Link></StyledTableCell>
+				<StyledTableCell align="center">{stud === row.student_id?<Button variant="contained" onClick={(event)=>deleteEntry(row.ID)}>Delete</Button>:''}</StyledTableCell>
+				</StyledTableRow>
+				))}
+			</TableBody>
+			</Table>
+		</TableContainer>
 	);
-  }
-  export default TableR;
+}
+export default TableR;
