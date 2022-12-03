@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState,useEffect} from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -20,42 +20,57 @@ import SPORTICS_LOGO from './../../assets/Societies_image/Sportics_logo.jpg'
 
 import './CardActionArea1.css'
 
+import axios from 'axios';
+
 function CardActionArea1() {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+  const [societies, setSociety] = useState([]);
+  useEffect(()=>{
+    getSocietyDetails();
+  }, []);
+  function getSocietyDetails(){
+  axios.get('http://localhost/forum/php/api/society.php').then(function(res){
+  console.log(res.data.results);    
+  setSociety([...res.data.results])
+    })
+  }
   //const [society, setSociety] = useState(null);
   // axios.get('url').then(function(res){
   //    setSociety(res.data.results);
   // })
 
   // <SingleCard
-//         width = "345px"
-//         height = "200px"
-//         logo={DECS_LOGO}
-//         heading={society.heading} 
-//         description={society.description}
-//         head={society.teacher_name} // this will come from a join query [ do a join on teacher and society]
-//         president= {society.president_name} // this will also come from a join query [ user join on society ]
-//         link={society.link}
-//         />
-//       <SingleCard
-
+  //       width = "345px"
+  //       height = "200px"
+  //       logo={DECS_LOGO}
+  //       heading={society.heading} 
+  //       description={society.description}
+  //       head={society.teacher_name} // this will come from a join query [ do a join on teacher and society]
+  //       president= {society.president_name} // this will also come from a join query [ user join on society ]
+  //       link={society.link}
+  //       />
+  //     <SingleCard
+  // {societies.map((row, i) => {
+    
   return (
     <div>
       <div className='society-card-wrapper'>
-        <SingleCard
-          width = "345px"
-          height = "200px"
-          logo={DECS_LOGO}
-          heading="Dramatic and Extra Curricular Society" 
-          description="DECS has always been on the go in planning extra-curricular activities such as picnics for the FASTians which prove to be both exhilarating and exclusive."
-          head="Sir Amin Sadiq"
-          president="Shayan Pasha"
-          link="https://www.facebook.com/decsfast/"
-          />
+      {societies.map((society, i) => (
+      <SingleCard
+        width = "345px"
+        height = "200px"
+        logo={society.image_path}
+        heading={society.sname} 
+        description={society.sdescription}
+        head={society.tname} // this will come from a join query [ do a join on teacher and society]
+        president= {society.president_id} // this will also come from a join query [ user join on society ]
+        link={society.socialMedia_link}
+        />
+        ))}
         <SingleCard
         
           width = "345px"
