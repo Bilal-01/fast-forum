@@ -67,12 +67,14 @@ function FormContainer()
                             defaultValue="Blog Description"
                             style={{paddingLeft: 50}}
                         />
-                        <div className='submit'>
-                        <Link to="/blog"><Button variant='contained'onClick={() => {
-                            formik.handleSubmit()
-                            }}>Submit</Button></Link>
+                        <div className='btn'>
+                            <Link to="/blog">
+                                <Button className='back' variant='contained'>Back</Button>
+                            </Link>
+                            <Button className='submit' variant='contained'onClick={() => {
+                                formik.handleSubmit()
+                                }}>Submit</Button>
                         </div>
-                        
                     </div>
                 </div>
             </div>

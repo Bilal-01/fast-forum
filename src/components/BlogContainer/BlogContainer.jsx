@@ -6,6 +6,7 @@ import BImg from './../../assets/blog-1.jpg';
 import './blogcont.css';
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import Footer from '../Footer/Footer';
 
 function BlogContainer()
 {
@@ -13,6 +14,14 @@ function BlogContainer()
     useEffect(() => {
     refreshBlog();
     }, [])
+    function deleteEntry(id){
+        let Bid= id
+        console.log(Bid)
+        axios.delete('http://localhost/forum/php/api/blog.php', {data: Bid}).then(function(response){
+            console.log(response.data)
+            refreshBlog();
+        })
+    }
     function refreshBlog() {
         axios.get('http://localhost/forum/php/api/blog.php').then(function(response){
             console.log(response.data.results)
@@ -48,15 +57,15 @@ function BlogContainer()
                             <div>
                                 {row.description}
                             </div>
-                        <Button variant="contained">Delete</Button>
+                        <Button variant="contained" onClick={(event)=>deleteEntry(row.Bid)}>Delete</Button>
                         </article>
                     </div>
                 ))}
             </div>
             <Box className='b-add' sx={{ flexGrow: 1, marginBottom: '64px' }}>
-            <Fab color='primary' aria-label='add blog' >
-                    <Link to="/blog/forms"><AddIcon /></Link>
-            </Fab>
+                <Fab color='primary' aria-label='add blog' >
+                        <Link to="/blog/forms"><AddIcon /></Link>
+                </Fab>
             </Box>
         </>
         
