@@ -77,9 +77,7 @@ function SingleCard(props) {
                 <b>Head</b>: {props.head}
                 </Typography>
                 <Typography variant="body2" color="text.primary">
-                {/* onClick={()=>navigate('/profile/'+ props.president)} */}
-                  {/* <b>President</b> : {props.president} */}
-                  <b>President</b>: <Link href="/profile/props.president">{props.president}</Link>
+                  <b>President</b>: <Link href={'/profile/'+ props.president}>{props.president}</Link>
                 </Typography>
 
                 <Typography variant="body2" color="text.secondary" >
