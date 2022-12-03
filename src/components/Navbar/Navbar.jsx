@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import NavList from './NavList';
 import {
   Box, 
@@ -32,7 +32,9 @@ import { useContext } from 'react';
       <Box sx={{ flexGrow: 1, marginBottom: '64px' }}>
         <AppBar position="fixed" sx={auth.user && auth.user.role === 0 ? { background: '#16213E'}: null}>
           <Toolbar>
+
           {
+            // add sidebar 
             auth.user 
             ?
             <IconButton
@@ -42,6 +44,7 @@ import { useContext } from 'react';
               aria-label="menu"
               sx={{ mr: 2 }}
             >
+
               <MenuIcon />
             </IconButton>
             :

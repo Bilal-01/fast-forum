@@ -21,6 +21,7 @@
     display: block;
     width: 100%;
     padding: 10px;
+    border-bottom: 1px solid #cac8c8;
 }
 
 .account-dropdown-link:hover{

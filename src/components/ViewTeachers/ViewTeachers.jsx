@@ -7,7 +7,6 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import ProfileIcon from '../../assets/user-profile-icon.png';
 import axios from 'axios';  
 import './teachers.css';
 
@@ -39,7 +38,8 @@ export default function ViewTeachers() {
 
 
   function getTeacherDetails(){
-    axios.get('http://localhost/forum/php/api/teacher.php').then(function(res){
+    axios.get('http://localhost/forum/php/api/teacher.php').then(function(res){   
+      console.log(res.data.results[0][1]);
       setTeachers([...res.data.results])
     })
   }
@@ -53,7 +53,7 @@ export default function ViewTeachers() {
               <StyledTableCell align='left'>SNO</StyledTableCell>
               <StyledTableCell align="left">Name</StyledTableCell>
               <StyledTableCell align="left">Email&nbsp;</StyledTableCell>
-              {/* <StyledTableCell align="left">Courses&nbsp;</StyledTableCell> */}
+              <StyledTableCell align="left">Course&nbsp;</StyledTableCell>
               <StyledTableCell align="left">Location&nbsp;</StyledTableCell>
             </TableRow>
           </TableHead>
@@ -62,11 +62,9 @@ export default function ViewTeachers() {
               return(
                   <StyledTableRow key={row.id}>
                     <StyledTableCell align="left">{i+1}</StyledTableCell>
-                    <StyledTableCell align="left">{row.name}</StyledTableCell>
+                    <StyledTableCell align="left">{row.tname}</StyledTableCell>
                     <StyledTableCell align="left">{row.email}</StyledTableCell>
-                    {/* <StyledTableCell align="left">{row.courses.map((value) => {
-                      return <p id={value}>{value}</p>
-                    })}</StyledTableCell> */}
+                    <StyledTableCell align="left">{row.cname ? row.cname : 'Not a coordinator'}</StyledTableCell>
                     <StyledTableCell align="left">{row.location}</StyledTableCell>
                   </StyledTableRow>
               )

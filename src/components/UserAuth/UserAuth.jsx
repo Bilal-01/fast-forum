@@ -56,9 +56,6 @@ const validationSchema = yup.object({
                     data.setUser(user);
                     sessionStorage.setItem("user", JSON.stringify(user));
                     const tempUser = JSON.parse(sessionStorage.getItem('user'));
-                    console.log('Session value');
-                    console.log(tempUser);
-                    // console.log(user);
                     if(user.role === 0){
                         navigate("/admin");
                     }
