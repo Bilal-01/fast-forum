@@ -6,6 +6,10 @@ import AdminPTable from './AdminTables/AdminPTable';
 import AdminRTable from './AdminTables/AdminRTable';
 import AdminCTable from './AdminTables/AdminCTable';
 import AdminBTable from './AdminTables/AdminBTable';
+import AdminUTable from './AdminTables/AdminUTable';
+import AdminSTable from './AdminTables/AdminSTable';
+import AdminTTable from './AdminTables/AdminTTable';
+
 
 function ManageComponent(props)
 {
@@ -40,6 +44,9 @@ function ManageComponent(props)
                     component === 'Resources' ? <AdminRTable /> :
                     component === 'Carpool' ? <AdminCTable />   :
                     component === 'Blogs' ? <AdminBTable />     :
+                    component === 'Users' ? <AdminUTable />     :
+                    component === 'Societies' ? <AdminSTable /> :
+                    component === 'Teachers' ? <AdminTTable />  :
                     null
                     
                 }

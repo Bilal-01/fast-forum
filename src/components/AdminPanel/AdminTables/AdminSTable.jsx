@@ -50,7 +50,7 @@ function AdminSTable() {
             refreshSocieties();
         })
     }
-	function refreshUser() {
+	function refreshSocieties() {
 	  	axios.get("http://localhost/forum/php/api/societies.php").then(function (response) {
 			console.log(response.data.results);
 			setRows([...response.data.results])
