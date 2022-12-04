@@ -54,7 +54,6 @@ function AdminPTable() {
 }
   function refreshProject() {
     axios.get("http://localhost/forum/php/api/project.php").then(function (response) {
-      console.log(response.data.results);
       setRows([...response.data.results])
       rows.map((row, i) => {
         console.log(row.project_id 

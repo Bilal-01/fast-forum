@@ -49,7 +49,7 @@ const validationSchema = yup.object({
         onSubmit: (values) => {
             axios.post('http://localhost/forum/php/index.php', values).then(function(response){
                 console.log(response.data);
-                if(response.data['status'] === 1 && !isRegister){
+                if(response.data['status'] === 1){
                     data.setIsLoggedIn(true);
                     let user = response.data.user;
                     data.setUser(user);
