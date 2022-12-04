@@ -1,4 +1,4 @@
-import React, { useState, useContext, createContext } from 'react';
+import React, { useState, useContext, createContext, useEffect } from 'react';
 import { 
   Home, 
   About, 
@@ -18,14 +18,15 @@ import {
   Admin,
 } from './pages';
 import UserContext from './components/UserContext';
-import {BrowserRouter as Router, Switch, Route, Routes, Navigate, useNavigate} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route, Routes, Navigate, useNavigate, json} from 'react-router-dom';
 import './App.css';
 import axios from 'axios';
+import { UserProfile, RequireAuth } from './components';
 
 function App() {
 
-  const [user, setUser] = useState(JSON.parse(sessionStorage.getItem('user')));
-  const [isLoading, setIsLoading] = useState(false);
+  const [user, setUser] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const data = {
@@ -37,23 +38,62 @@ function App() {
     setIsLoggedIn
   }
 
+  useEffect(() => {
+    setIsLoading(true);
+    setUser(JSON.parse(sessionStorage.getItem("user")));
+    setIsLoading(false);
+  }, [])
+
   return (
     <UserContext.Provider value={data}>
       <Router>
         <Routes>
-          <Route exact path='/' element={<Home />} />
+          <Route path='/societies' element = {
+            <RequireAuth>
+              <Societies />
+            </RequireAuth>
+          } />
+          <Route path='/Event' element = {
+            <RequireAuth>
+              <Event />
+            </RequireAuth>
+          } />
+          <Route path='/profile/:id' element = {
+            <RequireAuth>
+              <Profile /> 
+            </RequireAuth>
+          }></Route>
+          <Route path="/teachers" element = {
+            <RequireAuth>
+              <Teachers />
+            </RequireAuth>
+          } />
+          <Route path='/resources' element = {
+            <RequireAuth>
+              <Resources/>
+            </RequireAuth>
+          } />
+          <Route path="/carpool" element = {
+            <RequireAuth>
+              <Carpool />    
+            </RequireAuth>
+          } />
+          <Route path="/project" element = {
+            <RequireAuth>    
+              <Project />
+            </RequireAuth>
+          } />
+          <Route path="/timetable" element = {
+            <RequireAuth>   
+              <TimetablePage />  
+            </RequireAuth>
+          } />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/blog' element={<Blog />} />
-          <Route path='/societies' element={<Societies />} />
-          <Route path='/Event' element={<Event />} />          
-          <Route path='/profile/:id' element={<Profile />} />
+            
           <Route path='/blog/forms' element={<Forms />} />
-          <Route path='/teachers' element={<Teachers />} />
-          <Route path='/resources' element={<Resources/>} />
-          <Route path='/carpool' element={<Carpool />} />      
-          <Route path='/project' element={<Project />} />      
-          <Route path='/timetable' element={<TimetablePage />} />         
+                  
           <Route path='/authentication' element={<Authentication />} />
           <Route path='/admin' element={<Admin />} />
           <Route path='/*' element={<Home />} />

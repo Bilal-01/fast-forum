@@ -20,24 +20,20 @@ function BlogContainer()
     }, [])
     function deleteEntry(id){
         let Bid= id
-        console.log(Bid)
         axios.delete('http://localhost/forum/php/api/blog.php', {data: Bid}).then(function(response){
-            console.log(response.data)
             refreshBlog();
         })
     }
     function refreshBlog() {
         axios.get('http://localhost/forum/php/api/blog.php').then(function(response){
-            console.log(response.data.results)
             setRows([...response.data.results])
-            rows.map((row, i) => {
-            console.log(row.Bid +
-            row.Heading +
-            row.post_by +
-            row.date_of_post +
-            row.description);
-            })
-            console.log(auth.user);
+            // rows.map((row, i) => {
+            // console.log(row.Bid +
+            // row.Heading +
+            // row.post_by +
+            // row.date_of_post +
+            // row.description);
+            // })
         })
     }
     return(

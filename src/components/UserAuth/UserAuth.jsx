@@ -46,16 +46,16 @@ const validationSchema = yup.object({
         },
         validationSchema: validationSchema,
         onSubmit: (values) => {
-            // console.log(values);
             axios.post('http://localhost/forum/php/index.php', values).then(function(response){
-                console.log(response.data);
                 if(response.data['status'] === 1){
+                    data.setIsLoggedIn(true);
                     let user = response.data.user;
-                    console.log(user);
                     data.setUser(user);
                     sessionStorage.setItem("user", JSON.stringify(user));
                     const tempUser = JSON.parse(sessionStorage.getItem('user'));
-                    if(user.role === 0){
+                    console.log(user.role);
+                    if(user.role == 0){
+                        console.log("in admin");
                         navigate("/admin");
                     }
                     else{

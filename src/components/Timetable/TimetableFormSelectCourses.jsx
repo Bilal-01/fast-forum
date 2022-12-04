@@ -24,31 +24,20 @@ const MenuProps = {
   },
 };
 
-const names = [
-  'Algo BSCS-5D',
-  'DB BSCS-5D',
-  'GT BSCS-5D',
-  'PDC BSCS-5D',
-  'SDA BSCS-5D',
-  'Algo BSCS-5A',
-  'DB BSCS-5A',
-  'GT BSCS-5A',
-  'PDC BSCS-5A',
-  'SDA BSCS-5A',
-  'Algo BSCS-5B',
-  'DB BSCS-5B',
-  'GT BSCS-5B',
-  'PDC BSCS-5B',
-  'SDA BSCS-5B',
-];
 
 export default function TimetableFormSelectCourses(props) {
   const [personName, setPersonName] = useState([]);
   const [finalValue, setFinalValue] = useState([]);
   const timetable = useContext(TimetableContext);
-
+  const [names, setNames] = useState([]);
   useEffect(() => {
     timetable.setIsRefreshed(true);
+    axios.get('http://localhost/forum/php/api/timetable.php').then(function(res){
+      // console.log(res.data.results);
+      let results = res.data.results;
+      setNames([...results]);
+      // setNames([...res.data.results]);
+    })
   }, [])
 
 
@@ -86,9 +75,9 @@ export default function TimetableFormSelectCourses(props) {
           MenuProps={MenuProps}
         >
           {names.map((name) => (
-            <MenuItem key={name} value={name}>
-              <Checkbox checked={personName.indexOf(name) > -1} />
-              <ListItemText primary={name} />
+            <MenuItem key={name} value={name.tcode}>
+              <Checkbox checked={personName.indexOf(name.tcode) > -1} />
+              <ListItemText primary={name.tcode} />
             </MenuItem>
           ))}
         </Select>

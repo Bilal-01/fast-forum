@@ -9,7 +9,6 @@ import './navbar.css';
 function NavList(){
     const auth = useContext(UserContext)
     const navigate = useNavigate();
-    console.log(auth.user);
 
 
     const [isOpen, setIsOpen] = useState(false);
@@ -33,6 +32,7 @@ function NavList(){
     const handleLogout = () => {
         sessionStorage.removeItem('user');
         auth.setUser(null);
+        auth.setIsLoggedIn(false);
         navigate('/');
     }
 

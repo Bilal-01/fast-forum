@@ -18,25 +18,39 @@ function UserProfile(props){
     const params = useParams();
     const navigate = useNavigate();
     const [user, setUser] = useState(null);
+
+    // useEffect( () => {
+    //     console.log("Not logged in");
+    //     if(!auth.isLoggedIn){
+    //         console.log("Not logged in");
+    //         navigate('/authentication');
+    //     } 
+    // }, [])
+
     useEffect(() => {
-        axios.post('http://localhost/forum/php/api/userProfile.php', params).then(function(res){
-            console.log(res.data);
+        getUser();
+    }, [user]);
+
+    function getUser(){
+        axios.post('http://localhost/forum/php/api/profile.php', params).then(function(res){
             if(!res.data.results){
                 navigate('/');
-                // console.log(res.data.results);
             }
-            let tempUser = res.data.results;
-            setUser(tempUser);
+            if(user !== res.data.results){
+                
+                res.data.results.forEach(element => {
+                    if(params.id === element.uid){
+                        let tempUser = element;
+                        setUser(tempUser);
+                    }
+                });
+
+            }
         });
-        axios.post('http://localhost/forum/php/api/profile.php', params).then(function(res){
-            
-        })
-    }, [user]);
+    }
 
     return(
         <>
-            {!props.isLoggedIn && <Navigate to="/" replace={true} />}
-            
             <div className='user-profile-background'>
                 <img className='user-profile-bg-img' src={bgImage} alt="Background Image" />
                 
@@ -56,7 +70,7 @@ function UserProfile(props){
                             <div className='user-profile-desc'>
                                 <p>
                                     Batch: 20{user && user.id.substr(1, 2)}
-                                    <br /> Status: {user && user.role === 0 ? 'User' : 'Admin'}
+                                    <br /> Status: {user && user.role == 0 ? 'Admin' : 'User'}
                                 </p>
                                 <Stack direction='row' sx={{justifyContent: 'center', marginTop: '14px'}}>
                                     <IconButton onClick={() => {
@@ -65,7 +79,7 @@ function UserProfile(props){
                                     }}>
                                         <LinkedInIcon fontSize='large' color='primary' sx={{cursor: 'pointer'}} />
                                     </IconButton>
-                                    <IconButton fullWidth>
+                                    <IconButton>
                                         <GitHubIcon fontSize='large' color='dark' sx={{cursor: 'pointer'}} />
                                     </IconButton>
                                     <IconButton>
@@ -81,7 +95,7 @@ function UserProfile(props){
                             <h1 className='user-profile-heading'>
                                 Personal Information 
                                 {   
-                                    auth.user.id === params.id
+                                    auth.user.id && auth.user.id === params.id
                                     ?
                                     <EditPersonalInfoModal type="personal" />
                                     :

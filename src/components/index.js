@@ -27,3 +27,5 @@ export {default as Timetable} from './Timetable/Timetable';
 export {default as UserAuth} from './UserAuth/UserAuth';
 export {default as FileUpload} from './FileUpload/FileUpload';
 export {default as AdminPanel} from './AdminPanel/AdminPanel';
+export {default as RequireAuth} from './UserAuth/RequireAuth.jsx';
+
