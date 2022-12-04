@@ -8,7 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import axios from 'axios';
-import UserContext from '../UserContext';
+import UserContext from '../../UserContext';
 import { useContext } from 'react';
 import Button from '@mui/material/Button';
 
@@ -40,7 +40,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 
 
-function TableC() {
+function AdminCTable() {
 //   const auth=useContext(UserContext);
 // 	var stud=''
 //     {auth.user? stud=auth.user.id:stud=''}
@@ -110,4 +110,4 @@ function TableC() {
     </TableContainer>
   );
 }
-export default TableC;
+export default AdminCTable;
