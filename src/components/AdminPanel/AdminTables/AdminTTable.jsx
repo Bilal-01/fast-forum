@@ -10,7 +10,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Link from '@mui/material/Link';
 import axios from 'axios';
-import TeacherContext from '../../TeacherContext';
+import UserContext from '../../UserContext';
 import { useContext } from 'react';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -69,11 +69,12 @@ function AdminTTable() {
 			<Table sx={{ minWidth: 650 }} aria-label="customized table">
 			<TableHead>
 				<TableRow>
-				<StyledTableCell align="left">TID</StyledTableCell>
+				<StyledTableCell align="left">SNO</StyledTableCell>
 				<StyledTableCell align="center">Name</StyledTableCell>
 				<StyledTableCell align="center">Email</StyledTableCell>
+				<StyledTableCell align="center">Courses</StyledTableCell>
 				<StyledTableCell align="center">Location</StyledTableCell>
-				<StyledTableCell align="center"> </StyledTableCell>
+				<StyledTableCell align="center">Manage</StyledTableCell>
 				</TableRow>
 			</TableHead>
 			<TableBody>
@@ -85,10 +86,10 @@ function AdminTTable() {
 					<StyledTableCell component="th" scope="row">
 					{i+1}
 					</StyledTableCell>
-				<StyledTableCell align="center">{row.tid}</StyledTableCell>
 				<StyledTableCell align="center">{row.tname}</StyledTableCell>
                 <StyledTableCell align="center">{row.email}</StyledTableCell>
-                <StyledTableCell align="center">{row.location}</StyledTableCell>
+                <StyledTableCell align="left">{row.cname ? row.cname : 'Not a coordinator'}</StyledTableCell>
+				<StyledTableCell align="center">{row.location}</StyledTableCell>
                 <StyledTableCell align="center"><Button variant="contained" onClick={(event)=>deleteEntry(row.tid)}>Delete</Button></StyledTableCell>
 				</StyledTableRow>
 				))}
