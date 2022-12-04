@@ -10,7 +10,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Link from '@mui/material/Link';
 import axios from 'axios';
-import UserContext from '../UserContext';
+import UserContext from '../../UserContext';
 import { useContext } from 'react';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -46,10 +46,10 @@ function AdminTableB() {
         console.log(id)
         axios.delete('http://localhost/forum/php/api/blog.php', {data: id}).then(function(response){
             console.log(response.data)
-            refreshResource();
+            refreshBlog();
         })
     }
-	function refreshResource() {
+	function refreshBlog() {
 	  	axios.get("http://localhost/forum/php/api/blog.php").then(function (response) {
 			console.log(response.data.results);
 			setRows([...response.data.results])
