@@ -110,19 +110,21 @@ export default function PersistentDrawerLeft() {
           '& .MuiDrawer-paper': {
             width: drawerWidth,
             boxSizing: 'border-box',
+            background:'#16213E',
+            color:"white",
           },
         }}
         variant="persistent"
         anchor="left"
         open={open}
       >
-        <DrawerHeader sx={{background:'#f6fc38'}}>
+        <DrawerHeader sx={{background:'#16213E', color:"white"}}>
           <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+            {theme.direction === 'ltr' ? <ChevronLeftIcon sx={{color:"white"}}/> : <ChevronRightIcon />}
           </IconButton>
         </DrawerHeader>
         <Divider />
-        <List sx={{background:'#fa05f2'}}>
+        <List sx={{background:'#16213E'}}>
           <ListItem disablePadding>
             <Link style={{color:"white", textDecorationLine:"none"}} to="/resources">
               <ListItemButton >
@@ -162,6 +164,13 @@ export default function PersistentDrawerLeft() {
             <Link style={{color:"white", textDecorationLine:"none"}} to="/timetable">
               <ListItemButton>
                 <ListItemText primary="Time Table" />
+              </ListItemButton>
+            </Link>
+          </ListItem>
+          <ListItem disablePadding>
+            <Link style={{color:"white", textDecorationLine:"none"}} to="/teachers">
+              <ListItemButton>
+                <ListItemText primary="Teachers" />
               </ListItemButton>
             </Link>
           </ListItem>
