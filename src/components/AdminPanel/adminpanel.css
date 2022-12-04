@@ -25,38 +25,22 @@
 
 }
 
-.admin-sidebar-content > ul > li{
-    width: 100%;
-    list-style-type: none;
-    padding: 10px 20px;
-    background: #404258;
-    color: #eee;
-}
-
-.admin-sidebar-content > ul > li:hover{
-    background: #474E68;
-    cursor: pointer;
-    transition: 0.3s all;
-    
-}
 
 .managing-container{
-    width: 850px;
-    height: 550px;
+    width: 1200px;
+    height: 650px;
     
-    box-shadow: 0 0 15px #d35400;
     position: absolute;
     top: 55%;
-    left: 55%;
+    left: 58%;
     transform: translate(-50%, -50%);
-    border:2px solid #d35400;
     border-radius: 20px;
 }
 
 .admin-manage-comp-heading{
     color: #ffa502;
-    font-size: 3rem;
-    padding: 20px 40px;
+    font-size: 2rem;
+    padding: 30px 0px;
     font-weight: lighter;
 
 }
@@ -84,5 +68,25 @@
     color: #ffa502;
     box-shadow: 0 0 15px #d35400;
     text-shadow: 0 0 15px #d35400;
+
+}
+
+.admin-sb-btn{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: lighter;
+    display: block;
+    padding: 10px 15px;
+    outline: none;
+    width: 100%;
+    
+}
+
+.admin-sb-btn:hover{
+    cursor: pointer;
+    background: #474E68;
+    transition: 0.3s all;
 
 }

@@ -6,6 +6,7 @@ import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import ManageComponent from './ManageComponent';
+import AdminContext from './AdminContext';
 
 function AdminPanel()
 {
@@ -15,22 +16,41 @@ function AdminPanel()
         navigate('/');
     }
 
-    const [manageComponent, setManageComponent] = useState('projects')
+    
+    
+    const [manageComponent, setManageComponent] = useState({
+        component: 'Projects',
+        addBtn: false,
+        getBtn: true,
+        deleteBtn: true,
+    });
+    
+    useEffect(() => {
+        if(manageComponent === 'Users'){
+            console.log(manageComponent);
+        }
+    }, [])
+
+    const admin = {
+        manageComponent,
+        setManageComponent,
+    }
+
 
     return(
-        <>
+        <AdminContext.Provider value={admin}>
             <AdminSidebar comp={setManageComponent} />
             <div className="admin-page">
                 <div className="managing-container">
                     <ManageComponent
-                     compType={manageComponent}
-                     add={true}
-                     delete={true}
-                     get={true}
+                     compType={manageComponent.component}
+                     add={manageComponent.addBtn}
+                     delete={manageComponent.deleteBtn}
+                     get={manageComponent.getBtn}
                     />
                 </div>
             </div>
-        </>
+        </AdminContext.Provider>
     )
 }
 

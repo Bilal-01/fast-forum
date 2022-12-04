@@ -4,7 +4,6 @@ export {default as Contact} from './Contact/Contact';
 export {default as About} from './About/About';
 export {default as Profile} from './Profile/Profile';
 export {default as Societies} from './Societies/Societies';
-export {default as Event} from './Event/Event';
 export {default as Details} from './Societies/Details/Details';  //no need?
 export {default as Forms} from './Blog/Forms/Forms';
 export {default as Teachers} from './Teachers/Teachers';

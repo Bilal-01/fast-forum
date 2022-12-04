@@ -19,7 +19,7 @@ const validationSchema = yup.object({
       .required('This field is required'),
   });
 
-function FormContainer()
+function FormContainer(props)
 {
     const auth = useContext(UserContext);
     const formik = useFormik({

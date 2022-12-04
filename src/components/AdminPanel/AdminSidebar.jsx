@@ -1,45 +1,113 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { useEffect } from 'react';
+import AdminContext from './AdminContext';
 import './adminpanel.css';
+import ManageComponent from './ManageComponent';
+
 
 function AdminSidebar(props){
+
+    const admin=useContext(AdminContext);
+
+    function handleClick(str){
+        if(str === 'Projects'){
+            admin.setManageComponent({
+                component: 'Projects',
+                addBtn: false,
+                deleteBtn: true,
+                getBtn: true
+            })
+        }
+        if(str === 'Resources'){
+            admin.setManageComponent({
+                component: 'Resources',
+                addBtn: false,
+                deleteBtn: true,
+                getBtn: true
+            })
+        }
+        if(str === 'Courses'){
+            admin.setManageComponent({
+                component: 'Courses',
+                addBtn: true,
+                deleteBtn: true,
+                getBtn: true
+            })
+        }
+        if(str === 'Users'){
+            admin.setManageComponent({
+                component: 'Users',
+                addBtn: false,
+                deleteBtn: true,
+                getBtn: true
+            })
+        }
+        if(str === 'Teachers'){
+            admin.setManageComponent({
+                component: 'Teachers',
+                addBtn: true,
+                deleteBtn: true,
+                getBtn: true
+            })
+        }
+        if(str === 'Blogs'){
+            admin.setManageComponent({
+                component: 'Blogs',
+                addBtn: false,
+                deleteBtn: true,
+                getBtn: true
+            })
+        }
+        if(str === 'Societies'){
+            admin.setManageComponent({
+                component: 'Societies',
+                addBtn: true,
+                deleteBtn: true,
+                getBtn: true
+            })
+        }
+        if(str === 'Carpool'){
+            admin.setManageComponent({
+                component: 'Carpool',
+                addBtn: false,
+                deleteBtn: true,
+                getBtn: true
+            })
+        }
+        if(str === 'Timetable'){
+            admin.setManageComponent({
+                component: 'Timetable',
+                addBtn: true,
+                deleteBtn: true,
+                getBtn: true
+            })
+        }
+    }
+
     return(
         <div className="admin-sidebar-container admin-sidebar-props">
             <div className='admin-sidebar-content'>
                 <p>Academics</p>
                 <ul>
-                    <li onClick={() => props.comp('Projects')}>Projects</li>
-                    <li onClick={() => props.comp('Resources')}>Resources</li>
-                    <li onClick={() => props.comp('Courses')}>Courses</li>
+                    <button className='admin-sb-btn' autoFocus="off" onClick={() => handleClick('Projects')}>Projects</button>
+                    <button className='admin-sb-btn' autoFocus="off" onClick={() => handleClick('Resources')}>Resources</button>
+                    <button className='admin-sb-btn' autoFocus="off" onClick={() => handleClick('Courses')}>Courses</button>
                 </ul>
             </div>
             <div className='admin-sidebar-content'>
                 <p>Users</p>
-                <ul>
-                    <li onClick={props.comp('Users')}>Users</li>
-                    <li onClick={props.comp('Teachers')}>Teachers</li>
-                    <li onClick={props.comp('Blogs')}>Blogs</li>
-                </ul>
+                    <button className='admin-sb-btn' autoFocus="off" onClick={() => handleClick('Users')}>Users</button>
+                    <button className='admin-sb-btn' autoFocus="off" onClick={() => handleClick('Teachers')}>Teachers</button>
             </div>
             <div className='admin-sidebar-content'>
                 <p>Extra Curricular</p>
-                <ul>
-                    <li onClick={props.comp('Societies')}>Societies</li>
-                    <li onClick={props.comp('Events')}>Events</li>
-                </ul>
+                    <button className='admin-sb-btn' autoFocus="off" onClick={() => handleClick('Societies')}>Societies</button>
+                    <button className='admin-sb-btn' autoFocus="off" onClick={() => handleClick('Blogs')}>Blogs</button>
             </div>
             <div className='admin-sidebar-content'>
                 <p>Services</p>
-                <ul>
-                    <li onClick={props.comp('Timetable')}>Timetable</li>
-                    <li onClick={props.comp('Carpool')}>Carpool</li>
-                </ul>
-            </div>
-            <div className='admin-sidebar-content'>
-                <p>Others</p>
-                <ul>
-                    <li onClick={props.comp('About')}>About</li>
-                    <li onClick={props.comp('Contact')}>Contact</li>
-                </ul>
+                    <button className='admin-sb-btn' autoFocus="off" onClick={() => handleClick('Timetable')}>Timetable</button>
+                    <button className='admin-sb-btn' autoFocus="off" onClick={() => handleClick('Carpool')}>Carpool</button>
             </div>
         </div>
     )

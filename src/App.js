@@ -12,7 +12,6 @@ import {
   Teachers,
   Resources,
   Project,
-  Event,
   TimetablePage, 
   Authentication,
   Admin,
@@ -51,11 +50,6 @@ function App() {
           <Route path='/societies' element = {
             <RequireAuth>
               <Societies />
-            </RequireAuth>
-          } />
-          <Route path='/Event' element = {
-            <RequireAuth>
-              <Event />
             </RequireAuth>
           } />
           <Route path='/profile/:id' element = {
