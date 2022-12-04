@@ -35,7 +35,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 	},
   }));
 
-function AdminTTTable() {
+function AdminCoTable() {
 	const auth=useContext(UserContext);
 	const [rows, setRows] = useState([])
 	useEffect(() => {
@@ -44,13 +44,13 @@ function AdminTTTable() {
 	function deleteEntry(Tid){
         let id= Tid
         console.log(id)
-        axios.delete('http://localhost/forum/php/api/timetable.php', {data: id}).then(function(response){
+        axios.delete('http://localhost/forum/php/api/course.php', {data: id}).then(function(response){
             console.log(response.data)
             refreshTeacher();
         })
     }
 	function refreshTeacher() {
-	  	axios.get("http://localhost/forum/php/api/timetable.php").then(function (response) {
+	  	axios.get("http://localhost/forum/php/api/course.php").then(function (response) {
 			console.log(response.data.results);
 			setRows([...response.data.results])
 	  	})
@@ -60,28 +60,26 @@ function AdminTTTable() {
 			<Table sx={{ minWidth: 650 }} aria-label="customized table">
 			<TableHead>
 				<TableRow>
-				<StyledTableCell align="left">TID</StyledTableCell>
-				<StyledTableCell align="center">Day</StyledTableCell>
-				<StyledTableCell align="center">Code</StyledTableCell>
-				<StyledTableCell align="center">Room</StyledTableCell>
-				<StyledTableCell align="center">TimeSlot</StyledTableCell>
+				<StyledTableCell align="left">SNO</StyledTableCell>
+				<StyledTableCell align="left">CID</StyledTableCell>
+				<StyledTableCell align="center">CourseName</StyledTableCell>
+				<StyledTableCell align="center">CoordinatorID</StyledTableCell>
 				<StyledTableCell align="center">Manage</StyledTableCell>
 				</TableRow>
 			</TableHead>
 			<TableBody>
 				{rows.map((row,i) => (
 				<StyledTableRow
-					key={row.tt_id}
+					key={row.cid}
 					sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
 				>
 					<StyledTableCell component="th" scope="row">
 					{i+1}
 					</StyledTableCell>
-				<StyledTableCell align="center">{row.ttday}</StyledTableCell>
-                <StyledTableCell align="center">{row.tcode}</StyledTableCell>
-                <StyledTableCell align="center">{row.croom}</StyledTableCell>
-				<StyledTableCell align="center">{row.timeslot}</StyledTableCell>
-                <StyledTableCell align="center"><Button variant="contained" onClick={(event)=>deleteEntry(row.tt_id)}>Delete</Button></StyledTableCell>
+				<StyledTableCell align="center">{row.cid}</StyledTableCell>
+                <StyledTableCell align="center">{row.cname}</StyledTableCell>
+                <StyledTableCell align="center">{row.coordinator}</StyledTableCell>
+                <StyledTableCell align="center"><Button variant="contained" onClick={(event)=>deleteEntry(row.cid)}>Delete</Button></StyledTableCell>
 				</StyledTableRow>
 				))}
 			</TableBody>
@@ -89,4 +87,4 @@ function AdminTTTable() {
 		</TableContainer>
 	);
 }
-export default AdminTTTable;
+export default AdminCoTable;
