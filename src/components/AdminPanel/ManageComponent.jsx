@@ -3,10 +3,13 @@ import { useContext } from 'react';
 import AdminContext from './AdminContext';
 import { useEffect } from 'react';
 import AdminPTable from './AdminTables/AdminPTable';
+import AdminRTable from './AdminTables/AdminRTable';
 
 function ManageComponent(props)
 {
     const admin = useContext(AdminContext);
+
+    const {component} = admin.manageComponent
     
 
     const [isAdd, setIsAdd] = useState(props.add);
@@ -30,7 +33,12 @@ function ManageComponent(props)
         <>
             <>
                 <div className="admin-manage-comp-heading">{props.compType + ' Management'}</div>
-                <AdminPTable />
+                { 
+                    component === 'Projects' ? <AdminPTable /> :
+                    component === 'Resources' ? <AdminRTable />:
+                    null 
+                    
+                }
             </>
         </>
     )

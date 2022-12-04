@@ -10,7 +10,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Link from '@mui/material/Link';
 import axios from 'axios';
-import UserContext from '../UserContext';
+import UserContext from '../../UserContext';
 import { useContext } from 'react';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -36,10 +36,8 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 	},
   }));
 
-function AdminTableR() {
+function AdminRTable() {
 	const auth=useContext(UserContext);
-	var stud=''
-    {auth.user? stud=auth.user.id:stud=''}
 	const [rows, setRows] = useState([])
 	useEffect(() => {
 	  	refreshResource();
@@ -92,7 +90,7 @@ function AdminTableR() {
 				<StyledTableCell align="center"><Link href={'/profile/'+ row.student_id}>{row.student_id}</Link></StyledTableCell>
 				<StyledTableCell align="center">{row.date_of_publish}</StyledTableCell>
 				<StyledTableCell align="center"><Link href={row.Drive_Link}>{row.Drive_Link}</Link></StyledTableCell>
-				<StyledTableCell align="center">{stud === row.student_id?<Button variant="contained" onClick={(event)=>deleteEntry(row.ID)}>Delete</Button>:''}</StyledTableCell>
+				<StyledTableCell align="center"><Button variant="contained" onClick={(event)=>deleteEntry(row.ID)}>Delete</Button></StyledTableCell>
 				</StyledTableRow>
 				))}
 			</TableBody>
@@ -100,4 +98,4 @@ function AdminTableR() {
 		</TableContainer>
 	);
 }
-export default AdminTableR;
+export default AdminRTable;
