@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { useContext } from 'react';
 import AdminContext from './AdminContext';
 import { useEffect } from 'react';
-import AdminPTable from './AdminTables/AdminPTable';
+
+import AdminPContainer from './AdminContainer/AdminPContainer';
 import AdminRTable from './AdminTables/AdminRTable';
 import AdminCTable from './AdminTables/AdminCTable';
 import AdminBTable from './AdminTables/AdminBTable';
@@ -40,7 +41,7 @@ function ManageComponent(props)
             <>
                 <div className="admin-manage-comp-heading">{props.compType + ' Management'}</div>
                 { 
-                    component === 'Projects' ? <AdminPTable />  :
+                    component === 'Projects' ? <AdminPContainer />  :
                     component === 'Resources' ? <AdminRTable /> :
                     component === 'Carpool' ? <AdminCTable />   :
                     component === 'Blogs' ? <AdminBTable />     :
