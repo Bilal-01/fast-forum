@@ -43,16 +43,16 @@ function AdminUTable() {
 	  	refreshUser();
 	}, [])
 	function deleteEntry(Uid){
-        let id= Uid
-        console.log(id)
-        axios.delete('http://localhost/forum/php/api/user.php', {data: id}).then(function(response){
+        let id= Uid;
+        // console.log(id)
+        axios.post('http://localhost/forum/php/api/user.php', {Uid}).then(function(response){
             console.log(response.data)
             refreshUser();
         })
     }
 	function refreshUser() {
 	  	axios.get("http://localhost/forum/php/api/user.php").then(function (response) {
-			console.log(response.data.results);
+			console.log(response.data);
 			setRows([...response.data.results])
 			// rows.map((row, i) => {
 			// 	console.log(row.ID 
@@ -69,12 +69,13 @@ function AdminUTable() {
 			<Table sx={{ minWidth: 650 }} aria-label="customized table">
 			<TableHead>
 				<TableRow>
+				<StyledTableCell align="left">Snp</StyledTableCell>
 				<StyledTableCell align="left">ID</StyledTableCell>
 				<StyledTableCell align="center">Name</StyledTableCell>
 				<StyledTableCell align="center">Email</StyledTableCell>
 				<StyledTableCell align="center">Password</StyledTableCell>
 				<StyledTableCell align="center">Role</StyledTableCell>
-				<StyledTableCell align="center"> </StyledTableCell>
+				<StyledTableCell align="center">Manage</StyledTableCell>
 				</TableRow>
 			</TableHead>
 			<TableBody>

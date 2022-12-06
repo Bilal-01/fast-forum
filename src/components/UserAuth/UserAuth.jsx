@@ -49,6 +49,7 @@ const validationSchema = yup.object({
         onSubmit: (values) => {
             axios.post('http://localhost/forum/php/index.php', values).then(function(response){
 
+                console.log(response.data);
                 if(isRegister){
                     values.name='';
                     values.email='';
@@ -154,20 +155,6 @@ const validationSchema = yup.object({
                                 autoComplete='off'
                                 required
                                 sx={{marginBottom: 1, marginTop: 1}}
-                            />
-
-                            <Typography align='right' variant='body2'>
-                                <Button variant="text" onClick={()=>{setIsResetEntered(true)}} >
-                                    Forgot password?
-                                </Button>
-                            </Typography> 
-                            <FormControlLabel
-                                control={
-                                    <Checkbox 
-                                    name="checkedB"
-                                    />
-                                }
-                                label="Remember me"
                             />
                         </>
                     }       

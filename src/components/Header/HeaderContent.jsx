@@ -51,11 +51,8 @@ function HeaderContent(){
             <div className="content" ref={content}>
                 <div className='header-text-container'>
                     <h1 className='header-heading'>
-                        Hello
+                        Welcome to Fast Directory
                     </h1>
-                    <p className='header-text'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempus lectus dolor, et suscipit tellus rhoncus et. Integer lacus ante, ullamcorper nec mi sed, volutpat viverra sem. Vestibulum ultrices enim vitae tincidunt dignissim
-                    </p>
                 </div>
             </div>
         </div>

@@ -11,6 +11,7 @@ import Paper from '@mui/material/Paper';
 import Link from '@mui/material/Link';
 import axios from 'axios';
 import { useContext } from 'react';
+import UserContext from '../../UserContext';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   
@@ -39,18 +40,18 @@ function AdminCoTable() {
 	const auth=useContext(UserContext);
 	const [rows, setRows] = useState([])
 	useEffect(() => {
-	  	refreshTimeTable();
+	  	refreshCourse();
 	}, [])
-	function deleteEntry(Tid){
-        let id= Tid
+	function deleteEntry(Cid){
+        let id= Cid
         console.log(id)
-        axios.delete('http://localhost/forum/php/api/course.php', {data: id}).then(function(response){
+        axios.delete('http://localhost/forum/php/api/courses.php', {data: id}).then(function(response){
             console.log(response.data)
-            refreshTeacher();
+            refreshCourse();
         })
     }
-	function refreshTeacher() {
-	  	axios.get("http://localhost/forum/php/api/course.php").then(function (response) {
+	function refreshCourse() {
+	  	axios.get("http://localhost/forum/php/api/courses.php").then(function (response) {
 			console.log(response.data.results);
 			setRows([...response.data.results])
 	  	})

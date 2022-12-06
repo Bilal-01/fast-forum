@@ -5,6 +5,8 @@ import * as yup from "yup";
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { Navbar, Footer, ContactUs } from '../../components';
 import aboutImg from '../../assets/about-us.jpeg';
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 
 const validationSchema = yup.object({
@@ -42,16 +44,19 @@ const styles = {
 
 function Contact(props){
     const [submit, setSubmit] = useState(false);
-
+    const navigate = useNavigate();
     const formik = useFormik({
         initialValues: {
           subject: '',
-          email: '',
+          email: 'fastdirectory01@gmail.com',
           message: '',
         },
         validationSchema: validationSchema,
-        onSubmit: (values, { resetForm }) => {
-            //alert(JSON.stringify(values, null, 2));
+        onSubmit: (values) => {
+            axios.post('http://localhost/forum/php/api/contact.php', values).then(function(res){
+                console.log(res.data);
+                navigate('/');
+            })
         },
     });
     
@@ -150,6 +155,7 @@ function Contact(props){
                         variant="outlined"  
                         fullWidth
                         required
+                        disabled
                         />
                         <TextField sx={{...styles.field}}
                         id="message"

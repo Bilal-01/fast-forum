@@ -14,9 +14,9 @@ function About(){
             <Navbar />
             <TextAndImageContainer width="70%" height="70vh" src={aboutImg} />
             <div className='user-card-container'>
-                <UserCard src={bilal} name="Bilal Aziz" description="An admirable King" />
-                <UserCard src={panda} name="Maryam Siddiqui" description="An idiot Panda. " />
-                <UserCard src={dino} name="Sabah Mawani" description="A scary Dino" />
+                <UserCard src={bilal} name="Bilal Aziz" description="" />
+                <UserCard src={panda} name="Maryam Siddiqui" description="" />
+                <UserCard src={dino} name="Sabah Mawani" description="" />
             </div>
             <Footer />
         </>

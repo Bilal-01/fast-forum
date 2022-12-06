@@ -45,27 +45,19 @@ function AdminSTable() {
 	function deleteEntry(Sid){
         let id= Sid
         console.log(id)
-        axios.delete('http://localhost/forum/php/api/societies.php', {data: id}).then(function(response){
+        axios.delete('http://localhost/forum/php/api/society.php', {data: id}).then(function(response){
             console.log(response.data)
             refreshSocieties();
         })
     }
 	function refreshSocieties() {
-	  	axios.get("http://localhost/forum/php/api/societies.php").then(function (response) {
+	  	axios.get("http://localhost/forum/php/api/society.php").then(function (response) {
 			console.log(response.data.results);
 			setRows([...response.data.results])
-			// rows.map((row, i) => {
-			// 	console.log(row.ID 
-			// 		+ row.course_id
-			// 		+ row.student_id
-			// 		+ row.Drive_Link
-			// 		+ row.date_of_publish
-			// 	);
-			// })
 	  	})
 	}
 	return (
-		<TableContainer component={Paper} sx={{width: '95%', margin: '10px auto'}}>
+		<TableContainer component={Paper} sx={{width: '95%', margin: '10px auto', maxHeight: '70vh'}}>
 			<Table sx={{ minWidth: 650 }} aria-label="customized table">
 			<TableHead>
 				<TableRow>
@@ -75,25 +67,22 @@ function AdminSTable() {
 				<StyledTableCell align="center">Head_id</StyledTableCell>
 				<StyledTableCell align="center">President_id</StyledTableCell>
                 <StyledTableCell align="center">scoialMedia_Link</StyledTableCell>
-                <StyledTableCell align="center"> </StyledTableCell>
+                <StyledTableCell align="center">Manage</StyledTableCell>
 				</TableRow>
 			</TableHead>
 			<TableBody>
 				{rows.map((row,i) => (
 				<StyledTableRow
-					key={row.ID}
+					key={row.society_id}
 					sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
 				>
-					<StyledTableCell component="th" scope="row">
-					{i+1}
-					</StyledTableCell>
 				<StyledTableCell align="center">{row.society_id}</StyledTableCell>
 				<StyledTableCell align="center">{row.sname}</StyledTableCell>
                 <StyledTableCell align="center">{row.sdescription}</StyledTableCell>
                 <StyledTableCell align="center">{row.head_id}</StyledTableCell>
                 <StyledTableCell align="center">{row.president_id}</StyledTableCell>
                 <StyledTableCell align="center">{row.socialMedia_link}</StyledTableCell>
-                <StyledTableCell align="center"><Button variant="contained" onClick={(event)=>deleteEntry(row.id)}>Delete</Button></StyledTableCell>
+                <StyledTableCell align="center"><Button variant="contained" onClick={(event)=>deleteEntry(row.society_id)}>Delete</Button></StyledTableCell>
 				</StyledTableRow>
 				))}
 			</TableBody>

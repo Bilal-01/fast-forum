@@ -98,7 +98,7 @@ export default function PersistentDrawerLeft() {
             :null
           }
           <Typography variant="h6" component="a" sx={{ flexGrow: 1, cursor: 'pointer', display: 'inline' }}>
-            Fast Forum
+            Fast Directory
           </Typography>
           <NavList/>
         </Toolbar>
@@ -143,13 +143,6 @@ export default function PersistentDrawerLeft() {
             <Link style={{color:"white", textDecorationLine:"none"}} to="/societies">
               <ListItemButton>
                 <ListItemText primary="Societies" />
-              </ListItemButton>
-            </Link>
-          </ListItem>
-          <ListItem disablePadding>
-            <Link style={{color:"white", textDecorationLine:"none"}} to="/Event">
-              <ListItemButton>
-                <ListItemText primary="Events" />
               </ListItemButton>
             </Link>
           </ListItem>

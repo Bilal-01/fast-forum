@@ -10,5 +10,5 @@
 }
 
 .card:hover{
-
+    cursor: pointer;
 }

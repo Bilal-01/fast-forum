@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import QuizIcon from '@mui/icons-material/Quiz';
 import './card.css'
+import { useNavigate } from 'react-router-dom';
 
 function Card(props){
 

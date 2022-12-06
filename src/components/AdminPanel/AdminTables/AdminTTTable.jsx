@@ -11,6 +11,7 @@ import Paper from '@mui/material/Paper';
 import Link from '@mui/material/Link';
 import axios from 'axios';
 import { useContext } from 'react';
+import UserContext from '../../UserContext';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   
@@ -46,11 +47,11 @@ function AdminTTTable() {
         console.log(id)
         axios.delete('http://localhost/forum/php/api/timetable.php', {data: id}).then(function(response){
             console.log(response.data)
-            refreshTeacher();
+            refreshTimeTable();
         })
     }
-	function refreshTeacher() {
-	  	axios.get("http://localhost/forum/php/api/timetable.php").then(function (response) {
+	function refreshTimeTable() {
+	  	axios.get("http://localhost/forum/php/api/admin.php").then(function (response) {
 			console.log(response.data.results);
 			setRows([...response.data.results])
 	  	})
