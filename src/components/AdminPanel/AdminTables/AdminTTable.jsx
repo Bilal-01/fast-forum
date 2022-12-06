@@ -84,7 +84,7 @@ function AdminTTable() {
 					sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
 				>
 					<StyledTableCell component="th" scope="row">
-					{i+1}
+					{i}
 					</StyledTableCell>
 				<StyledTableCell align="center">{row.tname}</StyledTableCell>
                 <StyledTableCell align="center">{row.email}</StyledTableCell>
