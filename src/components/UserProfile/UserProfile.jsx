@@ -96,7 +96,7 @@ function UserProfile(props){
                                 {   
                                     auth.user.id && auth.user.id === params.id
                                     ?
-                                    <EditPersonalInfoModal type="personal" />
+                                    <EditPersonalInfoModal user={user} type="personal" />
                                     :
                                     null
                                 }
@@ -117,7 +117,7 @@ function UserProfile(props){
                                 {   
                                     auth.user.id === params.id
                                     ?
-                                    <EditPersonalInfoModal type="about" />
+                                    <EditPersonalInfoModal user={user} type="about" />
                                     :
                                     null
                                 }

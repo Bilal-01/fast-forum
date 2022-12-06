@@ -15,9 +15,11 @@ import UserContext from '../../UserContext';
 const validationSchema = yup.object({
   sname: yup
     .string('Enter Society Name')
+    .max(150, 'Maximum 150 characters allowed')
     .required('This field is required'),
   sdescription: yup
     .string('Enter society description')
+    .max(500, 'Maximum 500 characters allowed')
     .required('This field is required'),
   headID: yup
     .string('Enter Head ID')
@@ -52,7 +54,7 @@ function AdminSModal() {
     initialValues: {
       sname: '',
       sdescription: '',
-      headID: -1,
+      headID: '',
       presidentID: '',
       mediaLink: ''
     },
@@ -89,17 +91,6 @@ function AdminSModal() {
           <DialogContentText>
             Add your Society details 
           </DialogContentText>
-          <TextField
-             {...formik.getFieldProps('sname')}
-             error={formik.touched.sname && Boolean(formik.errors.sname)}
-             helperText={formik.touched.sname && formik.errors.sname}
-            margin="dense"
-            id="sname"
-            label="Society Name"
-            type="text"
-            fullWidth
-            variant="standard"
-          />
           <TextField
              {...formik.getFieldProps('sname')}
              error={formik.touched.sname && Boolean(formik.errors.sname)}
