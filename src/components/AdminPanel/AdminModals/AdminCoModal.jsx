@@ -15,14 +15,16 @@ import UserContext from '../../UserContext';
 const validationSchema = yup.object({
   cid: yup
     .string('Enter CourseID')
+    .max(55, "Must have a maximum of 55 characters")
   .required('This field is required')
   ,
   cname: yup
     .string('Enter course name')
+    .max(55, "Must have a maximum of 10 characters")
   .required('This field is required')
   ,
   coordinator: yup
-  .string('Enter course coordinator')
+  .string('Enter course coordinator id')
   .required('This field is required')
 });
 // const courses = [
@@ -114,7 +116,7 @@ function AdminCoModal() {
             helperText={formik.touched.coordinator && formik.errors.coordinator}
             margin="dense"
             id="coordinator"
-            label="Coordinator"
+            label="Coordinator ID"
             type="text"
             fullWidth
             variant="standard"

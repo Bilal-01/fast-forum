@@ -69,7 +69,7 @@ function AdminTTable() {
 			<Table sx={{ minWidth: 650 }} aria-label="customized table">
 			<TableHead>
 				<TableRow>
-				<StyledTableCell align="left">SNO</StyledTableCell>
+				<StyledTableCell align="left">Tid</StyledTableCell>
 				<StyledTableCell align="center">Name</StyledTableCell>
 				<StyledTableCell align="center">Email</StyledTableCell>
 				<StyledTableCell align="center">Courses</StyledTableCell>

@@ -77,7 +77,7 @@ function TableP() {
             <StyledTableCell align="center">StudentID</StyledTableCell>
             <StyledTableCell align="center">DateOfPost</StyledTableCell>
             <StyledTableCell align="center">GithubLink</StyledTableCell>
-            <StyledTableCell align="center"> </StyledTableCell>
+            <StyledTableCell align="center">Manage</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>

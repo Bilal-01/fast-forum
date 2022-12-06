@@ -85,7 +85,7 @@ function TableC() {
             <StyledTableCell align="center">PhoneNo</StyledTableCell>
             <StyledTableCell align="center">Time</StyledTableCell>
             <StyledTableCell align="center">Day</StyledTableCell>
-            <StyledTableCell align="center"> </StyledTableCell>
+            <StyledTableCell align="center">Manage</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
