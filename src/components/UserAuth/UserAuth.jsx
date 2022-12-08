@@ -9,7 +9,6 @@ import { deepPurple } from "@mui/material/colors";
 import { useFormik } from 'formik';
 import * as yup from "yup";
 import { useNavigate } from 'react-router-dom';
-import { ConstructionOutlined } from "@mui/icons-material";
 
 
 
@@ -29,7 +28,7 @@ const validationSchema = yup.object({
   function UserAuth(props){
 
     const data = useContext(UserContext);
-
+    const [error, setError] = useState('');
     const [isRegister, setIsRegister] = useState(false);
     const [isResetEntered, setIsResetEntered] = useState(false);
     const navigate = useNavigate();
@@ -48,8 +47,9 @@ const validationSchema = yup.object({
         validationSchema: validationSchema,
         onSubmit: (values) => {
             axios.post('http://localhost/forum/php/index.php', values).then(function(response){
-
-                console.log(response.data);
+                if(response.data.status === 0){
+                    alert('Error: ' + response.data.message);
+                }
                 if(isRegister){
                     values.name='';
                     values.email='';
