@@ -9,6 +9,7 @@ export {default as Forms} from './Blog/Forms/Forms';
 export {default as Teachers} from './Teachers/Teachers';
 export {default as Resources} from './Resources/Resources';
 export {default as Carpool} from './Carpool/Carpool';
+export {default as Library} from './Library/Library';
 export {default as Project} from './Project/Project';
 export {default as TimetablePage} from './TimetablePage/TimetablePage';
 export {default as Authentication} from './Authentication/Authentication';
