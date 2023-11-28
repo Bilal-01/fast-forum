@@ -5,7 +5,6 @@ import { useFormik } from 'formik';
 import axios from 'axios';
 import { useContext } from 'react';
 import UserContext from '../UserContext';
-import { useEffect } from 'react';
 
 const style = {
     position: 'absolute',
@@ -28,38 +27,27 @@ function EditPersonalInfoModal(props){
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-    const [userProfile, setUserProfile] = useState(null);
 
-    const getData = async () => {
-        let id = auth.user.id;
-        const { userProfile } = await axios.post('http://localhost/forum/php/api/setUserProfile.php', {uid: id});
-        setUserProfile(userProfile);
-
-    };
-    useEffect(() => {
-      getData();
-      console.log(userProfile);
-    }, []);
-    
     const formik = useFormik({
         initialValues: {
             uid: auth.user.id,
-            fullName: userProfile ? userProfile.full_name : '',
-            department: userProfile ? userProfile.department: '',
-            domain: userProfile ? userProfile.domain: '',
-            skill: userProfile ? userProfile.skill: '',
-            quote: userProfile ? userProfile.quote: '',
-            about: userProfile ? userProfile.about: '',
+            fullName: '',
+            department: '',
+            domain: '',
+            skill: '',
+            quote: '',
+            about: '',
         },
         onSubmit: (values) => {
             console.log(values);
             axios.post('http://localhost/forum/php/api/userProfile.php', values).then(function(res){
                 console.log(res.data);
             })
+
+            handleClose();
         }
 
     })
-
 
 
     return (

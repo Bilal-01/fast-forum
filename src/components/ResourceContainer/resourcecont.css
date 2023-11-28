@@ -15,17 +15,6 @@
 }
 
 
-.rimg-shadow{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 80vh;
-    background-color: #164457;
-    clip-path: ellipse(91% 66% at 64% 31%);
-    z-index: -5;
-}
-
 .resource-container > h1 {
     color: #fff;
     font-size: 90px;
@@ -42,11 +31,10 @@
 
 .br-bg{
     background-color: rgb(255, 255, 255);
-    height:30vh ;
+    height:10vh ;
 }
 
 .r-form-btn-container{
     width: 100%;
     text-align: center;
 }
-

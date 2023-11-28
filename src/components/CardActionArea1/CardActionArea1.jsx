@@ -64,8 +64,7 @@ function CardActionArea1() {
   }
 
   return (
-    <div>
-      <Grid container  >
+      <Grid container item xs={12}>
         {societies.map((society, i) => (
           <Grid item md={4} sx={{ boxShadow: 'none'}}>
             <SingleCard key={society.society_id} 
@@ -81,7 +80,6 @@ function CardActionArea1() {
           </Grid>
         ))}
       </Grid>
-    </div>
   );
 }
 export default CardActionArea1;
