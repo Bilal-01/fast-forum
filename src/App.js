@@ -16,7 +16,8 @@ import {
   Authentication,
   Admin,
   Canteens,
-  Menu
+  Menu,
+  Events
 } from './pages';
 
 import UserContext from './components/UserContext';
@@ -96,6 +97,8 @@ function App() {
           <Route path='/*' element={<Home />} />
           <Route path='/Canteens' element={<Canteens />} />
           <Route path='/Canteens/:params' element={<Menu />} />
+          <Route path='/Events' element={<Events />} />
+
         </Routes>
       </Router>
     </UserContext.Provider>

@@ -30,4 +30,5 @@ export {default as RequireAuth} from './UserAuth/RequireAuth.jsx';
 export {default as CanteensContainer} from './CanteensContainer/CanteensContainer'
 export {default as CanteensCard} from './CanteensContainer/CanteensCard'
 export {default as MenuContainer} from './Menu/MenuContainer'
+export {default as EventsContainer} from './Events/EventsContainer'
 
