@@ -7,7 +7,7 @@ function Library()
         
         <Navbar />
         <LibHeader />
-        <ModalL />
+        {/* <ModalL /> */}
         <TableL />
         <Footer />
     </>
