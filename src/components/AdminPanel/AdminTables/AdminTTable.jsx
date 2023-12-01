@@ -69,7 +69,7 @@ function AdminTTable() {
 			<Table sx={{ minWidth: 650 }} aria-label="customized table">
 			<TableHead>
 				<TableRow>
-				<StyledTableCell align="left">SNO</StyledTableCell>
+				<StyledTableCell align="left">Tid</StyledTableCell>
 				<StyledTableCell align="center">Name</StyledTableCell>
 				<StyledTableCell align="center">Email</StyledTableCell>
 				<StyledTableCell align="center">Courses</StyledTableCell>
@@ -84,7 +84,7 @@ function AdminTTable() {
 					sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
 				>
 					<StyledTableCell component="th" scope="row">
-					{i+1}
+					{row.tid}
 					</StyledTableCell>
 				<StyledTableCell align="center">{row.tname}</StyledTableCell>
                 <StyledTableCell align="center">{row.email}</StyledTableCell>

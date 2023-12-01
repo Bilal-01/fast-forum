@@ -42,7 +42,7 @@ function NavList(){
                 Home
             </Button>
             <Button onClick={() => (navigate('/blog'))} sx={{color: '#eeee'}}>
-                Explore
+                Blogs
             </Button>
             <Button onClick={() => (navigate('/about'))} sx={{color: '#eeee'}}>
                 About Us
