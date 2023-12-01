@@ -45,6 +45,7 @@ function CardActionArea1() {
           </Grid>
         ))}
       </Grid>
+    </div>
   );
 }
 export default CardActionArea1;

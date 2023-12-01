@@ -108,13 +108,15 @@ export default function PersistentDrawerLeft() {
                 sx={{ mr: 2, ...(open && { display: 'none' }) }}
               >
                 <MenuIcon />
-              </IconButton>
-              :<NavList/>
+              </IconButton> : 
+              <NavList/>
             }  
           </Toolbar>
 
         </div>
       </AppBar>
+      {
+        auth.user ? 
       <Drawer
         sx={{
           width: drawerWidth,
@@ -130,7 +132,7 @@ export default function PersistentDrawerLeft() {
         anchor="left"
         open={open}
       >
-        <DrawerHeader sx={{background:'#16213E', color:"white"}}>
+          <DrawerHeader sx={{background:'#16213E', color:"white"}}>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon sx={{color:"white"}}/> : <ChevronRightIcon />}
           </IconButton>
@@ -155,6 +157,20 @@ export default function PersistentDrawerLeft() {
             <Link style={{color:"white", textDecorationLine:"none"}} to="/about">
               <ListItemButton >
                 <ListItemText primary="About" />
+              </ListItemButton>
+            </Link>
+          </ListItem>
+          <ListItem disablePadding>
+            <Link style={{color:"white", textDecorationLine:"none"}} to="/blogs">
+              <ListItemButton >
+                <ListItemText primary="Blogs" />
+              </ListItemButton>
+            </Link>
+          </ListItem>
+          <ListItem disablePadding>
+            <Link style={{color:"white", textDecorationLine:"none"}} to="/Canteens">
+              <ListItemButton >
+                <ListItemText primary="Canteen" />
               </ListItemButton>
             </Link>
           </ListItem>
@@ -210,6 +226,8 @@ export default function PersistentDrawerLeft() {
           </ListItem>
         </List>
       </Drawer>
+      : null
+    }
     </Box>
   );
 }
