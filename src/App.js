@@ -93,9 +93,10 @@ function App() {
                   
           <Route path='/authentication' element={<Authentication />} />
           <Route path='/admin' element={<Admin />} />
-          <Route path='/*' element={<Home />} />
           <Route path='/Canteens' element={<Canteens />} />
           <Route path='/Canteens/:params' element={<Menu />} />
+          
+          <Route path='/*' element={<Home />} />
         </Routes>
       </Router>
     </UserContext.Provider>

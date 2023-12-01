@@ -21,7 +21,8 @@
 .header-heading{
     position: absolute;
     top: 0;
-    left: 30%;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
     opacity: 0;
     font-size: 3.2rem;
@@ -53,4 +54,23 @@
     background-color: #c5ecfc;
     clip-path: ellipse(91% 66% at 64% 31%);
     z-index: -5;
+}
+
+@media screen and (max-width: 768px) {
+    .header-heading{
+        top: 50;
+        left: 50;
+        transform: translateX(-50%);
+        font-size: 2rem;
+        opacity: 0;
+    }
+
+    .bg-img{
+        height: 60vh;
+    }
+    .img-shadow{
+        clip-path: ellipse(91% 42% at 64% 31%);
+    }
+
+
 }

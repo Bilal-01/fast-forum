@@ -4,12 +4,12 @@ import { Navbar, SocietyContainer, CardActionArea1,SocietyContainerBottom } from
 
 function Societies() {
     return (
-        <>
+        <div>
             <Navbar />
             <SocietyContainer />
             <CardActionArea1 />
             <SocietyContainerBottom />
-        </>
+        </div>
     )
 }
 
