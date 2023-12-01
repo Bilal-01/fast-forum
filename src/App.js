@@ -9,6 +9,7 @@ import {
   Details, 
   Profile,
   Carpool,
+  Library,
   Teachers,
   Resources,
   Project,
@@ -66,14 +67,15 @@ function App() {
             </RequireAuth>
           } />
           <Route path='/resources' element = {
-            <RequireAuth>
               <Resources/>
-            </RequireAuth>
+          } />
+          <Route path='/library' element = {
+              <Library/>
           } />
           <Route path="/carpool" element = {
-            <RequireAuth>
+            
               <Carpool />    
-            </RequireAuth>
+            
           } />
           <Route path="/project" element = {
             <RequireAuth>    
