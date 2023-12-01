@@ -1,5 +1,7 @@
 import React from 'react';
-import {Navbar, ResourceContainer,ModalR,TableR} from '../../components';
+import {Navbar, Footer, ResourceContainer,ModalR,TableR} from '../../components';
+import './resources.css'
+
 function Resources()
 {
     return (
@@ -7,7 +9,10 @@ function Resources()
             <Navbar/>
             <ResourceContainer />
             <ModalR/>
-            <TableR/>
+            <div className='table-container'>
+                <TableR/>
+            </div>
+            <Footer></Footer>
         </>
         
     );

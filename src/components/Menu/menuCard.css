@@ -1,0 +1,55 @@
+.main-image-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  /* overflow: hidden; */
+ height:40vh;
+}
+.main-image {
+  width: auto;
+  height: auto;
+}
+.main-image-left {
+  width: auto;
+  height: 30vh;
+  box-sizing: border-box;
+}
+.menu-img{
+    padding: 10px;
+    height: 50%;
+}
+
+.meal-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    /* padding: 20px; */
+    width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1); /* Add a box shadow */
+    background: linear-gradient(to right, #264598, #feb47b); /* Add a gradient background */
+    border-radius: 10px;
+    font-size: 100%;
+}
+
+.meal-container:hover{
+    background: rgb(45, 45, 81);
+    color: white;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+  
+.meal-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: left;
+  padding: 20px;
+}
+.title-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  width: 90%;
+}

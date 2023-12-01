@@ -16,7 +16,10 @@ import {
   TimetablePage, 
   Authentication,
   Admin,
+  Canteens,
+  Menu
 } from './pages';
+
 import UserContext from './components/UserContext';
 import {BrowserRouter as Router, Switch, Route, Routes, Navigate, useNavigate, json} from 'react-router-dom';
 import './App.css';
@@ -92,6 +95,9 @@ function App() {
                   
           <Route path='/authentication' element={<Authentication />} />
           <Route path='/admin' element={<Admin />} />
+          <Route path='/Canteens' element={<Canteens />} />
+          <Route path='/Canteens/:params' element={<Menu />} />
+          
           <Route path='/*' element={<Home />} />
         </Routes>
       </Router>

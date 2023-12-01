@@ -30,3 +30,6 @@ export {default as UserAuth} from './UserAuth/UserAuth';
 export {default as FileUpload} from './FileUpload/FileUpload';
 export {default as AdminPanel} from './AdminPanel/AdminPanel';
 export {default as RequireAuth} from './UserAuth/RequireAuth.jsx';
+export {default as CanteensContainer} from './CanteensContainer/CanteensContainer'
+export {default as CanteensCard} from './CanteensContainer/CanteensCard'
+export {default as MenuContainer} from './Menu/MenuContainer'
