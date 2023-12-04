@@ -14,6 +14,7 @@ import AdminBTable from './AdminTables/AdminBTable';
 import AdminUTable from './AdminTables/AdminUTable';
 // import AdminSTable from './AdminTables/AdminSTable';
 // import AdminTTable from './AdminTables/AdminTTable';
+import AdminETable from './AdminTables/AdminETable';
 
 
 function ManageComponent(props)
@@ -55,6 +56,8 @@ function ManageComponent(props)
                     component === 'Timetable' ? <AdminTTContainer />:
                     component === 'Courses' ? <AdminCoContainer />:
                     component === 'Users' ? <AdminUTable /> :
+                    component === 'Events' ? <AdminETable /> :
+
                     null
                     
                 }

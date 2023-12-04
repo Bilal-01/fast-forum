@@ -82,6 +82,14 @@ function AdminSidebar(props){
                 getBtn: true
             })
         }
+        if(str === 'Events'){
+            admin.setManageComponent({
+                component: 'Events',
+                addBtn: true,
+                deleteBtn: true,
+                getBtn: true
+            })
+        }
     }
 
     return(
@@ -103,6 +111,8 @@ function AdminSidebar(props){
                 <p>Extra Curricular</p>
                     <button className='admin-sb-btn' autoFocus="off" onClick={() => handleClick('Societies')}>Societies</button>
                     <button className='admin-sb-btn' autoFocus="off" onClick={() => handleClick('Blogs')}>Blogs</button>
+                    <button className='admin-sb-btn' autoFocus="off" onClick={() => handleClick('Events')}>Events</button>
+
             </div>
             <div className='admin-sidebar-content'>
                 <p>Services</p>

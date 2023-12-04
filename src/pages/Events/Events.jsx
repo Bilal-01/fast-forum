@@ -1,6 +1,5 @@
 import React from 'react';
 import {Navbar, EventsContainer,Footer} from '../../components';
-import { useParams } from 'react-router-dom';
 
 function Events()
 {
