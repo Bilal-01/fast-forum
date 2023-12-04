@@ -70,7 +70,7 @@ function CardContainer(){
                     <Card 
                     icon = {<QuizIcon color='primary' fontSize='large'/>}
                     heading="Library" 
-                    description="Need a book? Reserve it with one click!" 
+                    description="Search for a book!" 
                     color="primary"
                     border="1px solid yellow"
                 />
