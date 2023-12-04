@@ -17,9 +17,9 @@ import AdminUTable from "./AdminTables/AdminUTable";
 import AdminETable from "./AdminTables/AdminETable";
 import AdminLTable from "./AdminTables/AdminLTable";
 import AdminLContainer from "./AdminContainer/AdminLContainer";
-import AdminEContainer from './AdminContainer/AdminEContainer.jsx';
-import AdminMDContainer from './AdminContainer/AdminMDContainer.jsx';
-import AdminMSCContainer from './AdminContainer/AdminMSCContainer.jsx';
+import AdminEContainer from "./AdminContainer/AdminEContainer.jsx";
+import AdminMDContainer from "./AdminContainer/AdminMDContainer.jsx";
+import AdminMSCContainer from "./AdminContainer/AdminMSCContainer.jsx";
 function ManageComponent(props) {
   const admin = useContext(AdminContext);
 
@@ -65,9 +65,11 @@ function ManageComponent(props) {
         ) : component === "Users" ? (
           <AdminUTable />
         ) : component === "Events" ? (
-          <AdminEContainer />                    component === 'Dhabba' ?<AdminMDContainer/>:
-                    component === 'Shawarma-corner' ?<AdminMSCContainer/>:
-
+          <AdminEContainer />
+        ) : component === "Dhabba" ? (
+          <AdminMDContainer />
+        ) : component === "Shawarma-corner" ? (
+          <AdminMSCContainer />
         ) : component === "Library" ? (
           <AdminLContainer />
         ) : null}
