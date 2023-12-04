@@ -79,7 +79,7 @@ function AdminSTable() {
 				<StyledTableCell align="center">{row.society_id}</StyledTableCell>
 				<StyledTableCell align="center">{row.sname}</StyledTableCell>
                 <StyledTableCell align="center">{row.sdescription}</StyledTableCell>
-                <StyledTableCell align="center">{row.head_id}</StyledTableCell>
+                <StyledTableCell align="center">{row.t_name}</StyledTableCell>
 				<StyledTableCell align="center"><Link href={'/profile/'+ row.president_id}>{row.president_id}</Link></StyledTableCell>
                 <StyledTableCell align="center"><Link href={row.socialMedia_link}>{row.socialMedia_link}</Link></StyledTableCell>
                 <StyledTableCell align="center"><Button variant="contained" onClick={(event)=>deleteEntry(row.society_id)}>Delete</Button></StyledTableCell>

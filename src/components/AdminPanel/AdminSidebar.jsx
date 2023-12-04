@@ -90,6 +90,22 @@ function AdminSidebar(props){
                 getBtn: true
             })
         }
+        if(str === 'Dhabba'){
+            admin.setManageComponent({
+                component: 'Dhabba',
+                addBtn: true,
+                deleteBtn: true,
+                getBtn: true
+            })
+        }
+        if(str === 'Shawarma-corner'){
+            admin.setManageComponent({
+                component: 'Shawarma-corner',
+                addBtn: true,
+                deleteBtn: true,
+                getBtn: true
+            })
+        }
     }
 
     return(
@@ -118,6 +134,12 @@ function AdminSidebar(props){
                 <p>Services</p>
                     <button className='admin-sb-btn' autoFocus="off" onClick={() => handleClick('Timetable')}>Timetable</button>
                     <button className='admin-sb-btn' autoFocus="off" onClick={() => handleClick('Carpool')}>Carpool</button>
+            </div>
+            <div className='admin-sidebar-content'>
+                <p>Canteens</p>
+                    <button className='admin-sb-btn' autoFocus="off" onClick={() => handleClick('Dhabba')}>Dhabba</button>
+                    <button className='admin-sb-btn' autoFocus="off" onClick={() => handleClick('Shawarma-corner')}>Shawarma-Corner</button>
+
             </div>
         </div>
     )

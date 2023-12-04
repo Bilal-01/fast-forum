@@ -15,7 +15,9 @@ import AdminUTable from './AdminTables/AdminUTable';
 // import AdminSTable from './AdminTables/AdminSTable';
 // import AdminTTable from './AdminTables/AdminTTable';
 import AdminETable from './AdminTables/AdminETable';
-
+import AdminEContainer from './AdminContainer/AdminEContainer.jsx';
+import AdminMDContainer from './AdminContainer/AdminMDContainer.jsx';
+import AdminMSCContainer from './AdminContainer/AdminMSCContainer.jsx';
 
 function ManageComponent(props)
 {
@@ -56,7 +58,9 @@ function ManageComponent(props)
                     component === 'Timetable' ? <AdminTTContainer />:
                     component === 'Courses' ? <AdminCoContainer />:
                     component === 'Users' ? <AdminUTable /> :
-                    component === 'Events' ? <AdminETable /> :
+                    component === 'Events' ? <AdminEContainer /> :
+                    component === 'Dhabba' ?<AdminMDContainer/>:
+                    component === 'Shawarma-corner' ?<AdminMSCContainer/>:
 
                     null
                     
