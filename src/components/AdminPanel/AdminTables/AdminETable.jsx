@@ -61,7 +61,7 @@ function AdminSTable() {
 			<Table sx={{ minWidth: 650 }} aria-label="customized table">
 			<TableHead>
 				<TableRow>
-				<StyledTableCell align="left">EID</StyledTableCell>
+				<StyledTableCell align="left">SNo</StyledTableCell>
 				<StyledTableCell align="center">Name</StyledTableCell>
 				<StyledTableCell align="center">Month</StyledTableCell>
 				<StyledTableCell align="center">Society</StyledTableCell>
@@ -76,12 +76,12 @@ function AdminSTable() {
 					key={row.id}
 					sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
 				>
-				<StyledTableCell align="center">{row.id}</StyledTableCell>
+				<StyledTableCell align="center">{i+1}</StyledTableCell>
 				<StyledTableCell align="center">{row.event_name}</StyledTableCell>
-                <StyledTableCell align="center">{row.Month}</StyledTableCell>
+                <StyledTableCell align="center">{row.month}</StyledTableCell>
                 <StyledTableCell align="center">{row.society_name}</StyledTableCell>
                 <StyledTableCell align="center">{row.image_path}</StyledTableCell>
-                <StyledTableCell align="center"><Button variant="contained" onClick={(event)=>deleteEntry(row.society_id)}>Delete</Button></StyledTableCell>
+                <StyledTableCell align="center"><Button variant="contained" onClick={(event)=>deleteEntry(row.id)}>Delete</Button></StyledTableCell>
 				</StyledTableRow>
 				))}
 			</TableBody>

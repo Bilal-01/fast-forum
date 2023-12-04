@@ -90,6 +90,14 @@ function AdminSidebar(props){
                 getBtn: true
             })
         }
+        if(str === 'Library'){
+            admin.setManageComponent({
+                component: 'Library',
+                addBtn: true,
+                deleteBtn: true,
+                getBtn: true
+            })
+        }
     }
 
     return(
@@ -118,6 +126,7 @@ function AdminSidebar(props){
                 <p>Services</p>
                     <button className='admin-sb-btn' autoFocus="off" onClick={() => handleClick('Timetable')}>Timetable</button>
                     <button className='admin-sb-btn' autoFocus="off" onClick={() => handleClick('Carpool')}>Carpool</button>
+                    <button className='admin-sb-btn' autoFocus="off" onClick={() => handleClick('Library')}>Library</button>
             </div>
         </div>
     )

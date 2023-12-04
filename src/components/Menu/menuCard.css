@@ -15,9 +15,15 @@
   height: 30vh;
   box-sizing: border-box;
 }
+
+.meal-img-container{
+  padding: 10px 20px;
+}
 .menu-img{
     padding: 10px;
-    height: 50%;
+    height: 200px;
+    width: 256px;
+    border-radius: 25px;
 }
 
 .meal-container {
