@@ -12,14 +12,13 @@ import AdminRTable from "./AdminTables/AdminRTable";
 import AdminCTable from "./AdminTables/AdminCTable";
 import AdminBTable from "./AdminTables/AdminBTable";
 import AdminUTable from "./AdminTables/AdminUTable";
-// import AdminSTable from './AdminTables/AdminSTable';
-// import AdminTTable from './AdminTables/AdminTTable';
 import AdminETable from "./AdminTables/AdminETable";
 import AdminLTable from "./AdminTables/AdminLTable";
 import AdminLContainer from "./AdminContainer/AdminLContainer";
 import AdminEContainer from "./AdminContainer/AdminEContainer.jsx";
 import AdminMDContainer from "./AdminContainer/AdminMDContainer.jsx";
 import AdminMSCContainer from "./AdminContainer/AdminMSCContainer.jsx";
+
 function ManageComponent(props) {
   const admin = useContext(AdminContext);
 
