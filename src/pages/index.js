@@ -16,4 +16,5 @@ export {default as Authentication} from './Authentication/Authentication';
 export {default as Admin} from './Admin/Admin';
 export {default as Canteens} from './Canteens/Canteens';
 export {default as Menu} from './Canteens/Menu';
+export {default as Events} from './Events/Events';
 

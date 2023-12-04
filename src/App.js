@@ -17,7 +17,8 @@ import {
   Authentication,
   Admin,
   Canteens,
-  Menu
+  Menu,
+  Events
 } from './pages';
 
 import UserContext from './components/UserContext';
@@ -77,9 +78,9 @@ function App() {
               </RequireAuth>
           } />
           <Route path="/carpool" element = {
-            <RequireAuth>
+            <RequireAuth><RequireAuth>
               <Carpool />
-            </RequireAuth>    
+            </RequireAuth></RequireAuth>    
           } />
           <Route path="/project" element = {
             <RequireAuth>    
@@ -101,6 +102,8 @@ function App() {
           <Route path='/admin' element={<Admin />} />
           <Route path='/Canteens' element={<Canteens />} />
           <Route path='/Canteens/:params' element={<Menu />} />
+          <Route path='/Events' element={<Events />} />
+
           
           <Route path='/*' element={<Home />} />
         </Routes>
