@@ -9,13 +9,17 @@ import {
   Details, 
   Profile,
   Carpool,
+  Library,
   Teachers,
   Resources,
   Project,
   TimetablePage, 
   Authentication,
   Admin,
+  Canteens,
+  Menu
 } from './pages';
+
 import UserContext from './components/UserContext';
 import {BrowserRouter as Router, Switch, Route, Routes, Navigate, useNavigate, json} from 'react-router-dom';
 import './App.css';
@@ -63,14 +67,15 @@ function App() {
             </RequireAuth>
           } />
           <Route path='/resources' element = {
-            <RequireAuth>
               <Resources/>
-            </RequireAuth>
+          } />
+          <Route path='/library' element = {
+              <Library/>
           } />
           <Route path="/carpool" element = {
-            // <RequireAuth>
-            // </RequireAuth>
-            <Carpool />    
+            <RequireAuth>
+              <Carpool />    
+            </RequireAuth>
           } />
           <Route path="/project" element = {
             <RequireAuth>    
@@ -90,6 +95,9 @@ function App() {
                   
           <Route path='/authentication' element={<Authentication />} />
           <Route path='/admin' element={<Admin />} />
+          <Route path='/Canteens' element={<Canteens />} />
+          <Route path='/Canteens/:params' element={<Menu />} />
+          
           <Route path='/*' element={<Home />} />
         </Routes>
       </Router>

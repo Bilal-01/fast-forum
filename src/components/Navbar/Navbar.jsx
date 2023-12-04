@@ -70,6 +70,16 @@ export default function PersistentDrawerLeft() {
   const auth = useContext(UserContext);
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+  const [isMobile, setIsMobile] = React.useState(window.innerWidth < 576); 
+
+  const handleResize = () => {
+    setIsMobile(window.innerWidth < 768);
+  };
+
+  React.useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -83,26 +93,30 @@ export default function PersistentDrawerLeft() {
     <Box sx={{ flexGrow: 1, marginBottom:'64px' }}>
       <CssBaseline />
       <AppBar position="fixed" sx={auth.user && auth.user.role === 0 ? { background: '#16213E'}: null} open={open}>
-        <Toolbar>
-          {
-            auth.user?
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              onClick={handleDrawerOpen}
-              edge="start"
-              sx={{ mr: 2, ...(open && { display: 'none' }) }}
-            >
-              <MenuIcon />
-            </IconButton>
-            :null
-          }
-          <Typography variant="h6" component="a" sx={{ flexGrow: 1, cursor: 'pointer', display: 'inline' }}>
+        <div className='appbar-container'>
+          <Typography variant="h6" component="a" sx={{ flexGrow: 1, cursor: 'pointer', display: 'inline', paddingX: '30px' }}>
             Fast Directory
           </Typography>
-          <NavList/>
-        </Toolbar>
+          <Toolbar>
+            {
+              isMobile ?
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                onClick={handleDrawerOpen}
+                edge="start"
+                sx={{ mr: 2, ...(open && { display: 'none' }) }}
+              >
+                <MenuIcon />
+              </IconButton> : 
+              <NavList/>
+            }  
+          </Toolbar>
+
+        </div>
       </AppBar>
+      {
+        auth.user ? 
       <Drawer
         sx={{
           width: drawerWidth,
@@ -118,13 +132,56 @@ export default function PersistentDrawerLeft() {
         anchor="left"
         open={open}
       >
-        <DrawerHeader sx={{background:'#16213E', color:"white"}}>
+          <DrawerHeader sx={{background:'#16213E', color:"white"}}>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon sx={{color:"white"}}/> : <ChevronRightIcon />}
           </IconButton>
         </DrawerHeader>
         <Divider />
         <List sx={{background:'#16213E'}}>
+          <ListItem disablePadding>
+            <Link style={{color:"white", textDecorationLine:"none"}} to="/home">
+              <ListItemButton >
+                <ListItemText primary="Home" />
+              </ListItemButton>
+            </Link>
+          </ListItem>
+          <ListItem disablePadding>
+            <Link style={{color:"white", textDecorationLine:"none"}} to="/authentication">
+              <ListItemButton >
+                <ListItemText primary="Login" />
+              </ListItemButton>
+            </Link>
+          </ListItem>
+          <ListItem disablePadding>
+            <Link style={{color:"white", textDecorationLine:"none"}} to="/about">
+              <ListItemButton >
+                <ListItemText primary="About" />
+              </ListItemButton>
+            </Link>
+          </ListItem>
+          <ListItem disablePadding>
+            <Link style={{color:"white", textDecorationLine:"none"}} to="/blogs">
+              <ListItemButton >
+                <ListItemText primary="Blogs" />
+              </ListItemButton>
+            </Link>
+          </ListItem>
+          <ListItem disablePadding>
+            <Link style={{color:"white", textDecorationLine:"none"}} to="/Canteens">
+              <ListItemButton >
+                <ListItemText primary="Canteen" />
+              </ListItemButton>
+            </Link>
+          </ListItem>
+          <ListItem disablePadding>
+            <Link style={{color:"white", textDecorationLine:"none"}} to="/contact">
+              <ListItemButton >
+                <ListItemText primary="Contact" />
+              </ListItemButton>
+            </Link>
+          </ListItem>
+          <hr />
           <ListItem disablePadding>
             <Link style={{color:"white", textDecorationLine:"none"}} to="/resources">
               <ListItemButton >
@@ -169,6 +226,8 @@ export default function PersistentDrawerLeft() {
           </ListItem>
         </List>
       </Drawer>
+      : null
+    }
     </Box>
   );
 }
