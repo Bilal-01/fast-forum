@@ -9,7 +9,7 @@ function ResourceContainer()
                 <div className="resource-container">
                     <img className='rbg-img' src={RImg} alt="background" />
                     <div className="rimg-shadow"></div>
-                    <h1>
+                    <h1 className='resource-heading'>
                         Resources
                     </h1>
                 </div>

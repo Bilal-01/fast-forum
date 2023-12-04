@@ -67,7 +67,7 @@ function TableR() {
 	  	})
 	}
 	return (
-		<TableContainer component={Paper} sx={{width: '95%', margin: '10px auto'}}>
+		<TableContainer component={Paper} sx={{width: '95%', margin: '50px auto'}}>
 			<Table sx={{ minWidth: 650 }} aria-label="customized table">
 			<TableHead>
 				<TableRow>
