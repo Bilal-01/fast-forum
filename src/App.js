@@ -68,9 +68,9 @@ function App() {
             </RequireAuth>
           } />
           <Route path="/carpool" element = {
-            <RequireAuth>
-              <Carpool />    
-            </RequireAuth>
+            // <RequireAuth>
+            // </RequireAuth>
+            <Carpool />    
           } />
           <Route path="/project" element = {
             <RequireAuth>    
