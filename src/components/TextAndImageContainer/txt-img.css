@@ -7,17 +7,18 @@
 .text-container, .img-container{
     width: 50%;
     height: 100%;
+    margin-top: 50px;
 }
 
 .txt-container-heading{
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: #1976d2;
 }
 
 .txt-container-txt{
     width: 80%;
     align-items: left;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 
 

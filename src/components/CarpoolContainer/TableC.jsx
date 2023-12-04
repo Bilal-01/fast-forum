@@ -73,7 +73,7 @@ function TableC() {
   }
   // console.log(rows[0].Days);
   return (
-    <TableContainer component={Paper} sx={{ width: '95%', margin: '10px auto' }}>
+    <TableContainer component={Paper} sx={{ width: '95%', margin: '10px auto',minHeight: '50vh' }}>
       <Table sx={{ minWidth: 650 }} aria-label="customized table">
         <TableHead>
           <TableRow>

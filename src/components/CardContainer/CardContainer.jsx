@@ -81,7 +81,7 @@ function CardContainer(){
                     <Card 
                     icon = {<QuizIcon color='primary' fontSize='large'/>}
                     heading="Carpool" 
-                    description="Search for a book!" 
+                    description="Search for a ride!" 
                     color="primary"
                     border="1px solid yellow"
                 />
@@ -92,7 +92,7 @@ function CardContainer(){
                     <Card 
                     icon = {<QuizIcon color='primary' fontSize='large'/>}
                     heading="Teachers" 
-                    description="Search for a book!" 
+                    description="Search for a teacher!" 
                     color="primary"
                     border="1px solid yellow"
                 />

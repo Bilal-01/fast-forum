@@ -1,7 +1,7 @@
-.mainImg {
+.cp-mainImg {
     object-fit: cover;
     margin:60px auto ;
-    width: 650px;
+    width: 512px;
     display: flex;
     justify-content: center;
 }
