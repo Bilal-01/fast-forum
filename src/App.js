@@ -68,15 +68,19 @@ function App() {
             </RequireAuth>
           } />
           <Route path='/resources' element = {
-              <Resources/>
+            <RequireAuth>
+              <Resources />
+            </RequireAuth>
           } />
           <Route path='/library' element = {
-              <Library/>
+              <RequireAuth>
+                <Library />
+              </RequireAuth>
           } />
           <Route path="/carpool" element = {
-            <RequireAuth>
-              <Carpool />    
-            </RequireAuth>
+            <RequireAuth><RequireAuth>
+              <Carpool />
+            </RequireAuth></RequireAuth>    
           } />
           <Route path="/project" element = {
             <RequireAuth>    

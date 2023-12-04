@@ -5,10 +5,18 @@ import './LibHeader.css';
 function LibHeader()
 {
     return(
-        <div className='libHeader'>            
-            <video src={image} autoPlay loop muted/>
-            <img className='mainImg' src={image}/>
-        </div>
+        <>
+            <div className='libHeader'>            
+                {/* <video src={image} autoPlay loop muted/> */}
+                <img className='mainImg' src={image}/>
+            </div>
+
+            <div className="lib-heading">
+                Library Books
+            </div>
+        
+        
+        </>
     )
 }
 export default LibHeader;
