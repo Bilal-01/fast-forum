@@ -18,13 +18,13 @@ function ExploreBlogsSection(){
                                 Explore
                             </h3>
                             <p className='text-content'>
-                                Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem.
+                                The National University of Computer & Emerging Sciences has the honor of being the first multi-campus private sector university set up under the Federal Charter granted by Ordinance No.XXIII of 2000, dated July 01, 2000.
                             </p>   
                             <h3 className="text-heading">
-                                Explore
+                                Why FAST?
                             </h3>
                             <p className='text-content'>
-                                Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem.
+                                Founded as a Federally Chartered University in July 2000, the National University of Computer and Emerging Sciences is a premier University of Pakistan, renowned for quality and impact of its students in the development of local software and other industries.
                             </p>
                         </div>
                     </div>

@@ -1,0 +1,10 @@
+.mainImg {
+    width: 100%;
+    height: 75vh; /* Adjust the height as needed, this will cover 50% of the viewport height */
+    object-fit: cover;
+}
+
+.cp-form-btn-container{
+    width: 100%;
+    text-align: center;
+}

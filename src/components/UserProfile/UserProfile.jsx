@@ -114,13 +114,6 @@ function UserProfile(props){
                         <div className="user-profile-about">
                             <h1 className="user-profile-heading">
                                 About
-                                {   
-                                    auth.user.id === params.id
-                                    ?
-                                    <EditPersonalInfoModal user={user} type="about" />
-                                    :
-                                    null
-                                }
                             </h1>
                             <p>
                                 {user ? user.about : 'No about to show'}

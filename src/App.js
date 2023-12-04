@@ -9,6 +9,7 @@ import {
   Details, 
   Profile,
   Carpool,
+  Library,
   Teachers,
   Resources,
   Project,
@@ -67,9 +68,10 @@ function App() {
             </RequireAuth>
           } />
           <Route path='/resources' element = {
-            <RequireAuth>
               <Resources/>
-            </RequireAuth>
+          } />
+          <Route path='/library' element = {
+              <Library/>
           } />
           <Route path="/carpool" element = {
             <RequireAuth>
@@ -94,11 +96,12 @@ function App() {
                   
           <Route path='/authentication' element={<Authentication />} />
           <Route path='/admin' element={<Admin />} />
-          <Route path='/*' element={<Home />} />
           <Route path='/Canteens' element={<Canteens />} />
           <Route path='/Canteens/:params' element={<Menu />} />
           <Route path='/Events' element={<Events />} />
 
+          
+          <Route path='/*' element={<Home />} />
         </Routes>
       </Router>
     </UserContext.Provider>

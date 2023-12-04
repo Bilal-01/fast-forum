@@ -9,3 +9,10 @@
 .single-card{
     padding: 10px 10px;
 }
+
+@media only screen and (max-width: 768px) {
+    .card-wrapper{
+        flex-direction: column;
+        height: auto;
+    }
+}
