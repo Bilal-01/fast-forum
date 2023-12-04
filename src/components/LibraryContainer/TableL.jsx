@@ -1,4 +1,4 @@
-// import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 // import { styled } from '@mui/material/styles';
 // import Table from '@mui/material/Table';
 // import TableBody from '@mui/material/TableBody';
@@ -7,9 +7,9 @@
 // import TableHead from '@mui/material/TableHead';
 // import TableRow from '@mui/material/TableRow';
 // import Paper from '@mui/material/Paper';
-// import axios from 'axios';
-// import UserContext from '../UserContext';
-// import { useContext } from 'react';
+import axios from "axios";
+import UserContext from "../UserContext";
+import { useContext } from "react";
 // import Button from '@mui/material/Button';
 
 // const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -36,20 +36,24 @@
 // }));
 
 // function TableL() {
-//   const auth=useContext(UserContext);
-// 	var stud=''
-//     {auth.user? stud=auth.user.id:stud=''}
-//   const [rows, setRows] = useState([])
-//   useEffect(() => {
-//      refreshCarpool();
-//   }, [])
-//   function deleteEntry(Rid){
-//     let id= Rid
-//     console.log(id)
-//     axios.delete('http://localhost/forum/php/api/carpool.php', {data: id}).then(function(response){
-//         console.log(response.data)
-//         refreshCarpool();
-//     })
+// const auth = useContext(UserContext);
+// var stud = "";
+// {
+//   auth.user ? (stud = auth.user.id) : (stud = "");
+// }
+// const [rows, setRows] = useState([]);
+// useEffect(() => {
+//   refreshCarpool();
+// }, []);
+// function deleteEntry(Rid) {
+//   let id = Rid;
+//   console.log(id);
+//   axios
+//     .delete("http://localhost/forum/php/api/carpool.php", { data: id })
+//     .then(function (response) {
+//       console.log(response.data);
+//       refreshCarpool();
+//     });
 // }
 //   function refreshCarpool() {
 //     axios.get("http://localhost/forum/php/api/carpool.php").then(function (response) {
@@ -103,172 +107,204 @@
 // }
 // export default TableL;
 
-import { DataGrid, GridToolbar } from '@mui/x-data-grid';
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 
 // Assuming your book dataset is stored in the 'books' variable
 const books = [
   {
-    "ISBN": "978-0-306-40615-7",
-    "title": "The Great Gatsby",
-    "author": "F. Scott Fitzgerald",
-    "description": "A classic novel depicting the roaring twenties and the American Dream.",
-    "pages": 180,
-    "rating": 4.5,
-    "available": true,
+    ISBN: "978-0-306-40615-7",
+    title: "The Great Gatsby",
+    author: "F. Scott Fitzgerald",
+    description:
+      "A classic novel depicting the roaring twenties and the American Dream.",
+    pages: 180,
+    rating: 4.5,
+    available: true,
   },
   {
-    "ISBN": "978-0-7475-3269-6",
-    "title": "Harry Potter and the Philosopher's Stone",
-    "author": "J.K. Rowling",
-    "description": "The first book in the Harry Potter series, introducing the magical world of Hogwarts.",
-    "pages": 320,
-    "rating": 4.5,
-    "available": true
+    ISBN: "978-0-7475-3269-6",
+    title: "Harry Potter and the Philosopher's Stone",
+    author: "J.K. Rowling",
+    description:
+      "The first book in the Harry Potter series, introducing the magical world of Hogwarts.",
+    pages: 320,
+    rating: 4.5,
+    available: true,
   },
   {
-    "ISBN": "978-0-399-14861-0",
-    "title": "To Kill a Mockingbird",
-    "author": "Harper Lee",
-    "description": "A novel exploring racial injustice and moral growth in the American South.",
-    "pages": 281,
-    "rating": 4.5,
-    "available": true
+    ISBN: "978-0-399-14861-0",
+    title: "To Kill a Mockingbird",
+    author: "Harper Lee",
+    description:
+      "A novel exploring racial injustice and moral growth in the American South.",
+    pages: 281,
+    rating: 4.5,
+    available: true,
   },
   {
-    "ISBN": "978-0-618-06848-0",
-    "title": "The Catcher in the Rye",
-    "author": "J.D. Salinger",
-    "description": "A coming-of-age novel narrated by a teenager named Holden Caulfield.",
-    "pages": 224,
-    "rating": 4.5,
-    "available": true
+    ISBN: "978-0-618-06848-0",
+    title: "The Catcher in the Rye",
+    author: "J.D. Salinger",
+    description:
+      "A coming-of-age novel narrated by a teenager named Holden Caulfield.",
+    pages: 224,
+    rating: 4.5,
+    available: true,
   },
   {
-    "ISBN": "978-1-4165-8638-6",
-    "title": "The Da Vinci Code",
-    "author": "Dan Brown",
-    "description": "A thriller novel involving a conspiracy related to the works of Leonardo da Vinci.",
-    "pages": 689,
-    "rating": 4.5,
-    "available": true
+    ISBN: "978-1-4165-8638-6",
+    title: "The Da Vinci Code",
+    author: "Dan Brown",
+    description:
+      "A thriller novel involving a conspiracy related to the works of Leonardo da Vinci.",
+    pages: 689,
+    rating: 4.5,
+    available: true,
   },
   {
-    "ISBN": "978-0-399-14861-0",
-    "title": "To Kill a Mockingbird",
-    "author": "Harper Lee",
-    "description": "A novel exploring racial injustice and moral growth in the American South.",
-    "pages": 281,
-    "rating": 4.5,
-    "available": true
+    ISBN: "978-0-399-14861-0",
+    title: "To Kill a Mockingbird",
+    author: "Harper Lee",
+    description:
+      "A novel exploring racial injustice and moral growth in the American South.",
+    pages: 281,
+    rating: 4.5,
+    available: true,
   },
   {
-    "ISBN": "978-0-618-06848-0",
-    "title": "The Catcher in the Rye",
-    "author": "J.D. Salinger",
-    "description": "A coming-of-age novel narrated by a teenager named Holden Caulfield.",
-    "pages": 224,
-    "rating": 4.5,
-    "available": true
+    ISBN: "978-0-618-06848-0",
+    title: "The Catcher in the Rye",
+    author: "J.D. Salinger",
+    description:
+      "A coming-of-age novel narrated by a teenager named Holden Caulfield.",
+    pages: 224,
+    rating: 4.5,
+    available: true,
   },
   {
-    "ISBN": "978-1-4165-8638-6",
-    "title": "The Da Vinci Code",
-    "author": "Dan Brown",
-    "description": "A thriller novel involving a conspiracy related to the works of Leonardo da Vinci.",
-    "pages": 689,
-    "rating": 4.5,
-    "available": true
+    ISBN: "978-1-4165-8638-6",
+    title: "The Da Vinci Code",
+    author: "Dan Brown",
+    description:
+      "A thriller novel involving a conspiracy related to the works of Leonardo da Vinci.",
+    pages: 689,
+    rating: 4.5,
+    available: true,
   },
   {
-    "ISBN": "978-1-4165-8638-6",
-    "title": "The Da Vinci Code",
-    "author": "Dan Brown",
-    "description": "A thriller novel involving a conspiracy related to the works of Leonardo da Vinci.",
-    "pages": 689,
-    "rating": 4.5,
-    "available": true
+    ISBN: "978-1-4165-8638-6",
+    title: "The Da Vinci Code",
+    author: "Dan Brown",
+    description:
+      "A thriller novel involving a conspiracy related to the works of Leonardo da Vinci.",
+    pages: 689,
+    rating: 4.5,
+    available: true,
   },
   {
-    "ISBN": "978-0-399-14861-0",
-    "title": "To Kill a Mockingbird",
-    "author": "Harper Lee",
-    "description": "A novel exploring racial injustice and moral growth in the American South.",
-    "pages": 281,
-    "rating": 4.5,
-    "available": true
+    ISBN: "978-0-399-14861-0",
+    title: "To Kill a Mockingbird",
+    author: "Harper Lee",
+    description:
+      "A novel exploring racial injustice and moral growth in the American South.",
+    pages: 281,
+    rating: 4.5,
+    available: true,
   },
   {
-    "ISBN": "978-0-618-06848-0",
-    "title": "The Catcher in the Rye",
-    "author": "J.D. Salinger",
-    "description": "A coming-of-age novel narrated by a teenager named Holden Caulfield.",
-    "pages": 224,
-    "rating": 4.5,
-    "available": true
+    ISBN: "978-0-618-06848-0",
+    title: "The Catcher in the Rye",
+    author: "J.D. Salinger",
+    description:
+      "A coming-of-age novel narrated by a teenager named Holden Caulfield.",
+    pages: 224,
+    rating: 4.5,
+    available: true,
   },
   {
-    "ISBN": "978-1-4165-8638-6",
-    "title": "The Da Vinci Code",
-    "author": "Dan Brown",
-    "description": "A thriller novel involving a conspiracy related to the works of Leonardo da Vinci.",
-    "pages": 689,
-    "rating": 4.5,
-    "available": true
+    ISBN: "978-1-4165-8638-6",
+    title: "The Da Vinci Code",
+    author: "Dan Brown",
+    description:
+      "A thriller novel involving a conspiracy related to the works of Leonardo da Vinci.",
+    pages: 689,
+    rating: 4.5,
+    available: true,
   },
   {
-    "ISBN": "978-1-4165-8638-6",
-    "title": "The Da Vinci Code",
-    "author": "Dan Brown",
-    "description": "A thriller novel involving a conspiracy related to the works of Leonardo da Vinci.",
-    "pages": 689,
-    "rating": 4.5,
-    "available": true
+    ISBN: "978-1-4165-8638-6",
+    title: "The Da Vinci Code",
+    author: "Dan Brown",
+    description:
+      "A thriller novel involving a conspiracy related to the works of Leonardo da Vinci.",
+    pages: 689,
+    rating: 4.5,
+    available: true,
   },
   {
-    "ISBN": "978-0-399-14861-0",
-    "title": "To Kill a Mockingbird",
-    "author": "Harper Lee",
-    "description": "A novel exploring racial injustice and moral growth in the American South.",
-    "pages": 281,
-    "rating": 4.5,
-    "available": true
+    ISBN: "978-0-399-14861-0",
+    title: "To Kill a Mockingbird",
+    author: "Harper Lee",
+    description:
+      "A novel exploring racial injustice and moral growth in the American South.",
+    pages: 281,
+    rating: 4.5,
+    available: true,
   },
   {
-    "ISBN": "978-0-618-06848-0",
-    "title": "The Catcher in the Rye",
-    "author": "J.D. Salinger",
-    "description": "A coming-of-age novel narrated by a teenager named Holden Caulfield.",
-    "pages": 224,
-    "rating": 4.5,
-    "available": true
+    ISBN: "978-0-618-06848-0",
+    title: "The Catcher in the Rye",
+    author: "J.D. Salinger",
+    description:
+      "A coming-of-age novel narrated by a teenager named Holden Caulfield.",
+    pages: 224,
+    rating: 4.5,
+    available: true,
   },
   {
-    "ISBN": "978-1-4165-8638-6",
-    "title": "The Da Vinci Code",
-    "author": "Dan Brown",
-    "description": "A thriller novel involving a conspiracy related to the works of Leonardo da Vinci.",
-    "pages": 689,
-    "rating": 4.5,
-    "available": true
-  }
-]
-
+    ISBN: "978-1-4165-8638-6",
+    title: "The Da Vinci Code",
+    author: "Dan Brown",
+    description:
+      "A thriller novel involving a conspiracy related to the works of Leonardo da Vinci.",
+    pages: 689,
+    rating: 4.5,
+    available: true,
+  },
+];
 
 const TableL = () => {
+  const auth = useContext(UserContext);
+  const [books, setBooks] = useState([]);
+
+  const [rows, setRows] = useState([]);
+
+  const fetchBooks = async() => {
+    const response = await axios.get('http://localhost/forum/php/api/library.php');
+    if(response.data.results.length > 0){
+      setBooks(response.data.results);
+      console.log(response.data.results);
+    }
+  }
+
+  useEffect(() => {
+    fetchBooks();
+  }, []);
+
   const data = {
     columns: [
-      { field: 'ISBN', headerName: 'ISBN', flex: 1 },
-      { field: 'title', headerName: 'Title', flex: 1 },
-      { field: 'author', headerName: 'Author', flex: 1 },
-      { field: 'description', headerName: 'Description', flex: 1 },
-      { field: 'pages', headerName: 'Pages', flex: 1 },
-      { field: 'available', headerName: 'Available', flex: 1}
+      { field: "isbn", headerName: "ISBN", flex: 1 },
+      { field: "title", headerName: "Title", flex: 1 },
+      { field: "author", headerName: "Author", flex: 1 },
+      { field: "course_name", headerName: "Course Name", flex: 1 },
+      { field: "pages", headerName: "Pages", flex: 1 },
+      { field: "available", headerName: "Available", flex: 1 },
     ],
-    rows: books.map((book, index) => ({ id: index, ...book}))
+    rows: books.map((book) => ({ id: book.book_id, ...book })),
   };
 
   return (
-    <div className='lib-table' style={{ height: 600, width: '100%' }}>
+    <div className="lib-table" style={{ height: 600, width: "100%" }}>
       <DataGrid
         {...data}
         slots={{
@@ -281,4 +317,3 @@ const TableL = () => {
 };
 
 export default TableL;
-
