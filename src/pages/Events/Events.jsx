@@ -1,18 +1,16 @@
 import React from 'react';
-import {Navbar, EventsContainer} from '../../components';
+import {Navbar, EventsContainer,Footer} from '../../components';
 import { useParams } from 'react-router-dom';
 
 function Events()
 {
-    let {canteenName} = useParams();
-    console.log(canteenName);
     return (
         <>
             <Navbar/>
+            <div style={{padding:"50px"}}>
             <EventsContainer/>  
-            <div style={{padding:"20px"}}>
-        
             </div>
+            <Footer/>
             
         </>
         
