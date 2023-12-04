@@ -10,8 +10,8 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Link from '@mui/material/Link';
 import axios from 'axios';
-import { useContext } from 'react';
 import UserContext from '../../UserContext';
+import { useContext } from 'react';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   
@@ -36,51 +36,52 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 	},
   }));
 
-function AdminCoTable() {
+function AdminSTable() {
 	const auth=useContext(UserContext);
 	const [rows, setRows] = useState([])
 	useEffect(() => {
-	  	refreshCourse();
+	  	refreshSocieties();
 	}, [])
-	function deleteEntry(Cid){
-        let id= Cid
+	function deleteEntry(Sid){
+        let id= Sid
         console.log(id)
-        axios.delete('http://localhost/forum/php/api/courses.php', {data: id}).then(function(response){
+        axios.delete('http://localhost/forum/php/api/event.php', {data: id}).then(function(response){
             console.log(response.data)
-            refreshCourse();
+            refreshSocieties();
         })
     }
-	function refreshCourse() {
-	  	axios.get("http://localhost/forum/php/api/courses.php").then(function (response) {
+	function refreshSocieties() {
+	  	axios.get("http://localhost/forum/php/api/event.php").then(function (response) {
 			console.log(response.data.results);
 			setRows([...response.data.results])
 	  	})
 	}
 	return (
-		<TableContainer component={Paper} sx={{width: '95%', margin: '10px auto'}}>
+		<TableContainer component={Paper} sx={{width: '95%', margin: '10px auto', maxHeight: '70vh'}}>
 			<Table sx={{ minWidth: 650 }} aria-label="customized table">
 			<TableHead>
 				<TableRow>
-				<StyledTableCell align="left">SNO</StyledTableCell>
-				<StyledTableCell align="left">CID</StyledTableCell>
-				<StyledTableCell align="center">CourseName</StyledTableCell>
-				<StyledTableCell align="center">CoordinatorName</StyledTableCell>
-				<StyledTableCell align="center">Manage</StyledTableCell>
-				</TableRow>
+				<StyledTableCell align="left">EID</StyledTableCell>
+				<StyledTableCell align="center">Name</StyledTableCell>
+				<StyledTableCell align="center">Month</StyledTableCell>
+				<StyledTableCell align="center">Society</StyledTableCell>
+				<StyledTableCell align="center">Image Path</StyledTableCell>
+                <StyledTableCell align="center">Manage</StyledTableCell>
+
+                </TableRow>
 			</TableHead>
 			<TableBody>
 				{rows.map((row,i) => (
 				<StyledTableRow
-					key={row.cid}
+					key={row.id}
 					sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
 				>
-					<StyledTableCell component="th" scope="row">
-					{i+1}
-					</StyledTableCell>
-				<StyledTableCell align="center">{row.cid}</StyledTableCell>
-                <StyledTableCell align="center">{row.cname}</StyledTableCell>
-                <StyledTableCell align="center">{row.tname}</StyledTableCell>
-                <StyledTableCell align="center"><Button variant="contained" onClick={(event)=>deleteEntry(row.cid)}>Delete</Button></StyledTableCell>
+				<StyledTableCell align="center">{row.id}</StyledTableCell>
+				<StyledTableCell align="center">{row.event_name}</StyledTableCell>
+                <StyledTableCell align="center">{row.Month}</StyledTableCell>
+                <StyledTableCell align="center">{row.society_name}</StyledTableCell>
+                <StyledTableCell align="center">{row.image_path}</StyledTableCell>
+                <StyledTableCell align="center"><Button variant="contained" onClick={(event)=>deleteEntry(row.society_id)}>Delete</Button></StyledTableCell>
 				</StyledTableRow>
 				))}
 			</TableBody>
@@ -88,4 +89,4 @@ function AdminCoTable() {
 		</TableContainer>
 	);
 }
-export default AdminCoTable;
+export default AdminSTable;
