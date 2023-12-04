@@ -1,19 +1,32 @@
-.each-slide-effect > div {
+/* .each-slide-effect > div {
     display: flex;
     align-items: center;
     justify-content: center;
     background-size: cover;
     height: 350px;
-  }
+  } */
   
   .each-slide-effect span {
     padding: 20px;
     font-size: 20px;
-    background: #efefef;
+    background: #842020;
     text-align: center;
   }
-/* 
   .slide-image{
-    width:100%;
-    height:"100vh";
-  } */
+    height: 512px;
+    margin: 0px auto;
+    padding:20px 0;
+    object-fit: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .span-id{
+    padding:20px;
+    margin: 10px;
+    font-size: 1.2rem;
+    background: #842020;
+    color: white;
+    border-radius: 20px ;
+  }
