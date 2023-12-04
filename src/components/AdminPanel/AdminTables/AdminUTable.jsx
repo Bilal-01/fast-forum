@@ -15,6 +15,7 @@ import { useContext } from 'react';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   
+
 	[`&.${tableCellClasses.head}`]: {
 	  backgroundColor: '#bedff2',
 	  color: theme.palette.common.black,
@@ -43,12 +44,17 @@ function AdminUTable() {
 	  	refreshUser();
 	}, [])
 	function deleteEntry(Uid){
-        let id= Uid;
-        // console.log(id)
-        axios.post('http://localhost/forum/php/api/user.php', {Uid}).then(function(response){
-            console.log(response.data)
-            refreshUser();
-        })
+		if (auth.user.role === 0){
+			alert("Cannot Delete an Admin!");
+		}
+		else{
+			let id= Uid;
+			// console.log(id)
+			axios.post('http://localhost/forum/php/api/user.php', {Uid}).then(function(response){
+				console.log(response.data)
+				refreshUser();
+			})
+		}
     }
 	function refreshUser() {
 	  	axios.get("http://localhost/forum/php/api/user.php").then(function (response) {
